@@ -1,0 +1,3408 @@
+
+
+Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
+                                                                                               Mon Dec 06 18:51:49 2021
+
+Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
+     1                           	processor	16F15256
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	idataBANK0,global,class=CODE,delta=2,noexec
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     7                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1,noexec
+     8                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1,noexec
+     9                           	psect	inittext,global,class=CODE,delta=2
+    10                           	psect	clrtext,global,class=CODE,delta=2
+    11                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+    12                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+    13                           	psect	maintext,global,class=CODE,merge=1,split=1,delta=2
+    14                           	psect	text1,local,class=CODE,merge=1,delta=2
+    15                           	psect	text2,local,class=CODE,merge=1,delta=2
+    16                           	psect	text3,local,class=CODE,merge=1,delta=2
+    17                           	psect	text4,local,class=CODE,merge=1,delta=2
+    18                           	psect	text5,local,class=CODE,merge=1,delta=2
+    19                           	psect	text6,local,class=CODE,merge=1,delta=2
+    20                           	psect	intentry,global,class=CODE,delta=2
+    21                           	psect	text8,local,class=CODE,merge=1,delta=2
+    22                           	psect	text9,local,class=CODE,merge=1,delta=2
+    23                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    24                           	dabs	1,0xCA0,32
+    25                           	dabs	1,0xC20,80
+    26                           	dabs	1,0xBA0,80
+    27                           	dabs	1,0xB30,64
+    28                           	dabs	1,0x26F0,0,_dataBuf
+    29                           	dabs	1,0x7E,2
+    30  0000                     
+    31                           ; Version 2.35
+    32                           ; Generated 01/06/2021 GMT
+    33                           ; 
+    34                           ; Copyright © 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    35                           ; All rights reserved.
+    36                           ; 
+    37                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    38                           ; 
+    39                           ; Redistribution and use in source and binary forms, with or without modification, are
+    40                           ; permitted provided that the following conditions are met:
+    41                           ; 
+    42                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    43                           ;        conditions and the following disclaimer.
+    44                           ; 
+    45                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    46                           ;        of conditions and the following disclaimer in the documentation and/or other
+    47                           ;        materials provided with the distribution. Publication is not required when
+    48                           ;        this file is used in an embedded application.
+    49                           ; 
+    50                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    51                           ;        software without specific prior written permission.
+    52                           ; 
+    53                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    54                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    55                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    56                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    57                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    58                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    59                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    60                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    61                           ; 
+    62                           ; 
+    63                           ; Code-generator required, PIC16F15256 Definitions
+    64                           ; 
+    65                           ; SFR Addresses
+    66  0000                     	;# 
+    67  0001                     	;# 
+    68  0002                     	;# 
+    69  0003                     	;# 
+    70  0004                     	;# 
+    71  0005                     	;# 
+    72  0006                     	;# 
+    73  0007                     	;# 
+    74  0008                     	;# 
+    75  0009                     	;# 
+    76  000A                     	;# 
+    77  000B                     	;# 
+    78  000C                     	;# 
+    79  000D                     	;# 
+    80  000E                     	;# 
+    81  0010                     	;# 
+    82  0012                     	;# 
+    83  0013                     	;# 
+    84  0014                     	;# 
+    85  0016                     	;# 
+    86  0018                     	;# 
+    87  0019                     	;# 
+    88  001A                     	;# 
+    89  009A                     	;# 
+    90  009B                     	;# 
+    91  009B                     	;# 
+    92  009C                     	;# 
+    93  009D                     	;# 
+    94  009E                     	;# 
+    95  009F                     	;# 
+    96  010C                     	;# 
+    97  010D                     	;# 
+    98  010E                     	;# 
+    99  010F                     	;# 
+   100  0119                     	;# 
+   101  011A                     	;# 
+   102  011B                     	;# 
+   103  011B                     	;# 
+   104  011C                     	;# 
+   105  011D                     	;# 
+   106  011E                     	;# 
+   107  011F                     	;# 
+   108  018C                     	;# 
+   109  018D                     	;# 
+   110  018E                     	;# 
+   111  018F                     	;# 
+   112  0190                     	;# 
+   113  0191                     	;# 
+   114  0192                     	;# 
+   115  020C                     	;# 
+   116  020D                     	;# 
+   117  020E                     	;# 
+   118  020E                     	;# 
+   119  020F                     	;# 
+   120  020F                     	;# 
+   121  0210                     	;# 
+   122  0210                     	;# 
+   123  0211                     	;# 
+   124  0211                     	;# 
+   125  028C                     	;# 
+   126  028C                     	;# 
+   127  028D                     	;# 
+   128  028D                     	;# 
+   129  028E                     	;# 
+   130  028F                     	;# 
+   131  0290                     	;# 
+   132  0291                     	;# 
+   133  030C                     	;# 
+   134  030C                     	;# 
+   135  030D                     	;# 
+   136  030E                     	;# 
+   137  030F                     	;# 
+   138  0310                     	;# 
+   139  0310                     	;# 
+   140  0311                     	;# 
+   141  0312                     	;# 
+   142  0313                     	;# 
+   143  0314                     	;# 
+   144  0314                     	;# 
+   145  0315                     	;# 
+   146  0316                     	;# 
+   147  0318                     	;# 
+   148  0318                     	;# 
+   149  0319                     	;# 
+   150  031A                     	;# 
+   151  059C                     	;# 
+   152  059C                     	;# 
+   153  059D                     	;# 
+   154  059D                     	;# 
+   155  059E                     	;# 
+   156  059F                     	;# 
+   157  070C                     	;# 
+   158  070D                     	;# 
+   159  070E                     	;# 
+   160  0716                     	;# 
+   161  0717                     	;# 
+   162  0718                     	;# 
+   163  080C                     	;# 
+   164  0811                     	;# 
+   165  0813                     	;# 
+   166  0814                     	;# 
+   167  081A                     	;# 
+   168  081A                     	;# 
+   169  081B                     	;# 
+   170  081C                     	;# 
+   171  081C                     	;# 
+   172  081D                     	;# 
+   173  081E                     	;# 
+   174  081F                     	;# 
+   175  088E                     	;# 
+   176  0890                     	;# 
+   177  0891                     	;# 
+   178  0892                     	;# 
+   179  0893                     	;# 
+   180  090C                     	;# 
+   181  1E8F                     	;# 
+   182  1E90                     	;# 
+   183  1E91                     	;# 
+   184  1E92                     	;# 
+   185  1E93                     	;# 
+   186  1E9C                     	;# 
+   187  1EA1                     	;# 
+   188  1EA2                     	;# 
+   189  1EC3                     	;# 
+   190  1EC5                     	;# 
+   191  1EC6                     	;# 
+   192  1EC7                     	;# 
+   193  1ECB                     	;# 
+   194  1ECB                     	;# 
+   195  1ECB                     	;# 
+   196  1ECC                     	;# 
+   197  1ECC                     	;# 
+   198  1ECC                     	;# 
+   199  1F10                     	;# 
+   200  1F11                     	;# 
+   201  1F12                     	;# 
+   202  1F13                     	;# 
+   203  1F14                     	;# 
+   204  1F15                     	;# 
+   205  1F16                     	;# 
+   206  1F17                     	;# 
+   207  1F18                     	;# 
+   208  1F19                     	;# 
+   209  1F1A                     	;# 
+   210  1F1B                     	;# 
+   211  1F1C                     	;# 
+   212  1F1D                     	;# 
+   213  1F1E                     	;# 
+   214  1F1F                     	;# 
+   215  1F20                     	;# 
+   216  1F21                     	;# 
+   217  1F22                     	;# 
+   218  1F23                     	;# 
+   219  1F24                     	;# 
+   220  1F25                     	;# 
+   221  1F26                     	;# 
+   222  1F27                     	;# 
+   223  1F38                     	;# 
+   224  1F39                     	;# 
+   225  1F3A                     	;# 
+   226  1F3B                     	;# 
+   227  1F3C                     	;# 
+   228  1F3D                     	;# 
+   229  1F3E                     	;# 
+   230  1F3F                     	;# 
+   231  1F43                     	;# 
+   232  1F44                     	;# 
+   233  1F45                     	;# 
+   234  1F46                     	;# 
+   235  1F47                     	;# 
+   236  1F48                     	;# 
+   237  1F49                     	;# 
+   238  1F4A                     	;# 
+   239  1F4E                     	;# 
+   240  1F4F                     	;# 
+   241  1F50                     	;# 
+   242  1F51                     	;# 
+   243  1F52                     	;# 
+   244  1F53                     	;# 
+   245  1F54                     	;# 
+   246  1F55                     	;# 
+   247  1F65                     	;# 
+   248  1F68                     	;# 
+   249  1F69                     	;# 
+   250  1F6A                     	;# 
+   251  1F6B                     	;# 
+   252  1FE4                     	;# 
+   253  1FE5                     	;# 
+   254  1FE6                     	;# 
+   255  1FE7                     	;# 
+   256  1FE8                     	;# 
+   257  1FE8                     	;# 
+   258  1FE9                     	;# 
+   259  1FEA                     	;# 
+   260  1FEB                     	;# 
+   261  1FED                     	;# 
+   262  1FEE                     	;# 
+   263  1FEF                     	;# 
+   264  0000                     	;# 
+   265  0001                     	;# 
+   266  0002                     	;# 
+   267  0003                     	;# 
+   268  0004                     	;# 
+   269  0005                     	;# 
+   270  0006                     	;# 
+   271  0007                     	;# 
+   272  0008                     	;# 
+   273  0009                     	;# 
+   274  000A                     	;# 
+   275  000B                     	;# 
+   276  000C                     	;# 
+   277  000D                     	;# 
+   278  000E                     	;# 
+   279  0010                     	;# 
+   280  0012                     	;# 
+   281  0013                     	;# 
+   282  0014                     	;# 
+   283  0016                     	;# 
+   284  0018                     	;# 
+   285  0019                     	;# 
+   286  001A                     	;# 
+   287  009A                     	;# 
+   288  009B                     	;# 
+   289  009B                     	;# 
+   290  009C                     	;# 
+   291  009D                     	;# 
+   292  009E                     	;# 
+   293  009F                     	;# 
+   294  010C                     	;# 
+   295  010D                     	;# 
+   296  010E                     	;# 
+   297  010F                     	;# 
+   298  0119                     	;# 
+   299  011A                     	;# 
+   300  011B                     	;# 
+   301  011B                     	;# 
+   302  011C                     	;# 
+   303  011D                     	;# 
+   304  011E                     	;# 
+   305  011F                     	;# 
+   306  018C                     	;# 
+   307  018D                     	;# 
+   308  018E                     	;# 
+   309  018F                     	;# 
+   310  0190                     	;# 
+   311  0191                     	;# 
+   312  0192                     	;# 
+   313  020C                     	;# 
+   314  020D                     	;# 
+   315  020E                     	;# 
+   316  020E                     	;# 
+   317  020F                     	;# 
+   318  020F                     	;# 
+   319  0210                     	;# 
+   320  0210                     	;# 
+   321  0211                     	;# 
+   322  0211                     	;# 
+   323  028C                     	;# 
+   324  028C                     	;# 
+   325  028D                     	;# 
+   326  028D                     	;# 
+   327  028E                     	;# 
+   328  028F                     	;# 
+   329  0290                     	;# 
+   330  0291                     	;# 
+   331  030C                     	;# 
+   332  030C                     	;# 
+   333  030D                     	;# 
+   334  030E                     	;# 
+   335  030F                     	;# 
+   336  0310                     	;# 
+   337  0310                     	;# 
+   338  0311                     	;# 
+   339  0312                     	;# 
+   340  0313                     	;# 
+   341  0314                     	;# 
+   342  0314                     	;# 
+   343  0315                     	;# 
+   344  0316                     	;# 
+   345  0318                     	;# 
+   346  0318                     	;# 
+   347  0319                     	;# 
+   348  031A                     	;# 
+   349  059C                     	;# 
+   350  059C                     	;# 
+   351  059D                     	;# 
+   352  059D                     	;# 
+   353  059E                     	;# 
+   354  059F                     	;# 
+   355  070C                     	;# 
+   356  070D                     	;# 
+   357  070E                     	;# 
+   358  0716                     	;# 
+   359  0717                     	;# 
+   360  0718                     	;# 
+   361  080C                     	;# 
+   362  0811                     	;# 
+   363  0813                     	;# 
+   364  0814                     	;# 
+   365  081A                     	;# 
+   366  081A                     	;# 
+   367  081B                     	;# 
+   368  081C                     	;# 
+   369  081C                     	;# 
+   370  081D                     	;# 
+   371  081E                     	;# 
+   372  081F                     	;# 
+   373  088E                     	;# 
+   374  0890                     	;# 
+   375  0891                     	;# 
+   376  0892                     	;# 
+   377  0893                     	;# 
+   378  090C                     	;# 
+   379  1E8F                     	;# 
+   380  1E90                     	;# 
+   381  1E91                     	;# 
+   382  1E92                     	;# 
+   383  1E93                     	;# 
+   384  1E9C                     	;# 
+   385  1EA1                     	;# 
+   386  1EA2                     	;# 
+   387  1EC3                     	;# 
+   388  1EC5                     	;# 
+   389  1EC6                     	;# 
+   390  1EC7                     	;# 
+   391  1ECB                     	;# 
+   392  1ECB                     	;# 
+   393  1ECB                     	;# 
+   394  1ECC                     	;# 
+   395  1ECC                     	;# 
+   396  1ECC                     	;# 
+   397  1F10                     	;# 
+   398  1F11                     	;# 
+   399  1F12                     	;# 
+   400  1F13                     	;# 
+   401  1F14                     	;# 
+   402  1F15                     	;# 
+   403  1F16                     	;# 
+   404  1F17                     	;# 
+   405  1F18                     	;# 
+   406  1F19                     	;# 
+   407  1F1A                     	;# 
+   408  1F1B                     	;# 
+   409  1F1C                     	;# 
+   410  1F1D                     	;# 
+   411  1F1E                     	;# 
+   412  1F1F                     	;# 
+   413  1F20                     	;# 
+   414  1F21                     	;# 
+   415  1F22                     	;# 
+   416  1F23                     	;# 
+   417  1F24                     	;# 
+   418  1F25                     	;# 
+   419  1F26                     	;# 
+   420  1F27                     	;# 
+   421  1F38                     	;# 
+   422  1F39                     	;# 
+   423  1F3A                     	;# 
+   424  1F3B                     	;# 
+   425  1F3C                     	;# 
+   426  1F3D                     	;# 
+   427  1F3E                     	;# 
+   428  1F3F                     	;# 
+   429  1F43                     	;# 
+   430  1F44                     	;# 
+   431  1F45                     	;# 
+   432  1F46                     	;# 
+   433  1F47                     	;# 
+   434  1F48                     	;# 
+   435  1F49                     	;# 
+   436  1F4A                     	;# 
+   437  1F4E                     	;# 
+   438  1F4F                     	;# 
+   439  1F50                     	;# 
+   440  1F51                     	;# 
+   441  1F52                     	;# 
+   442  1F53                     	;# 
+   443  1F54                     	;# 
+   444  1F55                     	;# 
+   445  1F65                     	;# 
+   446  1F68                     	;# 
+   447  1F69                     	;# 
+   448  1F6A                     	;# 
+   449  1F6B                     	;# 
+   450  1FE4                     	;# 
+   451  1FE5                     	;# 
+   452  1FE6                     	;# 
+   453  1FE7                     	;# 
+   454  1FE8                     	;# 
+   455  1FE8                     	;# 
+   456  1FE9                     	;# 
+   457  1FEA                     	;# 
+   458  1FEB                     	;# 
+   459  1FED                     	;# 
+   460  1FEE                     	;# 
+   461  1FEF                     	;# 
+   462  0000                     	;# 
+   463  0001                     	;# 
+   464  0002                     	;# 
+   465  0003                     	;# 
+   466  0004                     	;# 
+   467  0005                     	;# 
+   468  0006                     	;# 
+   469  0007                     	;# 
+   470  0008                     	;# 
+   471  0009                     	;# 
+   472  000A                     	;# 
+   473  000B                     	;# 
+   474  000C                     	;# 
+   475  000D                     	;# 
+   476  000E                     	;# 
+   477  0010                     	;# 
+   478  0012                     	;# 
+   479  0013                     	;# 
+   480  0014                     	;# 
+   481  0016                     	;# 
+   482  0018                     	;# 
+   483  0019                     	;# 
+   484  001A                     	;# 
+   485  009A                     	;# 
+   486  009B                     	;# 
+   487  009B                     	;# 
+   488  009C                     	;# 
+   489  009D                     	;# 
+   490  009E                     	;# 
+   491  009F                     	;# 
+   492  010C                     	;# 
+   493  010D                     	;# 
+   494  010E                     	;# 
+   495  010F                     	;# 
+   496  0119                     	;# 
+   497  011A                     	;# 
+   498  011B                     	;# 
+   499  011B                     	;# 
+   500  011C                     	;# 
+   501  011D                     	;# 
+   502  011E                     	;# 
+   503  011F                     	;# 
+   504  018C                     	;# 
+   505  018D                     	;# 
+   506  018E                     	;# 
+   507  018F                     	;# 
+   508  0190                     	;# 
+   509  0191                     	;# 
+   510  0192                     	;# 
+   511  020C                     	;# 
+   512  020D                     	;# 
+   513  020E                     	;# 
+   514  020E                     	;# 
+   515  020F                     	;# 
+   516  020F                     	;# 
+   517  0210                     	;# 
+   518  0210                     	;# 
+   519  0211                     	;# 
+   520  0211                     	;# 
+   521  028C                     	;# 
+   522  028C                     	;# 
+   523  028D                     	;# 
+   524  028D                     	;# 
+   525  028E                     	;# 
+   526  028F                     	;# 
+   527  0290                     	;# 
+   528  0291                     	;# 
+   529  030C                     	;# 
+   530  030C                     	;# 
+   531  030D                     	;# 
+   532  030E                     	;# 
+   533  030F                     	;# 
+   534  0310                     	;# 
+   535  0310                     	;# 
+   536  0311                     	;# 
+   537  0312                     	;# 
+   538  0313                     	;# 
+   539  0314                     	;# 
+   540  0314                     	;# 
+   541  0315                     	;# 
+   542  0316                     	;# 
+   543  0318                     	;# 
+   544  0318                     	;# 
+   545  0319                     	;# 
+   546  031A                     	;# 
+   547  059C                     	;# 
+   548  059C                     	;# 
+   549  059D                     	;# 
+   550  059D                     	;# 
+   551  059E                     	;# 
+   552  059F                     	;# 
+   553  070C                     	;# 
+   554  070D                     	;# 
+   555  070E                     	;# 
+   556  0716                     	;# 
+   557  0717                     	;# 
+   558  0718                     	;# 
+   559  080C                     	;# 
+   560  0811                     	;# 
+   561  0813                     	;# 
+   562  0814                     	;# 
+   563  081A                     	;# 
+   564  081A                     	;# 
+   565  081B                     	;# 
+   566  081C                     	;# 
+   567  081C                     	;# 
+   568  081D                     	;# 
+   569  081E                     	;# 
+   570  081F                     	;# 
+   571  088E                     	;# 
+   572  0890                     	;# 
+   573  0891                     	;# 
+   574  0892                     	;# 
+   575  0893                     	;# 
+   576  090C                     	;# 
+   577  1E8F                     	;# 
+   578  1E90                     	;# 
+   579  1E91                     	;# 
+   580  1E92                     	;# 
+   581  1E93                     	;# 
+   582  1E9C                     	;# 
+   583  1EA1                     	;# 
+   584  1EA2                     	;# 
+   585  1EC3                     	;# 
+   586  1EC5                     	;# 
+   587  1EC6                     	;# 
+   588  1EC7                     	;# 
+   589  1ECB                     	;# 
+   590  1ECB                     	;# 
+   591  1ECB                     	;# 
+   592  1ECC                     	;# 
+   593  1ECC                     	;# 
+   594  1ECC                     	;# 
+   595  1F10                     	;# 
+   596  1F11                     	;# 
+   597  1F12                     	;# 
+   598  1F13                     	;# 
+   599  1F14                     	;# 
+   600  1F15                     	;# 
+   601  1F16                     	;# 
+   602  1F17                     	;# 
+   603  1F18                     	;# 
+   604  1F19                     	;# 
+   605  1F1A                     	;# 
+   606  1F1B                     	;# 
+   607  1F1C                     	;# 
+   608  1F1D                     	;# 
+   609  1F1E                     	;# 
+   610  1F1F                     	;# 
+   611  1F20                     	;# 
+   612  1F21                     	;# 
+   613  1F22                     	;# 
+   614  1F23                     	;# 
+   615  1F24                     	;# 
+   616  1F25                     	;# 
+   617  1F26                     	;# 
+   618  1F27                     	;# 
+   619  1F38                     	;# 
+   620  1F39                     	;# 
+   621  1F3A                     	;# 
+   622  1F3B                     	;# 
+   623  1F3C                     	;# 
+   624  1F3D                     	;# 
+   625  1F3E                     	;# 
+   626  1F3F                     	;# 
+   627  1F43                     	;# 
+   628  1F44                     	;# 
+   629  1F45                     	;# 
+   630  1F46                     	;# 
+   631  1F47                     	;# 
+   632  1F48                     	;# 
+   633  1F49                     	;# 
+   634  1F4A                     	;# 
+   635  1F4E                     	;# 
+   636  1F4F                     	;# 
+   637  1F50                     	;# 
+   638  1F51                     	;# 
+   639  1F52                     	;# 
+   640  1F53                     	;# 
+   641  1F54                     	;# 
+   642  1F55                     	;# 
+   643  1F65                     	;# 
+   644  1F68                     	;# 
+   645  1F69                     	;# 
+   646  1F6A                     	;# 
+   647  1F6B                     	;# 
+   648  1FE4                     	;# 
+   649  1FE5                     	;# 
+   650  1FE6                     	;# 
+   651  1FE7                     	;# 
+   652  1FE8                     	;# 
+   653  1FE8                     	;# 
+   654  1FE9                     	;# 
+   655  1FEA                     	;# 
+   656  1FEB                     	;# 
+   657  1FED                     	;# 
+   658  1FEE                     	;# 
+   659  1FEF                     	;_dataBuf
+   660                           
+   661                           	psect	idataBANK0
+   662  02F1                     __pidataBANK0:
+   663                           
+   664                           ;initializer for _ATR
+   665  02F1  343B               	retlw	59
+   666  02F2  3438               	retlw	56
+   667  02F3  3445               	retlw	69
+   668  02F4  3400               	retlw	0
+   669  02F5  3446               	retlw	70
+   670  02F6  346C               	retlw	108
+   671  02F7  3473               	retlw	115
+   672  02F8  3468               	retlw	104
+   673  02F9  3450               	retlw	80
+   674  02FA  3472               	retlw	114
+   675  02FB  3467               	retlw	103
+   676  02FC  3412               	retlw	18
+   677  0018                     _LATA	set	24
+   678  000D                     _PORTB	set	13
+   679  0014                     _TRISCbits	set	20
+   680  000B                     _INTCONbits	set	11
+   681  001A                     _LATCbits	set	26
+   682  0014                     _TRISC	set	20
+   683  0013                     _TRISB	set	19
+   684  0012                     _TRISA	set	18
+   685  011B                     _SP1BRG	set	283
+   686  0119                     _RC1REG	set	281
+   687  011A                     _TX1REG	set	282
+   688  011D                     _RC1STAbits	set	285
+   689  011F                     _BAUD1CONbits	set	287
+   690  011E                     _TX1STAbits	set	286
+   691  070D                     _PIR1bits	set	1805
+   692  0717                     _PIE1bits	set	1815
+   693  0890                     _OSCSTATbits	set	2192
+   694  0893                     _OSCFRQ	set	2195
+   695  0891                     _OSCENbits	set	2193
+   696  1ECB                     _RX1PPSbits	set	7883
+   697  1F26                     _RC6PPSbits	set	7974
+   698  1F50                     _ODCONC	set	8016
+   699  1F45                     _ODCONB	set	8005
+   700  1F3A                     _ODCONA	set	7994
+   701  1F51                     _SLRCONC	set	8017
+   702  1F46                     _SLRCONB	set	8006
+   703  1F3B                     _SLRCONA	set	7995
+   704  1F52                     _INLVLC	set	8018
+   705  1F47                     _INLVLB	set	8007
+   706  1F3C                     _INLVLA	set	7996
+   707  1F4F                     _WPUC	set	8015
+   708  1F44                     _WPUB	set	8004
+   709  1F39                     _WPUA	set	7993
+   710  1F4E                     _ANSELC	set	8014
+   711  1F43                     _ANSELB	set	8003
+   712  1F38                     _ANSELA	set	7992
+   713                           
+   714                           	psect	cinit
+   715  002C                     start_initialization:	
+   716                           ; #config settings
+   717                           
+   718  002C                     __initialization:	;BIGRAM
+   719                           
+   720                           ; Initialize objects allocated to BANK0
+   721  002C  30F1               	movlw	low __pidataBANK0
+   722  002D  0084               	movwf	4
+   723  002E  3082               	movlw	(high __pidataBANK0)| (0+128)
+   724  002F  0085               	movwf	5
+   725  0030  305D               	movlw	low __pdataBANK0
+   726  0031  0086               	movwf	6
+   727  0032  3000               	movlw	high __pdataBANK0
+   728  0033  0087               	movwf	7
+   729  0034  3000               	movlw	0
+   730  0035  00FF               	movwf	btemp+1
+   731  0036  300C               	movlw	12
+   732  0037  3182  22FD  3180   	fcall	init_ram
+   733                           
+   734                           ; Clear objects allocated to BIGRAM
+   735  003A  30F0               	movlw	low (0+9968)
+   736  003B  0084               	movwf	4
+   737  003C  3026               	movlw	high (0+9968)
+   738  003D  0085               	movwf	5
+   739  003E  3000               	movlw	0
+   740  003F  00FE               	movwf	btemp
+   741  0040  3001               	movlw	1
+   742  0041  00FF               	movwf	btemp+1
+   743  0042  3183  2309  3180   	fcall	clear_ram0
+   744                           
+   745                           ; Clear objects allocated to COMMON
+   746  0045  01F8               	clrf	__pbssCOMMON& (0+127)
+   747  0046  01F9               	clrf	(__pbssCOMMON+1)& (0+127)
+   748  0047  01FA               	clrf	(__pbssCOMMON+2)& (0+127)
+   749  0048  01FB               	clrf	(__pbssCOMMON+3)& (0+127)
+   750  0049  01FC               	clrf	(__pbssCOMMON+4)& (0+127)
+   751  004A  01FD               	clrf	(__pbssCOMMON+5)& (0+127)
+   752                           
+   753                           ; Clear objects allocated to BANK0
+   754  004B  304F               	movlw	low __pbssBANK0
+   755  004C  0084               	movwf	4
+   756  004D  3000               	movlw	high __pbssBANK0
+   757  004E  0085               	movwf	5
+   758  004F  300E               	movlw	14
+   759  0050  00FE               	movwf	btemp
+   760  0051  3000               	movlw	0
+   761  0052  00FF               	movwf	btemp+1
+   762  0053  3183  2309  3180   	fcall	clear_ram0
+   763  0056                     end_of_initialization:	
+   764                           ;End of C runtime variable initialization code
+   765                           
+   766  0056                     __end_of__initialization:
+   767  0056  107E               	bcf	int$flags,0	;clear compiler interrupt flag (level 1)
+   768  0057  0140               	movlb	0
+   769  0058  3180  285A         	ljmp	_main	;jump to C main() function
+   770                           
+   771                           	psect	bssCOMMON
+   772  0078                     __pbssCOMMON:
+   773  0078                     _buf:
+   774  0078                     	ds	2
+   775  007A                     _bufLength:
+   776  007A                     	ds	1
+   777  007B                     _bufPtr:
+   778  007B                     	ds	1
+   779  007C                     _successful:
+   780  007C                     	ds	1
+   781  007D                     _cmd:
+   782  007D                     	ds	1
+   783                           
+   784                           	psect	bssBANK0
+   785  004F                     __pbssBANK0:
+   786  004F                     _addr:
+   787  004F                     	ds	4
+   788  0053                     _portInUse:
+   789  0053                     	ds	1
+   790  0054                     _numBytes:
+   791  0054                     	ds	1
+   792  0055                     _cmdBuf:
+   793  0055                     	ds	5
+   794  005A                     _ackBuf:
+   795  005A                     	ds	2
+   796  005C                     _numRetBytes:
+   797  005C                     	ds	1
+   798                           
+   799                           	psect	dataBANK0
+   800  005D                     __pdataBANK0:
+   801  005D                     _ATR:
+   802  005D                     	ds	12
+   803                           
+   804                           	psect	inittext
+   805  02FD                     init_ram:
+   806  02FD  00FE               	movwf	btemp
+   807  02FE                     initloop:
+   808  02FE  0012               	moviw fsr0++
+   809  02FF  001E               	movwi fsr1++
+   810  0300  3001               	movlw	1
+   811  0301  02FE               	subwf	btemp,f
+   812  0302  3000               	movlw	0
+   813  0303  3BFF               	subwfb	btemp+1,f
+   814  0304  087F               	movf	btemp+1,w
+   815  0305  047E               	iorwf	btemp,w
+   816  0306  1D03               	skipz
+   817  0307  2AFE               	goto	initloop
+   818  0308  3400               	retlw	0
+   819                           
+   820                           	psect	clrtext
+   821  0309                     clear_ram0:	
+   822                           ;	Called with FSR0 containing the base address, and
+   823                           ;	btemp/btemp+1 has the size to clear
+   824                           
+   825  0309  0064               	clrwdt	;clear the watchdog before getting into this loop
+   826  030A                     clrloop0:
+   827  030A  0180               	clrf	0	;clear RAM location pointed to by FSR
+   828  030B  3101               	addfsr 0,1
+   829  030C  3001               	movlw	1
+   830  030D  02FE               	subwf	btemp,f
+   831  030E  3000               	movlw	0
+   832  030F  3BFF               	subwfb	btemp+1,f
+   833  0310  087F               	movf	btemp+1,w
+   834  0311  047E               	iorwf	btemp,w
+   835  0312  1D03               	skipz
+   836  0313  2B0A               	goto	clrloop0	;have we reached the end yet?
+   837  0314  3400               	retlw	0	;all done for this memory range, return
+   838                           
+   839                           	psect	cstackCOMMON
+   840  0070                     __pcstackCOMMON:
+   841  0070                     ?_clearAddressRegisters:
+   842  0070                     ?_SerialPortSetup:	
+   843                           ; 1 bytes @ 0x0
+   844                           
+   845  0070                     ?_SerialPortTransmitInterruptService:	
+   846                           ; 1 bytes @ 0x0
+   847                           
+   848  0070                     ??_SerialPortTransmitInterruptService:	
+   849                           ; 1 bytes @ 0x0
+   850                           
+   851  0070                     ?_SerialPortReceiveInterruptService:	
+   852                           ; 1 bytes @ 0x0
+   853                           
+   854  0070                     ??_SerialPortReceiveInterruptService:	
+   855                           ; 1 bytes @ 0x0
+   856                           
+   857  0070                     ?_main:	
+   858                           ; 1 bytes @ 0x0
+   859                           
+   860  0070                     ?_InterruptServiceRoutine:	
+   861                           ; 1 bytes @ 0x0
+   862                           
+   863                           
+   864                           ; 1 bytes @ 0x0
+   865  0070                     	ds	4
+   866  0074                     SerialPortReceiveInterruptService@tempData:
+   867                           
+   868                           ; 1 bytes @ 0x4
+   869  0074                     	ds	1
+   870  0075                     ??_InterruptServiceRoutine:
+   871                           
+   872                           ; 1 bytes @ 0x5
+   873  0075                     	ds	3
+   874                           
+   875                           	psect	cstackBANK0
+   876  0020                     __pcstackBANK0:
+   877  0020                     ??_SerialPortSetup:
+   878  0020                     ?_SerialPortSendData:	
+   879                           ; 1 bytes @ 0x0
+   880                           
+   881  0020                     ?_SerialPortReceiveData:	
+   882                           ; 1 bytes @ 0x0
+   883                           
+   884  0020                     ?_setAddressRegisters:	
+   885                           ; 1 bytes @ 0x0
+   886                           
+   887  0020                     SerialPortReceiveData@length:	
+   888                           ; 1 bytes @ 0x0
+   889                           
+   890  0020                     SerialPortSendData@dataToSend:	
+   891                           ; 1 bytes @ 0x0
+   892                           
+   893  0020                     setAddressRegisters@addr:	
+   894                           ; 2 bytes @ 0x0
+   895                           
+   896                           
+   897                           ; 4 bytes @ 0x0
+   898  0020                     	ds	1
+   899  0021                     ??_SerialPortReceiveData:
+   900                           
+   901                           ; 1 bytes @ 0x1
+   902  0021                     	ds	1
+   903  0022                     SerialPortSendData@length:
+   904  0022                     SerialPortReceiveData@dataReceived:	
+   905                           ; 1 bytes @ 0x2
+   906                           
+   907                           
+   908                           ; 1 bytes @ 0x2
+   909  0022                     	ds	1
+   910  0023                     ??_SerialPortSendData:
+   911                           
+   912                           ; 1 bytes @ 0x3
+   913  0023                     	ds	1
+   914  0024                     setAddressRegisters@OE:
+   915                           
+   916                           ; 1 bytes @ 0x4
+   917  0024                     	ds	1
+   918  0025                     setAddressRegisters@CE:
+   919                           
+   920                           ; 1 bytes @ 0x5
+   921  0025                     	ds	1
+   922  0026                     ??_setAddressRegisters:
+   923                           
+   924                           ; 1 bytes @ 0x6
+   925  0026                     	ds	4
+   926  002A                     setAddressRegisters@mask:
+   927                           
+   928                           ; 4 bytes @ 0xA
+   929  002A                     	ds	4
+   930  002E                     setAddressRegisters@i:
+   931                           
+   932                           ; 1 bytes @ 0xE
+   933  002E                     	ds	1
+   934  002F                     ??_clearAddressRegisters:
+   935  002F                     ?_readFlash:	
+   936                           ; 1 bytes @ 0xF
+   937                           
+   938  002F                     readFlash@addr:	
+   939                           ; 1 bytes @ 0xF
+   940                           
+   941                           
+   942                           ; 4 bytes @ 0xF
+   943  002F                     	ds	4
+   944  0033                     readFlash@numBytes:
+   945                           
+   946                           ; 1 bytes @ 0x13
+   947  0033                     	ds	1
+   948  0034                     readFlash@retBytes:
+   949                           
+   950                           ; 2 bytes @ 0x14
+   951  0034                     	ds	2
+   952  0036                     readFlash@numRetBytes:
+   953                           
+   954                           ; 1 bytes @ 0x16
+   955  0036                     	ds	1
+   956  0037                     ??_readFlash:
+   957                           
+   958                           ; 1 bytes @ 0x17
+   959  0037                     	ds	4
+   960  003B                     readFlash@done:
+   961                           
+   962                           ; 1 bytes @ 0x1B
+   963  003B                     	ds	1
+   964  003C                     readFlash@bufPtr:
+   965                           
+   966                           ; 1 bytes @ 0x1C
+   967  003C                     	ds	1
+   968  003D                     readFlash@length:
+   969                           
+   970                           ; 1 bytes @ 0x1D
+   971  003D                     	ds	1
+   972  003E                     ??_main:
+   973                           
+   974                           ; 1 bytes @ 0x1E
+   975  003E                     	ds	12
+   976  004A                     _main$229:
+   977                           
+   978                           ; 2 bytes @ 0x2A
+   979  004A                     	ds	2
+   980  004C                     _main$230:
+   981                           
+   982                           ; 2 bytes @ 0x2C
+   983  004C                     	ds	2
+   984  004E                     main@successful:
+   985                           
+   986                           ; 1 bytes @ 0x2E
+   987  004E                     	ds	1
+   988                           
+   989                           	psect	maintext
+   990  005A                     __pmaintext:	
+   991 ;;
+   992 ;;Main: autosize = 0, tempsize = 12, incstack = 0, save=0
+   993 ;;
+   994 ;; *************** function _main *****************
+   995 ;; Defined at:
+   996 ;;		line 62 in file "source/main.c"
+   997 ;; Parameters:    Size  Location     Type
+   998 ;;		None
+   999 ;; Auto vars:     Size  Location     Type
+  1000 ;;  successful      1   46[BANK0 ] unsigned char 
+  1001 ;; Return value:  Size  Location     Type
+  1002 ;;                  1    wreg      void 
+  1003 ;; Registers used:
+  1004 ;;		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+  1005 ;; Tracked objects:
+  1006 ;;		On entry : B3F/0
+  1007 ;;		On exit  : 0/0
+  1008 ;;		Unchanged: 0/0
+  1009 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  1010 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1011 ;;      Locals:         0       5       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1012 ;;      Temps:          0      12       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1013 ;;      Totals:         0      17       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1014 ;;Total ram usage:       17 bytes
+  1015 ;; Hardware stack levels required when called: 5
+  1016 ;; This function calls:
+  1017 ;;		_SerialPortReceiveData
+  1018 ;;		_SerialPortSendData
+  1019 ;;		_SerialPortSetup
+  1020 ;;		_clearAddressRegisters
+  1021 ;;		_readFlash
+  1022 ;; This function is called by:
+  1023 ;;		Startup code after reset
+  1024 ;; This function uses a non-reentrant model
+  1025 ;;
+  1026                           
+  1027                           
+  1028                           ;psect for function _main
+  1029  005A                     _main:
+  1030  005A                     l1201:	
+  1031                           ;incstack = 0
+  1032                           ; Regs used in _main: [wreg-fsr1h+status,2+status,0+pclath+cstack]
+  1033                           
+  1034                           
+  1035                           ;source/main.c: 64:     unsigned char successful;;source/main.c: 67:     OSCENbits.HFOEN
+      +                          =1;
+  1036  005A  0151               	movlb	17	; select bank17
+  1037  005B  1711               	bsf	17,6	;volatile
+  1038  005C                     l1203:
+  1039                           
+  1040                           ;source/main.c: 68:     OSCFRQ=3;
+  1041  005C  3003               	movlw	3
+  1042  005D  0093               	movwf	19	;volatile
+  1043  005E                     l87:	
+  1044                           ;source/main.c: 69:     while (!OSCSTATbits.HFOR);
+  1045                           
+  1046  005E  1F10               	btfss	16,6	;volatile
+  1047  005F  2861               	goto	u521
+  1048  0060  2862               	goto	u520
+  1049  0061                     u521:
+  1050  0061  285E               	goto	l87
+  1051  0062                     u520:
+  1052  0062                     l1205:
+  1053                           
+  1054                           ;source/main.c: 72:     ANSELA=0;
+  1055  0062  017E               	movlb	62	; select bank62
+  1056  0063  01B8               	clrf	56	;volatile
+  1057                           
+  1058                           ;source/main.c: 73:     ANSELB=0;
+  1059  0064  01C3               	clrf	67	;volatile
+  1060                           
+  1061                           ;source/main.c: 74:     ANSELC=0;
+  1062  0065  01CE               	clrf	78	;volatile
+  1063                           
+  1064                           ;source/main.c: 75:     WPUA=0;
+  1065  0066  01B9               	clrf	57	;volatile
+  1066                           
+  1067                           ;source/main.c: 76:     WPUB=0;
+  1068  0067  01C4               	clrf	68	;volatile
+  1069                           
+  1070                           ;source/main.c: 77:     WPUC=0;
+  1071  0068  01CF               	clrf	79	;volatile
+  1072                           
+  1073                           ;source/main.c: 78:     INLVLA=0;
+  1074  0069  01BC               	clrf	60	;volatile
+  1075                           
+  1076                           ;source/main.c: 79:     INLVLB=0;
+  1077  006A  01C7               	clrf	71	;volatile
+  1078                           
+  1079                           ;source/main.c: 80:     INLVLC=0;
+  1080  006B  01D2               	clrf	82	;volatile
+  1081                           
+  1082                           ;source/main.c: 81:     SLRCONA=0;
+  1083  006C  01BB               	clrf	59	;volatile
+  1084                           
+  1085                           ;source/main.c: 82:     SLRCONB=0;
+  1086  006D  01C6               	clrf	70	;volatile
+  1087                           
+  1088                           ;source/main.c: 83:     SLRCONC=0;
+  1089  006E  01D1               	clrf	81	;volatile
+  1090                           
+  1091                           ;source/main.c: 84:     ODCONA=0;
+  1092  006F  01BA               	clrf	58	;volatile
+  1093                           
+  1094                           ;source/main.c: 85:     ODCONB=0;
+  1095  0070  01C5               	clrf	69	;volatile
+  1096                           
+  1097                           ;source/main.c: 86:     ODCONC=0;
+  1098  0071  01D0               	clrf	80	;volatile
+  1099                           
+  1100                           ;source/main.c: 87:     TRISA=0;
+  1101  0072  0140               	movlb	0	; select bank0
+  1102  0073  0192               	clrf	18	;volatile
+  1103                           
+  1104                           ;source/main.c: 88:     TRISB=0;
+  1105  0074  0193               	clrf	19	;volatile
+  1106                           
+  1107                           ;source/main.c: 89:     TRISC=0;
+  1108  0075  0194               	clrf	20	;volatile
+  1109  0076                     l1207:
+  1110                           
+  1111                           ;source/main.c: 92:     LATCbits.LATC0=1;
+  1112  0076  141A               	bsf	26,0	;volatile
+  1113  0077                     l1209:
+  1114                           
+  1115                           ;source/main.c: 93:     LATCbits.LATC1=0;
+  1116  0077  109A               	bcf	26,1	;volatile
+  1117  0078                     l1211:
+  1118                           
+  1119                           ;source/main.c: 94:     LATCbits.LATC2=0;
+  1120  0078  111A               	bcf	26,2	;volatile
+  1121  0079                     l1213:
+  1122                           
+  1123                           ;source/main.c: 95:     LATCbits.LATC3=1;
+  1124  0079  159A               	bsf	26,3	;volatile
+  1125  007A                     l1215:
+  1126  007A  3182  22E0  3180   	fcall	_clearAddressRegisters
+  1127  007D                     l1217:
+  1128                           
+  1129                           ;source/main.c: 98:     TRISB=0xff;
+  1130  007D  30FF               	movlw	255
+  1131  007E  0140               	movlb	0	; select bank0
+  1132  007F  0093               	movwf	19	;volatile
+  1133  0080                     l1219:
+  1134                           
+  1135                           ;source/main.c: 103:     SerialPortSetup();
+  1136  0080  3182  22A3  3180   	fcall	_SerialPortSetup
+  1137  0083                     l1221:
+  1138                           
+  1139                           ;source/main.c: 106:     INTCONbits.PEIE=1;
+  1140  0083  170B               	bsf	11,6	;volatile
+  1141  0084                     l1223:
+  1142                           
+  1143                           ;source/main.c: 107:     (INTCONbits.GIE = 1);
+  1144  0084  178B               	bsf	11,7	;volatile
+  1145  0085                     l1225:
+  1146                           
+  1147                           ;source/main.c: 110:     SerialPortSendData(ATR,12);
+  1148  0085  305D               	movlw	low _ATR
+  1149  0086  0140               	movlb	0	; select bank0
+  1150  0087  00A0               	movwf	SerialPortSendData@dataToSend
+  1151  0088  3000               	movlw	high _ATR
+  1152  0089  00A1               	movwf	SerialPortSendData@dataToSend+1
+  1153  008A  300C               	movlw	12
+  1154  008B  00BE               	movwf	??_main
+  1155  008C  083E               	movf	??_main,w
+  1156  008D  00A2               	movwf	SerialPortSendData@length
+  1157  008E  3182  2255  3180   	fcall	_SerialPortSendData
+  1158  0091                     l1227:
+  1159                           
+  1160                           ;source/main.c: 115:         SerialPortReceiveData(cmdBuf,0x05);
+  1161  0091  3005               	movlw	5
+  1162  0092  0140               	movlb	0	; select bank0
+  1163  0093  00BE               	movwf	??_main
+  1164  0094  083E               	movf	??_main,w
+  1165  0095  00A0               	movwf	SerialPortReceiveData@length
+  1166  0096  3055               	movlw	(low (_cmdBuf| 0))& (0+255)
+  1167  0097  3182  227E  3180   	fcall	_SerialPortReceiveData
+  1168                           
+  1169                           ;source/main.c: 118:         switch (cmdBuf[0]) {
+  1170  009A  291C               	goto	l1255
+  1171  009B                     l1229:
+  1172                           
+  1173                           ;source/main.c: 122:                 addr=((unsigned long)cmdBuf[1]<<16 | (unsigned long
+      +                          )cmdBuf[2]<<8 | (unsigned long)cmdBuf[3]);
+  1174  009B  0858               	movf	_cmdBuf+3,w
+  1175  009C  00BE               	movwf	??_main
+  1176  009D  01BF               	clrf	??_main+1
+  1177  009E  01C0               	clrf	??_main+2
+  1178  009F  01C1               	clrf	??_main+3
+  1179  00A0  0857               	movf	_cmdBuf+2,w
+  1180  00A1  00C2               	movwf	??_main+4
+  1181  00A2  01C3               	clrf	??_main+5
+  1182  00A3  01C4               	clrf	??_main+6
+  1183  00A4  01C5               	clrf	??_main+7
+  1184  00A5  3008               	movlw	8
+  1185  00A6                     u535:
+  1186  00A6  35C2               	lslf	??_main+4,f
+  1187  00A7  0DC3               	rlf	??_main+5,f
+  1188  00A8  0DC4               	rlf	??_main+6,f
+  1189  00A9  0DC5               	rlf	??_main+7,f
+  1190  00AA                     u530:
+  1191  00AA  0B89               	decfsz	9,f
+  1192  00AB  28A6               	goto	u535
+  1193  00AC  0856               	movf	_cmdBuf+1,w
+  1194  00AD  00C6               	movwf	??_main+8
+  1195  00AE  01C7               	clrf	??_main+9
+  1196  00AF  01C8               	clrf	??_main+10
+  1197  00B0  01C9               	clrf	??_main+11
+  1198  00B1  3010               	movlw	16
+  1199  00B2                     u545:
+  1200  00B2  35C6               	lslf	??_main+8,f
+  1201  00B3  0DC7               	rlf	??_main+9,f
+  1202  00B4  0DC8               	rlf	??_main+10,f
+  1203  00B5  0DC9               	rlf	??_main+11,f
+  1204  00B6                     u540:
+  1205  00B6  0B89               	decfsz	9,f
+  1206  00B7  28B2               	goto	u545
+  1207  00B8  0846               	movf	??_main+8,w
+  1208  00B9  04C2               	iorwf	??_main+4,f
+  1209  00BA  0847               	movf	??_main+9,w
+  1210  00BB  04C3               	iorwf	??_main+5,f
+  1211  00BC  0848               	movf	??_main+10,w
+  1212  00BD  04C4               	iorwf	??_main+6,f
+  1213  00BE  0849               	movf	??_main+11,w
+  1214  00BF  04C5               	iorwf	??_main+7,f
+  1215  00C0  083E               	movf	??_main,w
+  1216  00C1  0442               	iorwf	??_main+4,w
+  1217  00C2  00CF               	movwf	_addr
+  1218  00C3  083F               	movf	??_main+1,w
+  1219  00C4  0443               	iorwf	??_main+5,w
+  1220  00C5  00D0               	movwf	_addr+1
+  1221  00C6  0840               	movf	??_main+2,w
+  1222  00C7  0444               	iorwf	??_main+6,w
+  1223  00C8  00D1               	movwf	_addr+2
+  1224  00C9  0841               	movf	??_main+3,w
+  1225  00CA  0445               	iorwf	??_main+7,w
+  1226  00CB  00D2               	movwf	_addr+3
+  1227  00CC                     l1231:
+  1228                           
+  1229                           ;source/main.c: 124:                 numBytes=cmdBuf[4];
+  1230  00CC  0859               	movf	_cmdBuf+4,w
+  1231  00CD  00BE               	movwf	??_main
+  1232  00CE  083E               	movf	??_main,w
+  1233  00CF  00D4               	movwf	_numBytes
+  1234  00D0                     l1233:
+  1235                           
+  1236                           ;source/main.c: 127:                 successful=readFlash(addr,numBytes,dataBuf,&numRetB
+      +                          ytes);
+  1237  00D0  0852               	movf	_addr+3,w
+  1238  00D1  00B2               	movwf	readFlash@addr+3
+  1239  00D2  0851               	movf	_addr+2,w
+  1240  00D3  00B1               	movwf	readFlash@addr+2
+  1241  00D4  0850               	movf	_addr+1,w
+  1242  00D5  00B0               	movwf	readFlash@addr+1
+  1243  00D6  084F               	movf	_addr,w
+  1244  00D7  00AF               	movwf	readFlash@addr
+  1245  00D8  0854               	movf	_numBytes,w
+  1246  00D9  00BE               	movwf	??_main
+  1247  00DA  083E               	movf	??_main,w
+  1248  00DB  00B3               	movwf	readFlash@numBytes
+  1249  00DC  30F0               	movlw	240
+  1250  00DD  00B4               	movwf	readFlash@retBytes
+  1251  00DE  3026               	movlw	38
+  1252  00DF  00B5               	movwf	readFlash@retBytes+1
+  1253  00E0  305C               	movlw	(low (_numRetBytes| 0))& (0+255)
+  1254  00E1  00BF               	movwf	??_main+1
+  1255  00E2  083F               	movf	??_main+1,w
+  1256  00E3  00B6               	movwf	readFlash@numRetBytes
+  1257  00E4  3181  2149  3180   	fcall	_readFlash
+  1258  00E7  0140               	movlb	0	; select bank0
+  1259  00E8  00C0               	movwf	??_main+2
+  1260  00E9  0840               	movf	??_main+2,w
+  1261  00EA  00CE               	movwf	main@successful
+  1262  00EB                     l1235:
+  1263                           
+  1264                           ;source/main.c: 130:                 if (successful) {
+  1265  00EB  084E               	movf	main@successful,w
+  1266  00EC  1903               	btfsc	3,2
+  1267  00ED  28EF               	goto	u551
+  1268  00EE  28F0               	goto	u550
+  1269  00EF                     u551:
+  1270  00EF  2916               	goto	l1249
+  1271  00F0                     u550:
+  1272  00F0                     l1237:
+  1273                           
+  1274                           ;source/main.c: 131:                     ackBuf[0]=(numRetBytes>0 ? 0x81 : 0x80);
+  1275  00F0  085C               	movf	_numRetBytes,w
+  1276  00F1  1D03               	btfss	3,2
+  1277  00F2  28F4               	goto	u561
+  1278  00F3  28F5               	goto	u560
+  1279  00F4                     u561:
+  1280  00F4  28FA               	goto	l1241
+  1281  00F5                     u560:
+  1282  00F5                     l1239:
+  1283  00F5  3080               	movlw	128
+  1284  00F6  00CA               	movwf	_main$229
+  1285  00F7  3000               	movlw	0
+  1286  00F8  00CB               	movwf	_main$229+1
+  1287  00F9  28FE               	goto	l97
+  1288  00FA                     l1241:
+  1289  00FA  3081               	movlw	129
+  1290  00FB  00CA               	movwf	_main$229
+  1291  00FC  3000               	movlw	0
+  1292  00FD  00CB               	movwf	_main$229+1
+  1293  00FE                     l97:
+  1294  00FE  084A               	movf	_main$229,w
+  1295  00FF  00BE               	movwf	??_main
+  1296  0100  083E               	movf	??_main,w
+  1297  0101  00DA               	movwf	_ackBuf
+  1298  0102                     l1243:
+  1299                           
+  1300                           ;source/main.c: 132:                     ackBuf[1]=(numRetBytes>0 ? numRetBytes : 0x00);
+  1301  0102  085C               	movf	_numRetBytes,w
+  1302  0103  1D03               	btfss	3,2
+  1303  0104  2906               	goto	u571
+  1304  0105  2907               	goto	u570
+  1305  0106                     u571:
+  1306  0106  290A               	goto	l1247
+  1307  0107                     u570:
+  1308  0107                     l1245:
+  1309  0107  01CC               	clrf	_main$230
+  1310  0108  01CD               	clrf	_main$230+1
+  1311  0109  2911               	goto	l101
+  1312  010A                     l1247:
+  1313  010A  085C               	movf	_numRetBytes,w
+  1314  010B  00BE               	movwf	??_main
+  1315  010C  01BF               	clrf	??_main+1
+  1316  010D  083E               	movf	??_main,w
+  1317  010E  00CC               	movwf	_main$230
+  1318  010F  083F               	movf	??_main+1,w
+  1319  0110  00CD               	movwf	_main$230+1
+  1320  0111                     l101:
+  1321  0111  084C               	movf	_main$230,w
+  1322  0112  00BE               	movwf	??_main
+  1323  0113  083E               	movf	??_main,w
+  1324  0114  00DB               	movwf	_ackBuf+1
+  1325                           
+  1326                           ;source/main.c: 133:                 } else {
+  1327  0115  292A               	goto	l1257
+  1328  0116                     l1249:
+  1329                           
+  1330                           ;source/main.c: 134:                     ackBuf[0]=0xC0;
+  1331  0116  30C0               	movlw	192
+  1332  0117  00BE               	movwf	??_main
+  1333  0118  083E               	movf	??_main,w
+  1334  0119  00DA               	movwf	_ackBuf
+  1335  011A                     l1251:
+  1336                           
+  1337                           ;source/main.c: 135:                     ackBuf[1]=0x00;
+  1338  011A  01DB               	clrf	_ackBuf+1
+  1339  011B  292A               	goto	l1257
+  1340  011C                     l1255:
+  1341  011C  0140               	movlb	0	; select bank0
+  1342  011D  0855               	movf	_cmdBuf,w
+  1343  011E  00BE               	movwf	??_main
+  1344  011F  01BF               	clrf	??_main+1
+  1345                           
+  1346                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1347                           ; Switch size 1, requested type "simple"
+  1348                           ; Number of cases is 1, Range of values is 0 to 0
+  1349                           ; switch strategies available:
+  1350                           ; Name         Instructions Cycles
+  1351                           ; simple_byte            4     3 (average)
+  1352                           ; direct_byte            8     6 (fixed)
+  1353                           ; jumptable            260     6 (fixed)
+  1354                           ;	Chosen strategy is simple_byte
+  1355  0120  083F               	movf	??_main+1,w
+  1356  0121  3A00               	xorlw	0	; case 0
+  1357  0122  1903               	skipnz
+  1358  0123  2925               	goto	l1307
+  1359  0124  292A               	goto	l1257
+  1360  0125                     l1307:
+  1361                           
+  1362                           ; Switch size 1, requested type "simple"
+  1363                           ; Number of cases is 1, Range of values is 128 to 128
+  1364                           ; switch strategies available:
+  1365                           ; Name         Instructions Cycles
+  1366                           ; simple_byte            4     3 (average)
+  1367                           ; direct_byte           11     9 (fixed)
+  1368                           ; jumptable            263     9 (fixed)
+  1369                           ;	Chosen strategy is simple_byte
+  1370  0125  083E               	movf	??_main,w
+  1371  0126  3A80               	xorlw	128	; case 128
+  1372  0127  1903               	skipnz
+  1373  0128  289B               	goto	l1229
+  1374  0129  292A               	goto	l1257
+  1375  012A                     l1257:
+  1376                           
+  1377                           ;source/main.c: 143:         SerialPortSendData(ackBuf,2);
+  1378  012A  305A               	movlw	low _ackBuf
+  1379  012B  00A0               	movwf	SerialPortSendData@dataToSend
+  1380  012C  3000               	movlw	high _ackBuf
+  1381  012D  00A1               	movwf	SerialPortSendData@dataToSend+1
+  1382  012E  3002               	movlw	2
+  1383  012F  00BE               	movwf	??_main
+  1384  0130  083E               	movf	??_main,w
+  1385  0131  00A2               	movwf	SerialPortSendData@length
+  1386  0132  3182  2255  3180   	fcall	_SerialPortSendData
+  1387  0135                     l1259:
+  1388                           
+  1389                           ;source/main.c: 144:         if (numRetBytes>0) SerialPortSendData(dataBuf,numRetBytes);
+  1390  0135  0140               	movlb	0	; select bank0
+  1391  0136  085C               	movf	_numRetBytes,w
+  1392  0137  1903               	btfsc	3,2
+  1393  0138  293A               	goto	u581
+  1394  0139  293B               	goto	u580
+  1395  013A                     u581:
+  1396  013A  2891               	goto	l1227
+  1397  013B                     u580:
+  1398  013B                     l1261:
+  1399  013B  30F0               	movlw	240
+  1400  013C  00A0               	movwf	SerialPortSendData@dataToSend
+  1401  013D  3026               	movlw	38
+  1402  013E  00A1               	movwf	SerialPortSendData@dataToSend+1
+  1403  013F  085C               	movf	_numRetBytes,w
+  1404  0140  00BE               	movwf	??_main
+  1405  0141  083E               	movf	??_main,w
+  1406  0142  00A2               	movwf	SerialPortSendData@length
+  1407  0143  3182  2255  3180   	fcall	_SerialPortSendData
+  1408  0146  2891               	goto	l1227
+  1409  0147  3180  282A         	ljmp	start
+  1410  0149                     __end_of_main:
+  1411                           
+  1412                           	psect	text1
+  1413  0149                     __ptext1:	
+  1414 ;; *************** function _readFlash *****************
+  1415 ;; Defined at:
+  1416 ;;		line 12 in file "source/flash.c"
+  1417 ;; Parameters:    Size  Location     Type
+  1418 ;;  addr            4   15[BANK0 ] unsigned long 
+  1419 ;;  numBytes        1   19[BANK0 ] unsigned char 
+  1420 ;;  retBytes        2   20[BANK0 ] PTR unsigned char 
+  1421 ;;		 -> dataBuf(256), 
+  1422 ;;  numRetBytes     1   22[BANK0 ] PTR unsigned char 
+  1423 ;;		 -> numRetBytes(1), 
+  1424 ;; Auto vars:     Size  Location     Type
+  1425 ;;  length          1   29[BANK0 ] unsigned char 
+  1426 ;;  bufPtr          1   28[BANK0 ] unsigned char 
+  1427 ;;  done            1   27[BANK0 ] unsigned char 
+  1428 ;; Return value:  Size  Location     Type
+  1429 ;;                  1    wreg      unsigned char 
+  1430 ;; Registers used:
+  1431 ;;		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+  1432 ;; Tracked objects:
+  1433 ;;		On entry : 0/0
+  1434 ;;		On exit  : 0/0
+  1435 ;;		Unchanged: 0/0
+  1436 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  1437 ;;      Params:         0       8       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1438 ;;      Locals:         0       3       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1439 ;;      Temps:          0       4       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1440 ;;      Totals:         0      15       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1441 ;;Total ram usage:       15 bytes
+  1442 ;; Hardware stack levels used: 1
+  1443 ;; Hardware stack levels required when called: 4
+  1444 ;; This function calls:
+  1445 ;;		_clearAddressRegisters
+  1446 ;;		_setAddressRegisters
+  1447 ;; This function is called by:
+  1448 ;;		_main
+  1449 ;; This function uses a non-reentrant model
+  1450 ;;
+  1451                           
+  1452                           
+  1453                           ;psect for function _readFlash
+  1454  0149                     _readFlash:
+  1455  0149                     l1121:	
+  1456                           ;incstack = 0
+  1457                           ; Regs used in _readFlash: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
+  1458                           
+  1459                           
+  1460                           ;source/flash.c: 15:     unsigned char done,length,bufPtr;;source/flash.c: 18:     bufPt
+      +                          r=0;
+  1461  0149  0140               	movlb	0	; select bank0
+  1462  014A  01BC               	clrf	readFlash@bufPtr
+  1463                           
+  1464                           ;source/flash.c: 19:     done=0;
+  1465  014B  01BB               	clrf	readFlash@done
+  1466  014C                     l1123:
+  1467                           
+  1468                           ;source/flash.c: 20:     length=numBytes;
+  1469  014C  0833               	movf	readFlash@numBytes,w
+  1470  014D  00B7               	movwf	??_readFlash
+  1471  014E  0837               	movf	??_readFlash,w
+  1472  014F  00BD               	movwf	readFlash@length
+  1473  0150                     l1125:
+  1474                           
+  1475                           ;source/flash.c: 23:     if (!setAddressRegisters(addr,0x0,0x0)) {
+  1476  0150  0832               	movf	readFlash@addr+3,w
+  1477  0151  00A3               	movwf	setAddressRegisters@addr+3
+  1478  0152  0831               	movf	readFlash@addr+2,w
+  1479  0153  00A2               	movwf	setAddressRegisters@addr+2
+  1480  0154  0830               	movf	readFlash@addr+1,w
+  1481  0155  00A1               	movwf	setAddressRegisters@addr+1
+  1482  0156  082F               	movf	readFlash@addr,w
+  1483  0157  00A0               	movwf	setAddressRegisters@addr
+  1484  0158  01A4               	clrf	setAddressRegisters@OE
+  1485  0159  01A5               	clrf	setAddressRegisters@CE
+  1486  015A  3181  21C1  3181   	fcall	_setAddressRegisters
+  1487  015D  3A00               	xorlw	0
+  1488  015E  1D03               	skipz
+  1489  015F  2961               	goto	u421
+  1490  0160  2962               	goto	u420
+  1491  0161                     u421:
+  1492  0161  29AE               	goto	l1157
+  1493  0162                     u420:
+  1494  0162                     l1127:
+  1495                           
+  1496                           ;source/flash.c: 24:         *numRetBytes=0;
+  1497  0162  0140               	movlb	0	; select bank0
+  1498  0163  0836               	movf	readFlash@numRetBytes,w
+  1499  0164  0086               	movwf	6
+  1500  0165  0187               	clrf	7
+  1501  0166  0181               	clrf	1
+  1502  0167                     l1129:
+  1503                           
+  1504                           ;source/flash.c: 25:         return 0;
+  1505  0167  3000               	movlw	0
+  1506  0168  29C0               	goto	l191
+  1507  0169                     l1133:
+  1508                           
+  1509                           ;source/flash.c: 30:         length--;
+  1510  0169  3001               	movlw	1
+  1511  016A  02BD               	subwf	readFlash@length,f
+  1512  016B                     l1135:
+  1513                           
+  1514                           ;source/flash.c: 33:         retBytes[bufPtr++]=PORTB;
+  1515  016B  083C               	movf	readFlash@bufPtr,w
+  1516  016C  00B7               	movwf	??_readFlash
+  1517  016D  01B8               	clrf	??_readFlash+1
+  1518  016E  0837               	movf	??_readFlash,w
+  1519  016F  0734               	addwf	readFlash@retBytes,w
+  1520  0170  00B9               	movwf	??_readFlash+2
+  1521  0171  0838               	movf	??_readFlash+1,w
+  1522  0172  3D35               	addwfc	readFlash@retBytes+1,w
+  1523  0173  00BA               	movwf	??_readFlash+3
+  1524  0174  0839               	movf	??_readFlash+2,w
+  1525  0175  0086               	movwf	6
+  1526  0176  083A               	movf	??_readFlash+3,w
+  1527  0177  0087               	movwf	7
+  1528  0178  080D               	movf	13,w	;volatile
+  1529  0179  0081               	movwf	1
+  1530  017A                     l1137:
+  1531  017A  3001               	movlw	1
+  1532  017B  00B7               	movwf	??_readFlash
+  1533  017C  0837               	movf	??_readFlash,w
+  1534  017D  07BC               	addwf	readFlash@bufPtr,f
+  1535  017E                     l1139:
+  1536                           
+  1537                           ;source/flash.c: 34:         if (++LATA==0x00 && length>0) {
+  1538  017E  3001               	movlw	1
+  1539  017F  00B7               	movwf	??_readFlash
+  1540  0180  0837               	movf	??_readFlash,w
+  1541  0181  0798               	addwf	24,f	;volatile
+  1542  0182  1D03               	btfss	3,2
+  1543  0183  2985               	goto	u431
+  1544  0184  2986               	goto	u430
+  1545  0185                     u431:
+  1546  0185  29A6               	goto	l1153
+  1547  0186                     u430:
+  1548  0186                     l1141:
+  1549  0186  083D               	movf	readFlash@length,w
+  1550  0187  1903               	btfsc	3,2
+  1551  0188  298A               	goto	u441
+  1552  0189  298B               	goto	u440
+  1553  018A                     u441:
+  1554  018A  29A6               	goto	l1153
+  1555  018B                     u440:
+  1556  018B                     l1143:
+  1557                           
+  1558                           ;source/flash.c: 35:             addr+=0x100;
+  1559  018B  3000               	movlw	0
+  1560  018C  07AF               	addwf	readFlash@addr,f
+  1561  018D  3001               	movlw	1
+  1562  018E  3DB0               	addwfc	readFlash@addr+1,f
+  1563  018F  3000               	movlw	0
+  1564  0190  3DB1               	addwfc	readFlash@addr+2,f
+  1565  0191  3000               	movlw	0
+  1566  0192  3DB2               	addwfc	readFlash@addr+3,f
+  1567  0193                     l1145:
+  1568                           
+  1569                           ;source/flash.c: 36:             if (!setAddressRegisters(addr,0x0,0x0)) {
+  1570  0193  0832               	movf	readFlash@addr+3,w
+  1571  0194  00A3               	movwf	setAddressRegisters@addr+3
+  1572  0195  0831               	movf	readFlash@addr+2,w
+  1573  0196  00A2               	movwf	setAddressRegisters@addr+2
+  1574  0197  0830               	movf	readFlash@addr+1,w
+  1575  0198  00A1               	movwf	setAddressRegisters@addr+1
+  1576  0199  082F               	movf	readFlash@addr,w
+  1577  019A  00A0               	movwf	setAddressRegisters@addr
+  1578  019B  01A4               	clrf	setAddressRegisters@OE
+  1579  019C  01A5               	clrf	setAddressRegisters@CE
+  1580  019D  3181  21C1  3181   	fcall	_setAddressRegisters
+  1581  01A0  3A00               	xorlw	0
+  1582  01A1  1D03               	skipz
+  1583  01A2  29A4               	goto	u451
+  1584  01A3  29A5               	goto	u450
+  1585  01A4                     u451:
+  1586  01A4  29A6               	goto	l1153
+  1587  01A5                     u450:
+  1588  01A5  2962               	goto	l1127
+  1589  01A6                     l1153:
+  1590                           
+  1591                           ;source/flash.c: 41:         if (length==0) done=1;
+  1592  01A6  0140               	movlb	0	; select bank0
+  1593  01A7  083D               	movf	readFlash@length,w
+  1594  01A8  1D03               	btfss	3,2
+  1595  01A9  29AB               	goto	u461
+  1596  01AA  29AC               	goto	u460
+  1597  01AB                     u461:
+  1598  01AB  29AE               	goto	l1157
+  1599  01AC                     u460:
+  1600  01AC                     l1155:
+  1601  01AC  01BB               	clrf	readFlash@done
+  1602  01AD  0ABB               	incf	readFlash@done,f
+  1603  01AE                     l1157:
+  1604                           
+  1605                           ;source/flash.c: 29:     while (!done) {
+  1606  01AE  0140               	movlb	0	; select bank0
+  1607  01AF  083B               	movf	readFlash@done,w
+  1608  01B0  1903               	btfsc	3,2
+  1609  01B1  29B3               	goto	u471
+  1610  01B2  29B4               	goto	u470
+  1611  01B3                     u471:
+  1612  01B3  2969               	goto	l1133
+  1613  01B4                     u470:
+  1614  01B4                     l1159:
+  1615                           
+  1616                           ;source/flash.c: 44:     clearAddressRegisters();
+  1617  01B4  3182  22E0  3181   	fcall	_clearAddressRegisters
+  1618  01B7                     l1161:
+  1619                           
+  1620                           ;source/flash.c: 45:     *numRetBytes=numBytes;
+  1621  01B7  0140               	movlb	0	; select bank0
+  1622  01B8  0833               	movf	readFlash@numBytes,w
+  1623  01B9  00B7               	movwf	??_readFlash
+  1624  01BA  0836               	movf	readFlash@numRetBytes,w
+  1625  01BB  0086               	movwf	6
+  1626  01BC  0187               	clrf	7
+  1627  01BD  0837               	movf	??_readFlash,w
+  1628  01BE  0081               	movwf	1
+  1629  01BF                     l1163:
+  1630                           
+  1631                           ;source/flash.c: 46:     return 1;
+  1632  01BF  3001               	movlw	1
+  1633  01C0                     l191:
+  1634  01C0  0008               	return
+  1635  01C1                     __end_of_readFlash:
+  1636                           
+  1637                           	psect	text2
+  1638  02E0                     __ptext2:	
+  1639 ;; *************** function _clearAddressRegisters *****************
+  1640 ;; Defined at:
+  1641 ;;		line 81 in file "source/flash.c"
+  1642 ;; Parameters:    Size  Location     Type
+  1643 ;;		None
+  1644 ;; Auto vars:     Size  Location     Type
+  1645 ;;		None
+  1646 ;; Return value:  Size  Location     Type
+  1647 ;;                  1    wreg      unsigned char 
+  1648 ;; Registers used:
+  1649 ;;		wreg, status,2, status,0, pclath, cstack
+  1650 ;; Tracked objects:
+  1651 ;;		On entry : 0/0
+  1652 ;;		On exit  : 0/0
+  1653 ;;		Unchanged: 0/0
+  1654 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  1655 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1656 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1657 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1658 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1659 ;;Total ram usage:        0 bytes
+  1660 ;; Hardware stack levels used: 1
+  1661 ;; Hardware stack levels required when called: 3
+  1662 ;; This function calls:
+  1663 ;;		_setAddressRegisters
+  1664 ;; This function is called by:
+  1665 ;;		_main
+  1666 ;;		_readFlash
+  1667 ;; This function uses a non-reentrant model
+  1668 ;;
+  1669                           
+  1670                           
+  1671                           ;psect for function _clearAddressRegisters
+  1672  02E0                     _clearAddressRegisters:
+  1673  02E0                     l1057:	
+  1674                           ;incstack = 0
+  1675                           ; Regs used in _clearAddressRegisters: [wreg+status,2+status,0+pclath+cstack]
+  1676                           
+  1677                           
+  1678                           ;source/flash.c: 84:     return setAddressRegisters(0x000000,0x1,0x1);
+  1679  02E0  3000               	movlw	0
+  1680  02E1  0140               	movlb	0	; select bank0
+  1681  02E2  00A3               	movwf	setAddressRegisters@addr+3
+  1682  02E3  3000               	movlw	0
+  1683  02E4  00A2               	movwf	setAddressRegisters@addr+2
+  1684  02E5  3000               	movlw	0
+  1685  02E6  00A1               	movwf	setAddressRegisters@addr+1
+  1686  02E7  3000               	movlw	0
+  1687  02E8  00A0               	movwf	setAddressRegisters@addr
+  1688  02E9  01A4               	clrf	setAddressRegisters@OE
+  1689  02EA  0AA4               	incf	setAddressRegisters@OE,f
+  1690  02EB  01A5               	clrf	setAddressRegisters@CE
+  1691  02EC  0AA5               	incf	setAddressRegisters@CE,f
+  1692  02ED  3181  21C1  3182   	fcall	_setAddressRegisters
+  1693  02F0                     l209:
+  1694  02F0  0008               	return
+  1695  02F1                     __end_of_clearAddressRegisters:
+  1696                           
+  1697                           	psect	text3
+  1698  01C1                     __ptext3:	
+  1699 ;; *************** function _setAddressRegisters *****************
+  1700 ;; Defined at:
+  1701 ;;		line 49 in file "source/flash.c"
+  1702 ;; Parameters:    Size  Location     Type
+  1703 ;;  addr            4    0[BANK0 ] unsigned long 
+  1704 ;;  OE              1    4[BANK0 ] unsigned char 
+  1705 ;;  CE              1    5[BANK0 ] unsigned char 
+  1706 ;; Auto vars:     Size  Location     Type
+  1707 ;;  mask            4   10[BANK0 ] unsigned long 
+  1708 ;;  i               1   14[BANK0 ] unsigned char 
+  1709 ;;  done            1    0        unsigned char 
+  1710 ;; Return value:  Size  Location     Type
+  1711 ;;                  1    wreg      unsigned char 
+  1712 ;; Registers used:
+  1713 ;;		wreg, status,2, status,0
+  1714 ;; Tracked objects:
+  1715 ;;		On entry : 0/0
+  1716 ;;		On exit  : 0/0
+  1717 ;;		Unchanged: 0/0
+  1718 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  1719 ;;      Params:         0       6       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1720 ;;      Locals:         0       5       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1721 ;;      Temps:          0       4       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1722 ;;      Totals:         0      15       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1723 ;;Total ram usage:       15 bytes
+  1724 ;; Hardware stack levels used: 1
+  1725 ;; Hardware stack levels required when called: 2
+  1726 ;; This function calls:
+  1727 ;;		Nothing
+  1728 ;; This function is called by:
+  1729 ;;		_readFlash
+  1730 ;;		_clearAddressRegisters
+  1731 ;; This function uses a non-reentrant model
+  1732 ;;
+  1733                           
+  1734                           
+  1735                           ;psect for function _setAddressRegisters
+  1736  01C1                     _setAddressRegisters:
+  1737  01C1                     l1021:	
+  1738                           ;incstack = 0
+  1739                           ; Regs used in _setAddressRegisters: [wreg+status,2+status,0]
+  1740                           
+  1741  01C1                     l1023:
+  1742                           
+  1743                           ;source/flash.c: 58:     addr&=0x07ffff;
+  1744  01C1  30FF               	movlw	255
+  1745  01C2  0140               	movlb	0	; select bank0
+  1746  01C3  05A0               	andwf	setAddressRegisters@addr,f
+  1747  01C4  30FF               	movlw	255
+  1748  01C5  05A1               	andwf	setAddressRegisters@addr+1,f
+  1749  01C6  3007               	movlw	7
+  1750  01C7  05A2               	andwf	setAddressRegisters@addr+2,f
+  1751  01C8  3000               	movlw	0
+  1752  01C9  05A3               	andwf	setAddressRegisters@addr+3,f
+  1753  01CA                     l1025:
+  1754                           
+  1755                           ;source/flash.c: 59:     if (CE) addr|=0x800000; else addr&=0x7fffff;
+  1756  01CA  0825               	movf	setAddressRegisters@CE,w
+  1757  01CB  1903               	btfsc	3,2
+  1758  01CC  29CE               	goto	u311
+  1759  01CD  29CF               	goto	u310
+  1760  01CE                     u311:
+  1761  01CE  29D1               	goto	l1029
+  1762  01CF                     u310:
+  1763  01CF                     l1027:
+  1764  01CF  17A2               	bsf	setAddressRegisters@addr+2,7
+  1765  01D0  29D9               	goto	l1031
+  1766  01D1                     l1029:
+  1767  01D1  30FF               	movlw	255
+  1768  01D2  05A0               	andwf	setAddressRegisters@addr,f
+  1769  01D3  30FF               	movlw	255
+  1770  01D4  05A1               	andwf	setAddressRegisters@addr+1,f
+  1771  01D5  307F               	movlw	127
+  1772  01D6  05A2               	andwf	setAddressRegisters@addr+2,f
+  1773  01D7  3000               	movlw	0
+  1774  01D8  05A3               	andwf	setAddressRegisters@addr+3,f
+  1775  01D9                     l1031:
+  1776                           
+  1777                           ;source/flash.c: 60:     if (OE) addr|=0x400000; else addr&=0xbfffff;
+  1778  01D9  0824               	movf	setAddressRegisters@OE,w
+  1779  01DA  1903               	btfsc	3,2
+  1780  01DB  29DD               	goto	u321
+  1781  01DC  29DE               	goto	u320
+  1782  01DD                     u321:
+  1783  01DD  29E0               	goto	l1035
+  1784  01DE                     u320:
+  1785  01DE                     l1033:
+  1786  01DE  1722               	bsf	setAddressRegisters@addr+2,6
+  1787  01DF  29E8               	goto	l203
+  1788  01E0                     l1035:
+  1789  01E0  30FF               	movlw	255
+  1790  01E1  05A0               	andwf	setAddressRegisters@addr,f
+  1791  01E2  30FF               	movlw	255
+  1792  01E3  05A1               	andwf	setAddressRegisters@addr+1,f
+  1793  01E4  30BF               	movlw	191
+  1794  01E5  05A2               	andwf	setAddressRegisters@addr+2,f
+  1795  01E6  3000               	movlw	0
+  1796  01E7  05A3               	andwf	setAddressRegisters@addr+3,f
+  1797  01E8                     l203:
+  1798                           
+  1799                           ;source/flash.c: 63:     mask=0x800000;
+  1800  01E8  3000               	movlw	0
+  1801  01E9  00AD               	movwf	setAddressRegisters@mask+3
+  1802  01EA  3080               	movlw	128
+  1803  01EB  00AC               	movwf	setAddressRegisters@mask+2
+  1804  01EC  3000               	movlw	0
+  1805  01ED  00AB               	movwf	setAddressRegisters@mask+1
+  1806  01EE  3000               	movlw	0
+  1807  01EF  00AA               	movwf	setAddressRegisters@mask
+  1808                           
+  1809                           ;source/flash.c: 64:     for (i=16; i>0; i--) {
+  1810  01F0  3010               	movlw	16
+  1811  01F1  00A6               	movwf	??_setAddressRegisters
+  1812  01F2  0826               	movf	??_setAddressRegisters,w
+  1813  01F3  00AE               	movwf	setAddressRegisters@i
+  1814  01F4                     l1041:
+  1815                           
+  1816                           ;source/flash.c: 66:         LATCbits.LATC0=((addr & mask) ? 1 : 0);
+  1817  01F4  0820               	movf	setAddressRegisters@addr,w
+  1818  01F5  052A               	andwf	setAddressRegisters@mask,w
+  1819  01F6  00A6               	movwf	??_setAddressRegisters
+  1820  01F7  0821               	movf	setAddressRegisters@addr+1,w
+  1821  01F8  052B               	andwf	setAddressRegisters@mask+1,w
+  1822  01F9  00A7               	movwf	??_setAddressRegisters+1
+  1823  01FA  0822               	movf	setAddressRegisters@addr+2,w
+  1824  01FB  052C               	andwf	setAddressRegisters@mask+2,w
+  1825  01FC  00A8               	movwf	??_setAddressRegisters+2
+  1826  01FD  0823               	movf	setAddressRegisters@addr+3,w
+  1827  01FE  052D               	andwf	setAddressRegisters@mask+3,w
+  1828  01FF  00A9               	movwf	??_setAddressRegisters+3
+  1829  0200  0829               	movf	??_setAddressRegisters+3,w
+  1830  0201  0428               	iorwf	??_setAddressRegisters+2,w
+  1831  0202  0427               	iorwf	??_setAddressRegisters+1,w
+  1832  0203  0426               	iorwf	??_setAddressRegisters,w
+  1833  0204  1D03               	skipz
+  1834  0205  2A07               	goto	u331
+  1835  0206  2A0A               	goto	u330
+  1836  0207                     u331:
+  1837  0207  0140               	movlb	0	; select bank0
+  1838  0208  141A               	bsf	26,0	;volatile
+  1839  0209  2A0C               	goto	u344
+  1840  020A                     u330:
+  1841  020A  0140               	movlb	0	; select bank0
+  1842  020B  101A               	bcf	26,0	;volatile
+  1843  020C                     u344:
+  1844  020C                     l1043:
+  1845                           
+  1846                           ;source/flash.c: 67:         LATCbits.LATC1=1;
+  1847  020C  149A               	bsf	26,1	;volatile
+  1848  020D                     l1045:
+  1849                           
+  1850                           ;source/flash.c: 68:         LATCbits.LATC1=0;
+  1851  020D  109A               	bcf	26,1	;volatile
+  1852  020E                     l1047:
+  1853                           
+  1854                           ;source/flash.c: 69:         mask>>=1;
+  1855  020E  3001               	movlw	1
+  1856  020F                     u355:
+  1857  020F  36AD               	lsrf	setAddressRegisters@mask+3,f
+  1858  0210  0CAC               	rrf	setAddressRegisters@mask+2,f
+  1859  0211  0CAB               	rrf	setAddressRegisters@mask+1,f
+  1860  0212  0CAA               	rrf	setAddressRegisters@mask,f
+  1861  0213  0B89               	decfsz	9,f
+  1862  0214  2A0F               	goto	u355
+  1863  0215                     l1049:
+  1864                           
+  1865                           ;source/flash.c: 70:     }
+  1866  0215  3001               	movlw	1
+  1867  0216  02AE               	subwf	setAddressRegisters@i,f
+  1868  0217                     l1051:
+  1869  0217  082E               	movf	setAddressRegisters@i,w
+  1870  0218  1D03               	btfss	3,2
+  1871  0219  2A1B               	goto	u361
+  1872  021A  2A1C               	goto	u360
+  1873  021B                     u361:
+  1874  021B  29F4               	goto	l1041
+  1875  021C                     u360:
+  1876  021C                     l205:
+  1877                           
+  1878                           ;source/flash.c: 72:     LATCbits.LATC2=1;
+  1879  021C  151A               	bsf	26,2	;volatile
+  1880                           
+  1881                           ;source/flash.c: 73:     LATCbits.LATC2=0;
+  1882  021D  111A               	bcf	26,2	;volatile
+  1883  021E                     l1053:
+  1884                           
+  1885                           ;source/flash.c: 76:     LATA=(addr&0xff);
+  1886  021E  0820               	movf	setAddressRegisters@addr,w
+  1887  021F  0098               	movwf	24	;volatile
+  1888                           
+  1889                           ;source/flash.c: 78:     return 1;
+  1890  0220  3001               	movlw	1
+  1891  0221                     l206:
+  1892  0221  0008               	return
+  1893  0222                     __end_of_setAddressRegisters:
+  1894                           
+  1895                           	psect	text4
+  1896  02A3                     __ptext4:	
+  1897 ;; *************** function _SerialPortSetup *****************
+  1898 ;; Defined at:
+  1899 ;;		line 38 in file "source/USART.c"
+  1900 ;; Parameters:    Size  Location     Type
+  1901 ;;		None
+  1902 ;; Auto vars:     Size  Location     Type
+  1903 ;;		None
+  1904 ;; Return value:  Size  Location     Type
+  1905 ;;                  1    wreg      void 
+  1906 ;; Registers used:
+  1907 ;;		wreg, status,2, status,0
+  1908 ;; Tracked objects:
+  1909 ;;		On entry : 0/0
+  1910 ;;		On exit  : 0/0
+  1911 ;;		Unchanged: 0/0
+  1912 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  1913 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1914 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1915 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1916 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1917 ;;Total ram usage:        0 bytes
+  1918 ;; Hardware stack levels used: 1
+  1919 ;; Hardware stack levels required when called: 2
+  1920 ;; This function calls:
+  1921 ;;		Nothing
+  1922 ;; This function is called by:
+  1923 ;;		_main
+  1924 ;; This function uses a non-reentrant model
+  1925 ;;
+  1926                           
+  1927                           
+  1928                           ;psect for function _SerialPortSetup
+  1929  02A3                     _SerialPortSetup:
+  1930  02A3                     l1061:	
+  1931                           ;incstack = 0
+  1932                           ; Regs used in _SerialPortSetup: [wreg+status,2+status,0]
+  1933                           
+  1934                           
+  1935                           ;source/USART.c: 40:     SP1BRG=16;
+  1936  02A3  3000               	movlw	0
+  1937  02A4  0142               	movlb	2	; select bank2
+  1938  02A5  009C               	movwf	28	;volatile
+  1939  02A6  3010               	movlw	16
+  1940  02A7  009B               	movwf	27	;volatile
+  1941                           
+  1942                           ;source/USART.c: 41:     TX1STAbits.BRGH=1;
+  1943  02A8  151E               	bsf	30,2	;volatile
+  1944                           
+  1945                           ;source/USART.c: 42:     BAUD1CONbits.BRG16=1;
+  1946  02A9  159F               	bsf	31,3	;volatile
+  1947                           
+  1948                           ;source/USART.c: 43:     LATCbits.LATC7=1;
+  1949  02AA  0140               	movlb	0	; select bank0
+  1950  02AB  179A               	bsf	26,7	;volatile
+  1951                           
+  1952                           ;source/USART.c: 44:     TRISCbits.TRISC7=1;
+  1953  02AC  1794               	bsf	20,7	;volatile
+  1954  02AD                     l1063:
+  1955                           
+  1956                           ;source/USART.c: 45:     RC6PPSbits.RC6PPS=0x05;
+  1957  02AD  017E               	movlb	62	; select bank62
+  1958  02AE  0826               	movf	38,w	;volatile
+  1959  02AF  39C0               	andlw	-64
+  1960  02B0  3805               	iorlw	5
+  1961  02B1  00A6               	movwf	38	;volatile
+  1962                           
+  1963                           ;source/USART.c: 46:     RX1PPSbits.PORT=0x02;
+  1964  02B2  017D               	movlb	61	; select bank61
+  1965  02B3  084B               	movf	75,w	;volatile
+  1966  02B4  39E7               	andlw	-25
+  1967  02B5  3810               	iorlw	16
+  1968  02B6  00CB               	movwf	75	;volatile
+  1969                           
+  1970                           ;source/USART.c: 47:     RX1PPSbits.PIN=0x07;
+  1971  02B7  3007               	movlw	7
+  1972  02B8  04CB               	iorwf	75,f	;volatile
+  1973  02B9                     l1065:
+  1974                           
+  1975                           ;source/USART.c: 48:     TX1STAbits.CSRC=0;
+  1976  02B9  0142               	movlb	2	; select bank2
+  1977  02BA  139E               	bcf	30,7	;volatile
+  1978  02BB                     l1067:
+  1979                           
+  1980                           ;source/USART.c: 49:     TX1STAbits.TX9=0;
+  1981  02BB  131E               	bcf	30,6	;volatile
+  1982  02BC                     l1069:
+  1983                           
+  1984                           ;source/USART.c: 50:     TX1STAbits.SYNC=0;
+  1985  02BC  121E               	bcf	30,4	;volatile
+  1986  02BD                     l1071:
+  1987                           
+  1988                           ;source/USART.c: 51:     RC1STAbits.SPEN=1;
+  1989  02BD  179D               	bsf	29,7	;volatile
+  1990  02BE                     l1073:
+  1991                           
+  1992                           ;source/USART.c: 52:     BAUD1CONbits.SCKP=0;
+  1993  02BE  121F               	bcf	31,4	;volatile
+  1994  02BF                     l1075:
+  1995                           
+  1996                           ;source/USART.c: 55:     LATCbits.LATC5=0;
+  1997  02BF  0140               	movlb	0	; select bank0
+  1998  02C0  129A               	bcf	26,5	;volatile
+  1999  02C1                     l1077:
+  2000                           
+  2001                           ;source/USART.c: 56:     LATCbits.LATC4=0;
+  2002  02C1  121A               	bcf	26,4	;volatile
+  2003  02C2                     l148:
+  2004  02C2  0008               	return
+  2005  02C3                     __end_of_SerialPortSetup:
+  2006                           
+  2007                           	psect	text5
+  2008  0255                     __ptext5:	
+  2009 ;; *************** function _SerialPortSendData *****************
+  2010 ;; Defined at:
+  2011 ;;		line 59 in file "source/USART.c"
+  2012 ;; Parameters:    Size  Location     Type
+  2013 ;;  dataToSend      2    0[BANK0 ] PTR unsigned char 
+  2014 ;;		 -> ackBuf(2), dataBuf(256), ATR(12), 
+  2015 ;;  length          1    2[BANK0 ] unsigned char 
+  2016 ;; Auto vars:     Size  Location     Type
+  2017 ;;		None
+  2018 ;; Return value:  Size  Location     Type
+  2019 ;;                  1    wreg      void 
+  2020 ;; Registers used:
+  2021 ;;		wreg, status,2, status,0
+  2022 ;; Tracked objects:
+  2023 ;;		On entry : 0/0
+  2024 ;;		On exit  : 0/0
+  2025 ;;		Unchanged: 0/0
+  2026 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  2027 ;;      Params:         0       3       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2028 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2029 ;;      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2030 ;;      Totals:         0       4       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2031 ;;Total ram usage:        4 bytes
+  2032 ;; Hardware stack levels used: 1
+  2033 ;; Hardware stack levels required when called: 2
+  2034 ;; This function calls:
+  2035 ;;		Nothing
+  2036 ;; This function is called by:
+  2037 ;;		_main
+  2038 ;; This function uses a non-reentrant model
+  2039 ;;
+  2040                           
+  2041                           
+  2042                           ;psect for function _SerialPortSendData
+  2043  0255                     _SerialPortSendData:
+  2044  0255                     l1079:	
+  2045                           ;incstack = 0
+  2046                           ; Regs used in _SerialPortSendData: [wreg+status,2+status,0]
+  2047                           
+  2048                           
+  2049                           ;source/USART.c: 68:     if (portInUse) return;
+  2050  0255  0140               	movlb	0	; select bank0
+  2051  0256  0853               	movf	_portInUse,w	;volatile
+  2052  0257  1903               	btfsc	3,2
+  2053  0258  2A5A               	goto	u371
+  2054  0259  2A5B               	goto	u370
+  2055  025A                     u371:
+  2056  025A  2A5C               	goto	l1083
+  2057  025B                     u370:
+  2058  025B  2A7D               	goto	l152
+  2059  025C                     l1083:
+  2060                           
+  2061                           ;source/USART.c: 70:     buf=dataToSend;
+  2062  025C  0821               	movf	SerialPortSendData@dataToSend+1,w
+  2063  025D  00F9               	movwf	_buf+1
+  2064  025E  0820               	movf	SerialPortSendData@dataToSend,w
+  2065  025F  00F8               	movwf	_buf
+  2066  0260                     l1085:
+  2067                           
+  2068                           ;source/USART.c: 71:     bufPtr=0;
+  2069  0260  01FB               	clrf	_bufPtr	;volatile
+  2070  0261                     l1087:
+  2071                           
+  2072                           ;source/USART.c: 72:     bufLength=length;
+  2073  0261  0822               	movf	SerialPortSendData@length,w
+  2074  0262  00A3               	movwf	??_SerialPortSendData
+  2075  0263  0823               	movf	??_SerialPortSendData,w
+  2076  0264  00FA               	movwf	_bufLength	;volatile
+  2077  0265                     l1089:
+  2078                           
+  2079                           ;source/USART.c: 73:     portInUse=1;
+  2080  0265  3001               	movlw	1
+  2081  0266  00A3               	movwf	??_SerialPortSendData
+  2082  0267  0823               	movf	??_SerialPortSendData,w
+  2083  0268  00D3               	movwf	_portInUse	;volatile
+  2084  0269                     l1091:
+  2085                           
+  2086                           ;source/USART.c: 74:     LATCbits.LATC4=1;
+  2087  0269  161A               	bsf	26,4	;volatile
+  2088  026A                     l1093:
+  2089                           
+  2090                           ;source/USART.c: 76:     PIE1bits.TX1IE=1;
+  2091  026A  014E               	movlb	14	; select bank14
+  2092  026B  1597               	bsf	23,3	;volatile
+  2093  026C                     l1095:
+  2094                           
+  2095                           ;source/USART.c: 77:     TX1STAbits.TXEN=1;
+  2096  026C  0142               	movlb	2	; select bank2
+  2097  026D  169E               	bsf	30,5	;volatile
+  2098  026E                     l153:	
+  2099                           ;source/USART.c: 79:     while (PIE1bits.TX1IE);
+  2100                           
+  2101  026E  014E               	movlb	14	; select bank14
+  2102  026F  1997               	btfsc	23,3	;volatile
+  2103  0270  2A72               	goto	u381
+  2104  0271  2A73               	goto	u380
+  2105  0272                     u381:
+  2106  0272  2A6E               	goto	l153
+  2107  0273                     u380:
+  2108  0273                     l156:
+  2109  0273  0142               	movlb	2	; select bank2
+  2110  0274  1C9E               	btfss	30,1	;volatile
+  2111  0275  2A77               	goto	u391
+  2112  0276  2A78               	goto	u390
+  2113  0277                     u391:
+  2114  0277  2A73               	goto	l156
+  2115  0278                     u390:
+  2116  0278                     l158:
+  2117                           
+  2118                           ;source/USART.c: 82:     TX1STAbits.TXEN=1;
+  2119  0278  169E               	bsf	30,5	;volatile
+  2120                           
+  2121                           ;source/USART.c: 84:     LATCbits.LATC4=0;
+  2122  0279  0140               	movlb	0	; select bank0
+  2123  027A  121A               	bcf	26,4	;volatile
+  2124  027B                     l1097:
+  2125                           
+  2126                           ;source/USART.c: 85:     portInUse=0;
+  2127  027B  01D3               	clrf	_portInUse	;volatile
+  2128                           
+  2129                           ;source/USART.c: 86:     bufPtr=0;
+  2130  027C  01FB               	clrf	_bufPtr	;volatile
+  2131  027D                     l152:
+  2132  027D  0008               	return
+  2133  027E                     __end_of_SerialPortSendData:
+  2134                           
+  2135                           	psect	text6
+  2136  027E                     __ptext6:	
+  2137 ;; *************** function _SerialPortReceiveData *****************
+  2138 ;; Defined at:
+  2139 ;;		line 91 in file "source/USART.c"
+  2140 ;; Parameters:    Size  Location     Type
+  2141 ;;  dataReceived    1    wreg     PTR unsigned char 
+  2142 ;;		 -> cmdBuf(5), 
+  2143 ;;  length          1    0[BANK0 ] unsigned char 
+  2144 ;; Auto vars:     Size  Location     Type
+  2145 ;;  dataReceived    1    2[BANK0 ] PTR unsigned char 
+  2146 ;;		 -> cmdBuf(5), 
+  2147 ;; Return value:  Size  Location     Type
+  2148 ;;                  1    wreg      void 
+  2149 ;; Registers used:
+  2150 ;;		wreg, status,2, status,0
+  2151 ;; Tracked objects:
+  2152 ;;		On entry : 0/0
+  2153 ;;		On exit  : 0/0
+  2154 ;;		Unchanged: 0/0
+  2155 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  2156 ;;      Params:         0       1       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2157 ;;      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2158 ;;      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2159 ;;      Totals:         0       3       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2160 ;;Total ram usage:        3 bytes
+  2161 ;; Hardware stack levels used: 1
+  2162 ;; Hardware stack levels required when called: 2
+  2163 ;; This function calls:
+  2164 ;;		Nothing
+  2165 ;; This function is called by:
+  2166 ;;		_main
+  2167 ;; This function uses a non-reentrant model
+  2168 ;;
+  2169                           
+  2170                           
+  2171                           ;psect for function _SerialPortReceiveData
+  2172  027E                     _SerialPortReceiveData:
+  2173                           
+  2174                           ;incstack = 0
+  2175                           ; Regs used in _SerialPortReceiveData: [wreg+status,2+status,0]
+  2176                           ;SerialPortReceiveData@dataReceived stored from wreg
+  2177  027E  0140               	movlb	0	; select bank0
+  2178  027F  00A2               	movwf	SerialPortReceiveData@dataReceived
+  2179  0280                     l1101:
+  2180                           
+  2181                           ;source/USART.c: 99:     if (portInUse) return;
+  2182  0280  0853               	movf	_portInUse,w	;volatile
+  2183  0281  1903               	btfsc	3,2
+  2184  0282  2A84               	goto	u401
+  2185  0283  2A85               	goto	u400
+  2186  0284                     u401:
+  2187  0284  2A86               	goto	l1105
+  2188  0285                     u400:
+  2189  0285  2AA2               	goto	l162
+  2190  0286                     l1105:
+  2191                           
+  2192                           ;source/USART.c: 101:     buf=dataReceived;
+  2193  0286  0822               	movf	SerialPortReceiveData@dataReceived,w
+  2194  0287  00F8               	movwf	_buf
+  2195  0288  3000               	movlw	0
+  2196  0289  00F9               	movwf	_buf+1
+  2197  028A                     l1107:
+  2198                           
+  2199                           ;source/USART.c: 102:     bufPtr=0;
+  2200  028A  01FB               	clrf	_bufPtr	;volatile
+  2201  028B                     l1109:
+  2202                           
+  2203                           ;source/USART.c: 103:     bufLength=length;
+  2204  028B  0820               	movf	SerialPortReceiveData@length,w
+  2205  028C  00A1               	movwf	??_SerialPortReceiveData
+  2206  028D  0821               	movf	??_SerialPortReceiveData,w
+  2207  028E  00FA               	movwf	_bufLength	;volatile
+  2208  028F                     l1111:
+  2209                           
+  2210                           ;source/USART.c: 104:     portInUse=1;
+  2211  028F  3001               	movlw	1
+  2212  0290  00A1               	movwf	??_SerialPortReceiveData
+  2213  0291  0821               	movf	??_SerialPortReceiveData,w
+  2214  0292  00D3               	movwf	_portInUse	;volatile
+  2215  0293                     l1113:
+  2216                           
+  2217                           ;source/USART.c: 106:     PIE1bits.RC1IE=1;
+  2218  0293  014E               	movlb	14	; select bank14
+  2219  0294  1617               	bsf	23,4	;volatile
+  2220  0295                     l1115:
+  2221                           
+  2222                           ;source/USART.c: 107:     RC1STAbits.CREN=1;
+  2223  0295  0142               	movlb	2	; select bank2
+  2224  0296  161D               	bsf	29,4	;volatile
+  2225  0297                     l163:	
+  2226                           ;source/USART.c: 109:     while (PIE1bits.RC1IE);
+  2227                           
+  2228  0297  014E               	movlb	14	; select bank14
+  2229  0298  1A17               	btfsc	23,4	;volatile
+  2230  0299  2A9B               	goto	u411
+  2231  029A  2A9C               	goto	u410
+  2232  029B                     u411:
+  2233  029B  2A97               	goto	l163
+  2234  029C                     u410:
+  2235  029C                     l165:
+  2236                           
+  2237                           ;source/USART.c: 111:     RC1STAbits.CREN=0;
+  2238  029C  0142               	movlb	2	; select bank2
+  2239  029D  121D               	bcf	29,4	;volatile
+  2240                           
+  2241                           ;source/USART.c: 113:     LATCbits.LATC5=0;
+  2242  029E  0140               	movlb	0	; select bank0
+  2243  029F  129A               	bcf	26,5	;volatile
+  2244  02A0                     l1117:
+  2245                           
+  2246                           ;source/USART.c: 114:     portInUse=0;
+  2247  02A0  01D3               	clrf	_portInUse	;volatile
+  2248                           
+  2249                           ;source/USART.c: 115:     bufPtr=0;
+  2250  02A1  01FB               	clrf	_bufPtr	;volatile
+  2251  02A2                     l162:
+  2252  02A2  0008               	return
+  2253  02A3                     __end_of_SerialPortReceiveData:
+  2254                           
+  2255                           	psect	intentry
+  2256  0004                     __pintentry:	
+  2257 ;; *************** function _InterruptServiceRoutine *****************
+  2258 ;; Defined at:
+  2259 ;;		line 150 in file "source/main.c"
+  2260 ;; Parameters:    Size  Location     Type
+  2261 ;;		None
+  2262 ;; Auto vars:     Size  Location     Type
+  2263 ;;		None
+  2264 ;; Return value:  Size  Location     Type
+  2265 ;;                  1    wreg      void 
+  2266 ;; Registers used:
+  2267 ;;		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+  2268 ;; Tracked objects:
+  2269 ;;		On entry : 0/0
+  2270 ;;		On exit  : 0/0
+  2271 ;;		Unchanged: 0/0
+  2272 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  2273 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2274 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2275 ;;      Temps:          3       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2276 ;;      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2277 ;;Total ram usage:        3 bytes
+  2278 ;; Hardware stack levels used: 1
+  2279 ;; Hardware stack levels required when called: 1
+  2280 ;; This function calls:
+  2281 ;;		_SerialPortReceiveInterruptService
+  2282 ;;		_SerialPortTransmitInterruptService
+  2283 ;; This function is called by:
+  2284 ;;		Interrupt level 1
+  2285 ;; This function uses a non-reentrant model
+  2286 ;;
+  2287                           
+  2288  0004                     _InterruptServiceRoutine:
+  2289                           
+  2290                           ;incstack = 0
+  2291  0004  147E               	bsf	int$flags,0	;set compiler interrupt flag (level 1)
+  2292                           
+  2293                           ; Regs used in _InterruptServiceRoutine: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+csta
+      +                          ck]
+  2294  0005  3180               	pagesel	$
+  2295  0006                     i1l1269:
+  2296                           
+  2297                           ;source/main.c: 154:     if (PIE1bits.TX1IE & PIR1bits.TX1IF) {
+  2298  0006  014E               	movlb	14	; select bank14
+  2299  0007  0C0D               	rrf	13,w	;volatile
+  2300  0008  00F5               	movwf	??_InterruptServiceRoutine
+  2301  0009  0CF5               	rrf	??_InterruptServiceRoutine,f
+  2302  000A  0C75               	rrf	??_InterruptServiceRoutine,w
+  2303  000B  3901               	andlw	1
+  2304  000C  00F6               	movwf	??_InterruptServiceRoutine+1
+  2305  000D  0C17               	rrf	23,w	;volatile
+  2306  000E  00F7               	movwf	??_InterruptServiceRoutine+2
+  2307  000F  0CF7               	rrf	??_InterruptServiceRoutine+2,f
+  2308  0010  0C77               	rrf	??_InterruptServiceRoutine+2,w
+  2309  0011  3901               	andlw	1
+  2310  0012  0576               	andwf	??_InterruptServiceRoutine+1,w
+  2311  0013  1903               	btfsc	3,2
+  2312  0014  2816               	goto	u59_21
+  2313  0015  2817               	goto	u59_20
+  2314  0016                     u59_21:
+  2315  0016  281A               	goto	i1l1273
+  2316  0017                     u59_20:
+  2317  0017                     i1l1271:
+  2318                           
+  2319                           ;source/main.c: 155:         SerialPortTransmitInterruptService();
+  2320  0017  3182  22C3  3180   	fcall	_SerialPortTransmitInterruptService
+  2321  001A                     i1l1273:
+  2322                           
+  2323                           ;source/main.c: 159:     if (PIE1bits.RC1IE & PIR1bits.RC1IF) {
+  2324  001A  014E               	movlb	14	; select bank14
+  2325  001B  0E0D               	swapf	13,w	;volatile
+  2326  001C  3901               	andlw	1
+  2327  001D  00F5               	movwf	??_InterruptServiceRoutine
+  2328  001E  0E17               	swapf	23,w	;volatile
+  2329  001F  3901               	andlw	1
+  2330  0020  0575               	andwf	??_InterruptServiceRoutine,w
+  2331  0021  1903               	btfsc	3,2
+  2332  0022  2824               	goto	u60_21
+  2333  0023  2825               	goto	u60_20
+  2334  0024                     u60_21:
+  2335  0024  2828               	goto	i1l115
+  2336  0025                     u60_20:
+  2337  0025                     i1l1275:
+  2338                           
+  2339                           ;source/main.c: 160:         SerialPortReceiveInterruptService();
+  2340  0025  3182  2222  3180   	fcall	_SerialPortReceiveInterruptService
+  2341  0028                     i1l115:
+  2342  0028  107E               	bcf	int$flags,0	;clear compiler interrupt flag (level 1)
+  2343  0029  0009               	retfie
+  2344  002A                     __end_of_InterruptServiceRoutine:
+  2345                           
+  2346                           	psect	text8
+  2347  02C3                     __ptext8:	
+  2348 ;; *************** function _SerialPortTransmitInterruptService *****************
+  2349 ;; Defined at:
+  2350 ;;		line 120 in file "source/USART.c"
+  2351 ;; Parameters:    Size  Location     Type
+  2352 ;;		None
+  2353 ;; Auto vars:     Size  Location     Type
+  2354 ;;		None
+  2355 ;; Return value:  Size  Location     Type
+  2356 ;;                  1    wreg      void 
+  2357 ;; Registers used:
+  2358 ;;		wreg, fsr1l, fsr1h, status,2, status,0
+  2359 ;; Tracked objects:
+  2360 ;;		On entry : 0/0
+  2361 ;;		On exit  : 0/0
+  2362 ;;		Unchanged: 0/0
+  2363 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  2364 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2365 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2366 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2367 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2368 ;;Total ram usage:        2 bytes
+  2369 ;; Hardware stack levels used: 1
+  2370 ;; This function calls:
+  2371 ;;		Nothing
+  2372 ;; This function is called by:
+  2373 ;;		_InterruptServiceRoutine
+  2374 ;; This function uses a non-reentrant model
+  2375 ;;
+  2376                           
+  2377                           
+  2378                           ;psect for function _SerialPortTransmitInterruptService
+  2379  02C3                     _SerialPortTransmitInterruptService:
+  2380  02C3                     i1l1167:	
+  2381                           ;incstack = 0
+  2382                           ; Regs used in _SerialPortTransmitInterruptService: [wreg+fsr1l+fsr1h+status,2+status,0]
+  2383                           
+  2384                           
+  2385                           ;source/USART.c: 126:     bufLength--;
+  2386  02C3  3001               	movlw	1
+  2387  02C4  02FA               	subwf	_bufLength,f	;volatile
+  2388  02C5                     i1l1169:
+  2389                           
+  2390                           ;source/USART.c: 127:     TX1REG=buf[bufPtr++];
+  2391  02C5  087B               	movf	_bufPtr,w	;volatile
+  2392  02C6  00F0               	movwf	??_SerialPortTransmitInterruptService
+  2393  02C7  01F1               	clrf	??_SerialPortTransmitInterruptService+1
+  2394  02C8  0870               	movf	??_SerialPortTransmitInterruptService,w
+  2395  02C9  0778               	addwf	_buf,w
+  2396  02CA  0086               	movwf	6
+  2397  02CB  0871               	movf	??_SerialPortTransmitInterruptService+1,w
+  2398  02CC  3D79               	addwfc	_buf+1,w
+  2399  02CD  0087               	movwf	7
+  2400  02CE  0801               	movf	1,w
+  2401  02CF  0142               	movlb	2	; select bank2
+  2402  02D0  009A               	movwf	26	;volatile
+  2403  02D1                     i1l1171:
+  2404  02D1  3001               	movlw	1
+  2405  02D2  00F0               	movwf	??_SerialPortTransmitInterruptService
+  2406  02D3  0870               	movf	??_SerialPortTransmitInterruptService,w
+  2407  02D4  07FB               	addwf	_bufPtr,f	;volatile
+  2408  02D5                     i1l1173:
+  2409                           
+  2410                           ;source/USART.c: 129:     if (bufLength==0x00) {
+  2411  02D5  087A               	movf	_bufLength,w	;volatile
+  2412  02D6  1D03               	btfss	3,2
+  2413  02D7  2AD9               	goto	u48_21
+  2414  02D8  2ADA               	goto	u48_20
+  2415  02D9                     u48_21:
+  2416  02D9  2ADF               	goto	i1l169
+  2417  02DA                     u48_20:
+  2418  02DA                     i1l1175:
+  2419                           
+  2420                           ;source/USART.c: 131:         portInUse=0;
+  2421  02DA  0140               	movlb	0	; select bank0
+  2422  02DB  01D3               	clrf	_portInUse	;volatile
+  2423                           
+  2424                           ;source/USART.c: 132:         bufPtr=0;
+  2425  02DC  01FB               	clrf	_bufPtr	;volatile
+  2426  02DD                     i1l1177:
+  2427                           
+  2428                           ;source/USART.c: 133:         PIE1bits.TX1IE=0;
+  2429  02DD  014E               	movlb	14	; select bank14
+  2430  02DE  1197               	bcf	23,3	;volatile
+  2431  02DF                     i1l169:
+  2432  02DF  0008               	return
+  2433  02E0                     __end_of_SerialPortTransmitInterruptService:
+  2434                           
+  2435                           	psect	text9
+  2436  0222                     __ptext9:	
+  2437 ;; *************** function _SerialPortReceiveInterruptService *****************
+  2438 ;; Defined at:
+  2439 ;;		line 137 in file "source/USART.c"
+  2440 ;; Parameters:    Size  Location     Type
+  2441 ;;		None
+  2442 ;; Auto vars:     Size  Location     Type
+  2443 ;;  tempData        1    4[COMMON] unsigned char 
+  2444 ;; Return value:  Size  Location     Type
+  2445 ;;                  1    wreg      void 
+  2446 ;; Registers used:
+  2447 ;;		wreg, fsr1l, fsr1h, status,2, status,0
+  2448 ;; Tracked objects:
+  2449 ;;		On entry : 0/0
+  2450 ;;		On exit  : 0/0
+  2451 ;;		Unchanged: 0/0
+  2452 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  2453 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2454 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2455 ;;      Temps:          4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2456 ;;      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2457 ;;Total ram usage:        5 bytes
+  2458 ;; Hardware stack levels used: 1
+  2459 ;; This function calls:
+  2460 ;;		Nothing
+  2461 ;; This function is called by:
+  2462 ;;		_InterruptServiceRoutine
+  2463 ;; This function uses a non-reentrant model
+  2464 ;;
+  2465                           
+  2466                           
+  2467                           ;psect for function _SerialPortReceiveInterruptService
+  2468  0222                     _SerialPortReceiveInterruptService:
+  2469  0222                     i1l1179:	
+  2470                           ;incstack = 0
+  2471                           ; Regs used in _SerialPortReceiveInterruptService: [wreg+fsr1l+fsr1h+status,2+status,0]
+  2472                           
+  2473                           
+  2474                           ;source/USART.c: 143:     char tempData;;source/USART.c: 145:     LATCbits.LATC5=1;
+  2475  0222  0140               	movlb	0	; select bank0
+  2476  0223  169A               	bsf	26,5	;volatile
+  2477  0224                     i1l1181:
+  2478                           
+  2479                           ;source/USART.c: 147:     bufLength--;
+  2480  0224  3001               	movlw	1
+  2481  0225  02FA               	subwf	_bufLength,f	;volatile
+  2482  0226                     i1l1183:
+  2483                           
+  2484                           ;source/USART.c: 150:     if (RC1STAbits.FERR) {
+  2485  0226  0142               	movlb	2	; select bank2
+  2486  0227  1D1D               	btfss	29,2	;volatile
+  2487  0228  2A2A               	goto	u49_21
+  2488  0229  2A2B               	goto	u49_20
+  2489  022A                     u49_21:
+  2490  022A  2A2F               	goto	i1l172
+  2491  022B                     u49_20:
+  2492  022B                     i1l1185:
+  2493  022B  0819               	movf	25,w	;volatile
+  2494  022C                     i1l1187:
+  2495                           
+  2496                           ;source/USART.c: 153:         PIE1bits.RC1IE=0;
+  2497  022C  014E               	movlb	14	; select bank14
+  2498  022D  1217               	bcf	23,4	;volatile
+  2499                           
+  2500                           ;source/USART.c: 154:     } else if (RC1STAbits.OERR) {
+  2501  022E  2A54               	goto	i1l177
+  2502  022F                     i1l172:
+  2503  022F  1C9D               	btfss	29,1	;volatile
+  2504  0230  2A32               	goto	u50_21
+  2505  0231  2A33               	goto	u50_20
+  2506  0232                     u50_21:
+  2507  0232  2A36               	goto	i1l1191
+  2508  0233                     u50_20:
+  2509  0233                     i1l1189:
+  2510                           
+  2511                           ;source/USART.c: 156:         PIE1bits.RC1IE=0;
+  2512  0233  014E               	movlb	14	; select bank14
+  2513  0234  1217               	bcf	23,4	;volatile
+  2514                           
+  2515                           ;source/USART.c: 157:     } else {
+  2516  0235  2A54               	goto	i1l177
+  2517  0236                     i1l1191:
+  2518                           
+  2519                           ;source/USART.c: 159:         tempData=RC1REG;
+  2520  0236  0819               	movf	25,w	;volatile
+  2521  0237  00F0               	movwf	??_SerialPortReceiveInterruptService
+  2522  0238  0870               	movf	??_SerialPortReceiveInterruptService,w
+  2523  0239  00F4               	movwf	SerialPortReceiveInterruptService@tempData
+  2524  023A                     i1l1193:
+  2525                           
+  2526                           ;source/USART.c: 160:         buf[bufPtr++]=tempData;
+  2527  023A  087B               	movf	_bufPtr,w	;volatile
+  2528  023B  00F0               	movwf	??_SerialPortReceiveInterruptService
+  2529  023C  01F1               	clrf	??_SerialPortReceiveInterruptService+1
+  2530  023D  0870               	movf	??_SerialPortReceiveInterruptService,w
+  2531  023E  0778               	addwf	_buf,w
+  2532  023F  00F2               	movwf	??_SerialPortReceiveInterruptService+2
+  2533  0240  0871               	movf	??_SerialPortReceiveInterruptService+1,w
+  2534  0241  3D79               	addwfc	_buf+1,w
+  2535  0242  00F3               	movwf	??_SerialPortReceiveInterruptService+3
+  2536  0243  0872               	movf	??_SerialPortReceiveInterruptService+2,w
+  2537  0244  0086               	movwf	6
+  2538  0245  0873               	movf	??_SerialPortReceiveInterruptService+3,w
+  2539  0246  0087               	movwf	7
+  2540  0247  0874               	movf	SerialPortReceiveInterruptService@tempData,w
+  2541  0248  0081               	movwf	1
+  2542  0249                     i1l1195:
+  2543  0249  3001               	movlw	1
+  2544  024A  00F0               	movwf	??_SerialPortReceiveInterruptService
+  2545  024B  0870               	movf	??_SerialPortReceiveInterruptService,w
+  2546  024C  07FB               	addwf	_bufPtr,f	;volatile
+  2547  024D                     i1l1197:
+  2548                           
+  2549                           ;source/USART.c: 161:         if (bufLength==0x00) {
+  2550  024D  087A               	movf	_bufLength,w	;volatile
+  2551  024E  1D03               	btfss	3,2
+  2552  024F  2A51               	goto	u51_21
+  2553  0250  2A52               	goto	u51_20
+  2554  0251                     u51_21:
+  2555  0251  2A54               	goto	i1l177
+  2556  0252                     u51_20:
+  2557  0252                     i1l1199:
+  2558                           
+  2559                           ;source/USART.c: 163:             PIE1bits.RC1IE=0;
+  2560  0252  014E               	movlb	14	; select bank14
+  2561  0253  1217               	bcf	23,4	;volatile
+  2562  0254                     i1l177:
+  2563  0254  0008               	return
+  2564  0255                     __end_of_SerialPortReceiveInterruptService:
+  2565  007E                     btemp	set	126	;btemp
+  2566  007E                     int$flags	set	126
+  2567  007E                     wtemp0	set	126
+  2568  26F0                     
+  2569                           	psect	config
+  2570                           
+  2571                           ;Config register CONFIG1 @ 0x8007
+  2572                           ;	External Oscillator Mode Selection bits
+  2573                           ;	FEXTOSC = OFF, Oscillator not enabled
+  2574                           ;	Power-up Default Value for COSC bits
+  2575                           ;	RSTOSC = HFINTOSC_1MHZ, HFINTOSC (1 MHz)
+  2576                           ;	Clock Out Enable bit
+  2577                           ;	CLKOUTEN = OFF, CLKOUT function is disabled; I/O function on RA6
+  2578                           ;	VDD Range Analog Calibration Selection bit
+  2579                           ;	VDDAR = HI, Internal analog systems are calibrated for operation between VDD = 2.3V - 
+      +                          5.5V
+  2580  8007                     	org	32775
+  2581  8007  3FED               	dw	16365
+  2582                           
+  2583                           ;Config register CONFIG2 @ 0x8008
+  2584                           ;	Master Clear Enable bit
+  2585                           ;	MCLRE = EXTMCLR, If LVP = 0, MCLR pin is MCLR; If LVP = 1, RE3 pin function is MCLR
+  2586                           ;	Power-up Timer Selection bits
+  2587                           ;	PWRTS = PWRT_OFF, PWRT is disabled
+  2588                           ;	WDT Operating Mode bits
+  2589                           ;	WDTE = OFF, WDT disabled; SEN is ignored
+  2590                           ;	Brown-out Reset Enable bits
+  2591                           ;	BOREN = OFF, Brown-out Reset disabled
+  2592                           ;	Brown-out Reset Voltage Selection bit
+  2593                           ;	BORV = LO, Brown-out Reset Voltage (VBOR) set to 1.9V
+  2594                           ;	PPSLOCKED One-Way Set Enable bit
+  2595                           ;	PPS1WAY = OFF, The PPSLOCKED bit can be set and cleared as needed (unlocking sequence 
+      +                          is required)
+  2596                           ;	Stack Overflow/Underflow Reset Enable bit
+  2597                           ;	STVREN = OFF, Stack Overflow or Underflow will not cause a reset
+  2598  8008                     	org	32776
+  2599  8008  2727               	dw	10023
+  2600                           
+  2601                           ;Config register CONFIG4 @ 0x800A
+  2602                           ;	Boot Block Size Selection bits
+  2603                           ;	BBSIZE = BB512, 512 words boot block size
+  2604                           ;	Boot Block Enable bit
+  2605                           ;	BBEN = OFF, Boot Block is disabled
+  2606                           ;	SAF Enable bit
+  2607                           ;	SAFEN = OFF, SAF is disabled
+  2608                           ;	Application Block Write Protection bit
+  2609                           ;	WRTAPP = OFF, Application Block is not write-protected
+  2610                           ;	Boot Block Write Protection bit
+  2611                           ;	WRTB = OFF, Boot Block is not write-protected
+  2612                           ;	Configuration Registers Write Protection bit
+  2613                           ;	WRTC = OFF, Configuration Registers are not write-protected
+  2614                           ;	Storage Area Flash (SAF) Write Protection bit
+  2615                           ;	WRTSAF = OFF, SAF is not write-protected
+  2616                           ;	Low Voltage Programming Enable bit
+  2617                           ;	LVP = OFF, High Voltage on MCLR/Vpp must be used for programming
+  2618  800A                     	org	32778
+  2619  800A  1FFF               	dw	8191
+  2620                           
+  2621                           ;Config register CONFIG5 @ 0x800B
+  2622                           ;	User Program Flash Memory Code Protection bit
+  2623                           ;	CP = OFF, User Program Flash Memory code protection is disabled
+  2624  800B                     	org	32779
+  2625  800B  3FFF               	dw	16383
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        12
+    BSS         20
+    Persistent  32
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      8      14
+    BANK0            80     47      73
+    BANK1            80      0       0
+    BANK2            80      0       0
+    BANK3            80      0       0
+    BANK4            80      0       0
+    BANK5            80      0       0
+    BANK6            80      0       0
+    BANK7            80      0       0
+    BANK8            80      0       0
+    BANK9            80      0       0
+    BANK10           80      0       0
+    BANK11           80      0       0
+    BANK12           80      0       0
+    BANK13           80      0       0
+    BANK14           80      0       0
+    BANK15           80      0       0
+    BANK16           80      0       0
+    BANK17           80      0       0
+    BANK18           80      0       0
+    BANK19           80      0       0
+    BANK20           80      0       0
+    BANK21           80      0       0
+    BANK22           16      0       0
+    BANK23            0      0       0
+    BANK24            0      0       0
+    BANK25            0      0       0
+
+Pointer List with Targets:
+
+    readFlash@retBytes	PTR unsigned char  size(2) Largest target is 256
+		 -> dataBuf(BIGRAM[256]), 
+
+    readFlash@numRetBytes	PTR unsigned char  size(1) Largest target is 1
+		 -> numRetBytes(BANK0[1]), 
+
+    SerialPortReceiveData@dataReceived	PTR unsigned char  size(1) Largest target is 5
+		 -> cmdBuf(BANK0[5]), 
+
+    SerialPortSendData@dataToSend	PTR unsigned char  size(2) Largest target is 256
+		 -> ackBuf(BANK0[2]), dataBuf(BIGRAM[256]), ATR(BANK0[12]), 
+
+    buf	PTR volatile unsigned char  size(2) Largest target is 256
+		 -> NULL(NULL[0]), ackBuf(BANK0[2]), dataBuf(BIGRAM[256]), cmdBuf(BANK0[5]), 
+		 -> ATR(BANK0[12]), 
+
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in COMMON
+
+    _InterruptServiceRoutine->_SerialPortReceiveInterruptService
+
+Critical Paths under _main in BANK0
+
+    _main->_readFlash
+    _readFlash->_setAddressRegisters
+    _clearAddressRegisters->_setAddressRegisters
+
+Critical Paths under _InterruptServiceRoutine in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK7
+
+    None.
+
+Critical Paths under _main in BANK8
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK8
+
+    None.
+
+Critical Paths under _main in BANK9
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK9
+
+    None.
+
+Critical Paths under _main in BANK10
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK10
+
+    None.
+
+Critical Paths under _main in BANK11
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK11
+
+    None.
+
+Critical Paths under _main in BANK12
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK12
+
+    None.
+
+Critical Paths under _main in BANK13
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK13
+
+    None.
+
+Critical Paths under _main in BANK14
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK14
+
+    None.
+
+Critical Paths under _main in BANK15
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK15
+
+    None.
+
+Critical Paths under _main in BANK16
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK16
+
+    None.
+
+Critical Paths under _main in BANK17
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK17
+
+    None.
+
+Critical Paths under _main in BANK18
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK18
+
+    None.
+
+Critical Paths under _main in BANK19
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK19
+
+    None.
+
+Critical Paths under _main in BANK20
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK20
+
+    None.
+
+Critical Paths under _main in BANK21
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK21
+
+    None.
+
+Critical Paths under _main in BANK22
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK22
+
+    None.
+
+Critical Paths under _main in BANK23
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK23
+
+    None.
+
+Critical Paths under _main in BANK24
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK24
+
+    None.
+
+Critical Paths under _main in BANK25
+
+    None.
+
+Critical Paths under _InterruptServiceRoutine in BANK25
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                17    17      0    3844
+                                             30 BANK0     17    17      0
+              _SerialPortReceiveData
+                 _SerialPortSendData
+                    _SerialPortSetup
+              _clearAddressRegisters
+                          _readFlash
+ ---------------------------------------------------------------------------------
+ (1) _readFlash                                           15     7      8    2271
+                                             15 BANK0     15     7      8
+              _clearAddressRegisters
+                _setAddressRegisters
+ ---------------------------------------------------------------------------------
+ (2) _clearAddressRegisters                                0     0      0     848
+                _setAddressRegisters
+ ---------------------------------------------------------------------------------
+ (2) _setAddressRegisters                                 16    10      6     848
+                                              0 BANK0     15     9      6
+ ---------------------------------------------------------------------------------
+ (1) _SerialPortSetup                                      0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _SerialPortSendData                                   4     1      3     500
+                                              0 BANK0      4     1      3
+ ---------------------------------------------------------------------------------
+ (1) _SerialPortReceiveData                                3     2      1     153
+                                              0 BANK0      3     2      1
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (4) _InterruptServiceRoutine                              3     3      0      24
+                                              5 COMMON     3     3      0
+  _SerialPortReceiveInterruptService
+ _SerialPortTransmitInterruptService
+ ---------------------------------------------------------------------------------
+ (5) _SerialPortTransmitInterruptService                   2     2      0       0
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ (5) _SerialPortReceiveInterruptService                    5     5      0      24
+                                              0 COMMON     5     5      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 5
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _SerialPortReceiveData
+   _SerialPortSendData
+   _SerialPortSetup
+   _clearAddressRegisters
+     _setAddressRegisters
+   _readFlash
+     _clearAddressRegisters
+     _setAddressRegisters
+
+ _InterruptServiceRoutine (ROOT)
+   _SerialPortReceiveInterruptService
+   _SerialPortTransmitInterruptService
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             7F0      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BITCOMMON            E      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+COMMON               E      8       E       2      100.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR2              0      0       0       3        0.0%
+SFR2                 0      0       0       3        0.0%
+STACK                0      0       0       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50     2F      49       5       91.2%
+BITSFR4              0      0       0       5        0.0%
+SFR4                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BITSFR5              0      0       0       6        0.0%
+SFR5                 0      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITSFR6              0      0       0       7        0.0%
+SFR6                 0      0       0       7        0.0%
+BITSFR7              0      0       0       8        0.0%
+SFR7                 0      0       0       8        0.0%
+ABS                  0      0      57       8        0.0%
+BITBANK2            50      0       0       9        0.0%
+BITSFR8              0      0       0       9        0.0%
+SFR8                 0      0       0       9        0.0%
+BANK2               50      0       0      10        0.0%
+BITSFR9              0      0       0      10        0.0%
+SFR9                 0      0       0      10        0.0%
+BITBANK3            50      0       0      11        0.0%
+BITSFR10             0      0       0      11        0.0%
+SFR10                0      0       0      11        0.0%
+BANK3               50      0       0      12        0.0%
+BITSFR11             0      0       0      12        0.0%
+SFR11                0      0       0      12        0.0%
+BITBANK4            50      0       0      13        0.0%
+BITSFR12             0      0       0      13        0.0%
+SFR12                0      0       0      13        0.0%
+BANK4               50      0       0      14        0.0%
+BITSFR13             0      0       0      14        0.0%
+SFR13                0      0       0      14        0.0%
+BITBANK5            50      0       0      15        0.0%
+BITSFR14             0      0       0      15        0.0%
+SFR14                0      0       0      15        0.0%
+BANK5               50      0       0      16        0.0%
+BITSFR15             0      0       0      16        0.0%
+SFR15                0      0       0      16        0.0%
+BITBANK6            50      0       0      17        0.0%
+BITSFR16             0      0       0      17        0.0%
+SFR16                0      0       0      17        0.0%
+BANK6               50      0       0      18        0.0%
+BITSFR17             0      0       0      18        0.0%
+SFR17                0      0       0      18        0.0%
+BITBANK7            50      0       0      19        0.0%
+BITSFR18             0      0       0      19        0.0%
+SFR18                0      0       0      19        0.0%
+BANK7               50      0       0      20        0.0%
+BITSFR19             0      0       0      20        0.0%
+SFR19                0      0       0      20        0.0%
+BITBANK8            50      0       0      21        0.0%
+BITSFR20             0      0       0      21        0.0%
+SFR20                0      0       0      21        0.0%
+BANK8               50      0       0      22        0.0%
+BITSFR21             0      0       0      22        0.0%
+SFR21                0      0       0      22        0.0%
+BITBANK9            50      0       0      23        0.0%
+BITSFR22             0      0       0      23        0.0%
+SFR22                0      0       0      23        0.0%
+BANK9               50      0       0      24        0.0%
+BITSFR23             0      0       0      24        0.0%
+SFR23                0      0       0      24        0.0%
+BITBANK10           50      0       0      25        0.0%
+BITSFR24             0      0       0      25        0.0%
+SFR24                0      0       0      25        0.0%
+BANK10              50      0       0      26        0.0%
+BITSFR25             0      0       0      26        0.0%
+SFR25                0      0       0      26        0.0%
+BITBANK11           50      0       0      27        0.0%
+BITSFR26             0      0       0      27        0.0%
+SFR26                0      0       0      27        0.0%
+BANK11              50      0       0      28        0.0%
+BITSFR27             0      0       0      28        0.0%
+SFR27                0      0       0      28        0.0%
+BITBANK12           50      0       0      29        0.0%
+BITSFR28             0      0       0      29        0.0%
+SFR28                0      0       0      29        0.0%
+BANK12              50      0       0      30        0.0%
+BITSFR29             0      0       0      30        0.0%
+SFR29                0      0       0      30        0.0%
+BITBANK13           50      0       0      31        0.0%
+BITSFR30             0      0       0      31        0.0%
+SFR30                0      0       0      31        0.0%
+BANK13              50      0       0      32        0.0%
+BITSFR31             0      0       0      32        0.0%
+SFR31                0      0       0      32        0.0%
+BITBANK14           50      0       0      33        0.0%
+BITSFR32             0      0       0      33        0.0%
+SFR32                0      0       0      33        0.0%
+BANK14              50      0       0      34        0.0%
+BITSFR33             0      0       0      34        0.0%
+SFR33                0      0       0      34        0.0%
+BITBANK15           50      0       0      35        0.0%
+BITSFR34             0      0       0      35        0.0%
+SFR34                0      0       0      35        0.0%
+BANK15              50      0       0      36        0.0%
+BITSFR35             0      0       0      36        0.0%
+SFR35                0      0       0      36        0.0%
+BITBANK16           50      0       0      37        0.0%
+BITSFR36             0      0       0      37        0.0%
+SFR36                0      0       0      37        0.0%
+BANK16              50      0       0      38        0.0%
+BITSFR37             0      0       0      38        0.0%
+SFR37                0      0       0      38        0.0%
+BITBANK17           50      0       0      39        0.0%
+BITSFR38             0      0       0      39        0.0%
+SFR38                0      0       0      39        0.0%
+BANK17              50      0       0      40        0.0%
+BITSFR39             0      0       0      40        0.0%
+SFR39                0      0       0      40        0.0%
+BITBANK18           50      0       0      41        0.0%
+BITSFR40             0      0       0      41        0.0%
+SFR40                0      0       0      41        0.0%
+BANK18              50      0       0      42        0.0%
+BITSFR41             0      0       0      42        0.0%
+SFR41                0      0       0      42        0.0%
+BITBANK19           50      0       0      43        0.0%
+BITSFR42             0      0       0      43        0.0%
+SFR42                0      0       0      43        0.0%
+BANK19              50      0       0      44        0.0%
+BITSFR43             0      0       0      44        0.0%
+SFR43                0      0       0      44        0.0%
+BITBANK20           50      0       0      45        0.0%
+BITSFR44             0      0       0      45        0.0%
+SFR44                0      0       0      45        0.0%
+BANK20              50      0       0      46        0.0%
+BITSFR45             0      0       0      46        0.0%
+SFR45                0      0       0      46        0.0%
+BITBANK21           50      0       0      47        0.0%
+BITSFR46             0      0       0      47        0.0%
+SFR46                0      0       0      47        0.0%
+BANK21              50      0       0      48        0.0%
+BITSFR47             0      0       0      48        0.0%
+SFR47                0      0       0      48        0.0%
+BITBANK22           50      0       0      49        0.0%
+BITSFR48             0      0       0      49        0.0%
+SFR48                0      0       0      49        0.0%
+BANK22              10      0       0      50        0.0%
+BITSFR49             0      0       0      50        0.0%
+SFR49                0      0       0      50        0.0%
+BITBANK23           50      0       0      51        0.0%
+BITSFR50             0      0       0      51        0.0%
+SFR50                0      0       0      51        0.0%
+BITSFR51             0      0       0      52        0.0%
+SFR51                0      0       0      52        0.0%
+BANK23               0      0       0      52        0.0%
+BITBANK24           50      0       0      53        0.0%
+BITSFR52             0      0       0      53        0.0%
+SFR52                0      0       0      53        0.0%
+BITSFR53             0      0       0      54        0.0%
+SFR53                0      0       0      54        0.0%
+BANK24               0      0       0      54        0.0%
+BITBANK25           20      0       0      55        0.0%
+BITSFR54             0      0       0      55        0.0%
+SFR54                0      0       0      55        0.0%
+BITSFR55             0      0       0      56        0.0%
+SFR55                0      0       0      56        0.0%
+BANK25               0      0       0      56        0.0%
+BITSFR56             0      0       0      57        0.0%
+SFR56                0      0       0      57        0.0%
+DATA                 0      0      57      57        0.0%
+BITSFR57             0      0       0      58        0.0%
+SFR57                0      0       0      58        0.0%
+BITSFR58             0      0       0      59        0.0%
+SFR58                0      0       0      59        0.0%
+BITSFR59             0      0       0      60        0.0%
+SFR59                0      0       0      60        0.0%
+BITSFR60             0      0       0      61        0.0%
+SFR60                0      0       0      61        0.0%
+BITSFR61             0      0       0      62        0.0%
+SFR61                0      0       0      62        0.0%
+BITSFR62             0      0       0      63        0.0%
+SFR62                0      0       0      63        0.0%
+BITSFR63             0      0       0      64        0.0%
+SFR63                0      0       0      64        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
+Symbol Table                                                                                   Mon Dec 06 18:51:49 2021
+
+                         _SerialPortSendData 0255                            ??_SerialPortSetup 0020  
+                                         l87 005E                                           l97 00FE  
+                                        l101 0111                                          l203 01E8  
+                                        l205 021C                                          l206 0221  
+                                        l152 027D                                          l153 026E  
+                                        l209 02F0                                          l162 02A2  
+                                        l163 0297                                          l156 0273  
+                                        l148 02C2                                          l165 029C  
+                                        l158 0278                                          l191 01C0  
+                                        _ATR 005D                                          u310 01CF  
+                                        u311 01CE                                          u400 0285  
+                                        u320 01DE                                          u401 0284  
+                                        u321 01DD                                          u410 029C  
+                                        u330 020A                                          u411 029B  
+                                        u331 0207                                          u420 0162  
+                                        u421 0161                                          u430 0186  
+                                        u431 0185                                          u360 021C  
+                                        u344 020C                                          u440 018B  
+                                        u520 0062                                          u361 021B  
+                                        u441 018A                                          u521 0061  
+                                        u370 025B                                          u450 01A5  
+                                        u530 00AA                                          u371 025A  
+                                        u355 020F                                          u451 01A4  
+                                        u380 0273                                          u460 01AC  
+                                        u540 00B6                                          u381 0272  
+                                        u461 01AB                                          u390 0278  
+                                        u470 01B4                                          u550 00F0  
+                                        u391 0277                                          u471 01B3  
+                                        u551 00EF                                          u535 00A6  
+                                        u560 00F5                                          u561 00F4  
+                                        u545 00B2                                          u570 0107  
+                                        u571 0106                                          u580 013B  
+                                        u581 013A                          ?_SerialPortSendData 0020  
+                                        _cmd 007D                                          _buf 0078  
+                                        wreg 0009                                 _BAUD1CONbits 011F  
+                                       l1101 0280                                         l1021 01C1  
+                                       l1111 028F                                         l1031 01D9  
+                                       l1023 01C1                                         l1113 0293  
+                                       l1105 0286                                         l1041 01F4  
+                                       l1033 01DE                                         l1025 01CA  
+                                       l1121 0149                                         l1201 005A  
+                                       l1115 0295                                         l1107 028A  
+                                       l1051 0217                                         l1043 020C  
+                                       l1035 01E0                                         l1027 01CF  
+                                       l1123 014C                                         l1211 0078  
+                                       l1203 005C                                         l1117 02A0  
+                                       l1109 028B                                         l1061 02A3  
+                                       l1053 021E                                         l1045 020D  
+                                       l1029 01D1                                         l1141 0186  
+                                       l1133 0169                                         l1125 0150  
+                                       l1221 0083                                         l1213 0079  
+                                       l1205 0062                                         l1071 02BD  
+                                       l1063 02AD                                         l1047 020E  
+                                       l1143 018B                                         l1135 016B  
+                                       l1127 0162                                         l1231 00CC  
+                                       l1223 0084                                         l1215 007A  
+                                       l1207 0076                                         l1073 02BE  
+                                       l1065 02B9                                         l1049 0215  
+                                       l1057 02E0                                         l1161 01B7  
+                                       l1145 0193                                         l1153 01A6  
+                                       l1137 017A                                         l1129 0167  
+                                       l1241 00FA                                         l1233 00D0  
+                                       l1225 0085                                         l1217 007D  
+                                       l1209 0077                                         l1091 0269  
+                                       l1083 025C                                         l1075 02BF  
+                                       l1067 02BB                                         l1163 01BF  
+                                       l1155 01AC                                         l1139 017E  
+                                       l1307 0125                                         l1251 011A  
+                                       l1243 0102                                         l1235 00EB  
+                                       l1227 0091                                         l1219 0080  
+                                       l1093 026A                                         l1085 0260  
+                                       l1077 02C1                                         l1069 02BC  
+                                       l1157 01AE                                         l1261 013B  
+                                       l1245 0107                                         l1237 00F0  
+                                       l1229 009B                                         l1095 026C  
+                                       l1087 0261                                         l1079 0255  
+                                       l1159 01B4                                         l1247 010A  
+                                       l1239 00F5                                         l1255 011C  
+                                       l1097 027B                                         l1089 0265  
+                                       l1257 012A                                         l1249 0116  
+                                       l1259 0135                                         _LATA 0018  
+                                       _WPUA 1F39                                         _WPUB 1F44  
+                                       _WPUC 1F4F                        _SerialPortReceiveData 027E  
+                                       _addr 004F                                         _main 005A  
+                                       fsr0h 0005                                         fsr1h 0007  
+                                       indf0 0000                                         fsr0l 0004  
+                                       indf1 0001                                         fsr1l 0006  
+                                       btemp 007E                         ??_SerialPortSendData 0023  
+           __size_of_InterruptServiceRoutine 0026                                         start 002A  
+  SerialPortReceiveInterruptService@tempData 0074                                        ?_main 0070  
+                                      i1l115 0028                                        i1l172 022F  
+                                      i1l177 0254                                        i1l169 02DF  
+                                      u50_20 0233                                        u50_21 0232  
+                                      u51_20 0252                                        u51_21 0251  
+                                      _PORTB 000D                                        u60_20 0025  
+                                      u60_21 0024                                        u48_20 02DA  
+                                      u48_21 02D9                                        u49_20 022B  
+                                      u49_21 022A                                        _TRISA 0012  
+                                      _TRISB 0013                                        _TRISC 0014  
+                                      u59_20 0017                                        u59_21 0016  
+                                      status 0003                                        wtemp0 007E  
+                            __initialization 002C                                 __end_of_main 0149  
+                       setAddressRegisters@i 002E                                       ??_main 003E  
+                    setAddressRegisters@addr 0020                      setAddressRegisters@mask 002A  
+                                     _ANSELA 1F38                                       _ANSELB 1F43  
+                                     _ANSELC 1F4E                       ?_SerialPortReceiveData 0020  
+                                     _RC1REG 0119                                       i1l1171 02D1  
+                                     i1l1181 0224                                       i1l1173 02D5  
+                                     i1l1191 0236                                       i1l1183 0226  
+                                     i1l1175 02DA                                       i1l1167 02C3  
+                                     i1l1271 0017                                       i1l1193 023A  
+                                     i1l1185 022B                                       i1l1177 02DD  
+                                     i1l1169 02C5                                       i1l1273 001A  
+                                     _ODCONA 1F3A                                       _ODCONB 1F45  
+                                     i1l1195 0249                                       i1l1187 022C  
+                                     i1l1179 0222                                       i1l1275 0025  
+                                     _ODCONC 1F50                                       i1l1197 024D  
+                                     i1l1189 0233                                       i1l1269 0006  
+                                     i1l1199 0252                                       _INLVLA 1F3C  
+                                     _INLVLB 1F47                                       _INLVLC 1F52  
+                                     _SP1BRG 011B                                       _OSCFRQ 0893  
+                                     _TX1REG 011A                     SerialPortSendData@length 0022  
+             __size_of_clearAddressRegisters 0011                __end_of_clearAddressRegisters 02F1  
+                                     _ackBuf 005A                                       _cmdBuf 0055  
+                                     _bufPtr 007B                      __end_of__initialization 0056  
+                            _SerialPortSetup 02A3                      _InterruptServiceRoutine 0004  
+                             __pcstackCOMMON 0070                                 __pidataBANK0 02F1  
+                      setAddressRegisters@CE 0025                        setAddressRegisters@OE 0024  
+                __end_of_setAddressRegisters 0222                                   __pbssBANK0 004F  
+                         __size_of_readFlash 0078                  SerialPortReceiveData@length 0020  
+                                 __pmaintext 005A                                   __pintentry 0004  
+                    __end_of_SerialPortSetup 02C3                                      _SLRCONA 1F3B  
+                                    _SLRCONB 1F46                                      _SLRCONC 1F51  
+                  ??_InterruptServiceRoutine 0075                  __size_of_SerialPortSendData 0029  
+                                    _dataBuf 26F0                                      __ptext1 0149  
+                                    __ptext2 02E0                                      __ptext3 01C1  
+                                    __ptext4 02A3                                      __ptext5 0255  
+                                    __ptext6 027E                                      __ptext8 02C3  
+                                    __ptext9 0222                            __end_of_readFlash 01C1  
+                    ??_SerialPortReceiveData 0021                                      clrloop0 030A  
+                       end_of_initialization 0056                                      init_ram 02FD  
+                                    initloop 02FE                                    _OSCENbits 0891  
+                             main@successful 004E                 SerialPortSendData@dataToSend 0020  
+                                  _TRISCbits 0014                                   _successful 007C  
+                           ?_SerialPortSetup 0070                         readFlash@numRetBytes 0036  
+                      _clearAddressRegisters 02E0                          start_initialization 002C  
+                                __pdataBANK0 005D                                  __pbssBIGRAM 26F0  
+                                __pbssCOMMON 0078                                    ___latbits 0003  
+                              __pcstackBANK0 0020                 __size_of_setAddressRegisters 0061  
+                                  _bufLength 007A                       ?_clearAddressRegisters 0070  
+                          readFlash@retBytes 0034                            readFlash@numBytes 0033  
+                                  _readFlash 0149               __size_of_SerialPortReceiveData 0025  
+              __end_of_SerialPortReceiveData 02A3                   __end_of_SerialPortSendData 027E  
+                                   _LATCbits 001A                                    clear_ram0 0309  
+                                   _PIE1bits 0717                                readFlash@addr 002F  
+                              readFlash@done 003B                                     _PIR1bits 070D  
+                                  _portInUse 0053    __end_of_SerialPortReceiveInterruptService 0255  
+ __size_of_SerialPortReceiveInterruptService 0033          ??_SerialPortReceiveInterruptService 0070  
+         ?_SerialPortReceiveInterruptService 0070            _SerialPortReceiveInterruptService 0222  
+                   ?_InterruptServiceRoutine 0070                                   ?_readFlash 002F  
+                                   _main$230 004C                                     _main$229 004A  
+                              __size_of_main 00EF                     __size_of_SerialPortSetup 0020  
+          SerialPortReceiveData@dataReceived 0022                                     _numBytes 0054  
+                                 _RC1STAbits 011D                                     int$flags 007E  
+                                 _RC6PPSbits 1F26              __end_of_InterruptServiceRoutine 002A  
+                                _OSCSTATbits 0890                          _setAddressRegisters 01C1  
+                                 _INTCONbits 000B                                  ??_readFlash 0037  
+ __end_of_SerialPortTransmitInterruptService 02E0  __size_of_SerialPortTransmitInterruptService 001D  
+       ??_SerialPortTransmitInterruptService 0070          ?_SerialPortTransmitInterruptService 0070  
+         _SerialPortTransmitInterruptService 02C3                                     intlevel1 0000  
+                            readFlash@bufPtr 003C                              readFlash@length 003D  
+                                _numRetBytes 005C                      ??_clearAddressRegisters 002F  
+                       ?_setAddressRegisters 0020                                   _RX1PPSbits 1ECB  
+                                 _TX1STAbits 011E                        ??_setAddressRegisters 0026  

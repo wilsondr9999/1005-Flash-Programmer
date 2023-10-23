@@ -1,0 +1,316 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F15256 ]
+[d frameptr 6 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"12 C:\EE\MPLABx\1005\source/flash.c
+[v _readFlash readFlash `(uc  1 e 1 0 ]
+"49
+[v _setAddressRegisters setAddressRegisters `(uc  1 e 1 0 ]
+"81
+[v _clearAddressRegisters clearAddressRegisters `(uc  1 e 1 0 ]
+"62 C:\EE\MPLABx\1005\source/main.c
+[v _main main `(v  1 e 1 0 ]
+"150
+[v _InterruptServiceRoutine InterruptServiceRoutine `II(v  1 e 1 0 ]
+"38 C:\EE\MPLABx\1005\source/USART.c
+[v _SerialPortSetup SerialPortSetup `(v  1 e 1 0 ]
+"59
+[v _SerialPortSendData SerialPortSendData `(v  1 e 1 0 ]
+"91
+[v _SerialPortReceiveData SerialPortReceiveData `(v  1 e 1 0 ]
+"120
+[v _SerialPortTransmitInterruptService SerialPortTransmitInterruptService `(v  1 e 1 0 ]
+"137
+[v _SerialPortReceiveInterruptService SerialPortReceiveInterruptService `(v  1 e 1 0 ]
+[s S106 . 1 `uc 1 INTEDG 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"427 C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h
+[u S111 . 1 `S106 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES111  1 e 1 @11 ]
+"509
+[v _PORTB PORTB `VEuc  1 e 1 @13 ]
+"654
+[v _TRISA TRISA `VEuc  1 e 1 @18 ]
+"716
+[v _TRISB TRISB `VEuc  1 e 1 @19 ]
+"778
+[v _TRISC TRISC `VEuc  1 e 1 @20 ]
+[s S307 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"795
+[u S316 . 1 `S307 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES316  1 e 1 @20 ]
+"861
+[v _LATA LATA `VEuc  1 e 1 @24 ]
+[s S77 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"1002
+[u S86 . 1 `S77 1 . 1 0 ]
+[v _LATCbits LATCbits `VES86  1 e 1 @26 ]
+"1402
+[v _RC1REG RC1REG `VEuc  1 e 1 @281 ]
+"1422
+[v _TX1REG TX1REG `VEuc  1 e 1 @282 ]
+"1442
+[v _SP1BRG SP1BRG `VEus  1 e 2 @283 ]
+[s S377 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"1506
+[u S386 . 1 `S377 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES386  1 e 1 @285 ]
+[s S253 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"1568
+[u S262 . 1 `S253 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES262  1 e 1 @286 ]
+[s S274 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"1630
+[u S283 . 1 `S274 1 . 1 0 ]
+[v _BAUD1CONbits BAUD1CONbits `VES283  1 e 1 @287 ]
+[s S160 . 1 `uc 1 ADIF 1 0 :1:0 
+`uc 1 SSP1IF 1 0 :1:1 
+`uc 1 BCL1IF 1 0 :1:2 
+`uc 1 TX1IF 1 0 :1:3 
+`uc 1 RC1IF 1 0 :1:4 
+`uc 1 TMR1IF 1 0 :1:5 
+`uc 1 TMR2IF 1 0 :1:6 
+`uc 1 CCP1IF 1 0 :1:7 
+]
+"5352
+[u S169 . 1 `S160 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES169  1 e 1 @1805 ]
+[s S139 . 1 `uc 1 ADIE 1 0 :1:0 
+`uc 1 SSP1IE 1 0 :1:1 
+`uc 1 BCL1IE 1 0 :1:2 
+`uc 1 TX1IE 1 0 :1:3 
+`uc 1 RC1IE 1 0 :1:4 
+`uc 1 TMR1IE 1 0 :1:5 
+`uc 1 TMR2IE 1 0 :1:6 
+`uc 1 CCP1IE 1 0 :1:7 
+]
+"5480
+[u S148 . 1 `S139 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES148  1 e 1 @1815 ]
+[s S40 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 SFOR 1 0 :1:1 
+`uc 1 ADOR 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 LFOR 1 0 :1:4 
+`uc 1 MFOR 1 0 :1:5 
+`uc 1 HFOR 1 0 :1:6 
+]
+"5976
+[u S48 . 1 `S40 1 . 1 0 ]
+[v _OSCSTATbits OSCSTATbits `VES48  1 e 1 @2192 ]
+[s S22 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 ADOEN 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 LFOEN 1 0 :1:4 
+`uc 1 MFOEN 1 0 :1:5 
+`uc 1 HFOEN 1 0 :1:6 
+]
+"6021
+[u S29 . 1 `S22 1 . 1 0 ]
+[v _OSCENbits OSCENbits `VES29  1 e 1 @2193 ]
+"6104
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2195 ]
+[s S350 . 1 `uc 1 PIN 1 0 :3:0 
+`uc 1 PORT 1 0 :2:3 
+]
+"6967
+[s S353 . 1 `uc 1 RX1DTPPS 1 0 :5:0 
+]
+[s S355 . 1 `uc 1 RX1DTPPS0 1 0 :1:0 
+`uc 1 RX1DTPPS1 1 0 :1:1 
+`uc 1 RX1DTPPS2 1 0 :1:2 
+`uc 1 RX1DTPPS3 1 0 :1:3 
+`uc 1 RX1DTPPS4 1 0 :1:4 
+]
+[u S361 . 1 `S350 1 . 1 0 `S353 1 . 1 0 `S355 1 . 1 0 ]
+[v _RX1PPSbits RX1PPSbits `VES361  1 e 1 @7883 ]
+[s S328 . 1 `uc 1 RC6PPS 1 0 :6:0 
+]
+"8615
+[s S330 . 1 `uc 1 RC6PPS0 1 0 :1:0 
+`uc 1 RC6PPS1 1 0 :1:1 
+`uc 1 RC6PPS2 1 0 :1:2 
+`uc 1 RC6PPS3 1 0 :1:3 
+`uc 1 RC6PPS4 1 0 :1:4 
+`uc 1 RC6PPS5 1 0 :1:5 
+]
+[u S337 . 1 `S328 1 . 1 0 `S330 1 . 1 0 ]
+[v _RC6PPSbits RC6PPSbits `VES337  1 e 1 @7974 ]
+"8713
+[v _ANSELA ANSELA `VEuc  1 e 1 @7992 ]
+"8775
+[v _WPUA WPUA `VEuc  1 e 1 @7993 ]
+"8837
+[v _ODCONA ODCONA `VEuc  1 e 1 @7994 ]
+"8899
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @7995 ]
+"8961
+[v _INLVLA INLVLA `VEuc  1 e 1 @7996 ]
+"9209
+[v _ANSELB ANSELB `VEuc  1 e 1 @8003 ]
+"9271
+[v _WPUB WPUB `VEuc  1 e 1 @8004 ]
+"9333
+[v _ODCONB ODCONB `VEuc  1 e 1 @8005 ]
+"9395
+[v _SLRCONB SLRCONB `VEuc  1 e 1 @8006 ]
+"9457
+[v _INLVLB INLVLB `VEuc  1 e 1 @8007 ]
+"9705
+[v _ANSELC ANSELC `VEuc  1 e 1 @8014 ]
+"9767
+[v _WPUC WPUC `VEuc  1 e 1 @8015 ]
+"9829
+[v _ODCONC ODCONC `VEuc  1 e 1 @8016 ]
+"9891
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @8017 ]
+"9953
+[v _INLVLC INLVLC `VEuc  1 e 1 @8018 ]
+"39 C:\EE\MPLABx\1005\source/main.c
+[v _ATR ATR `[12]uc  1 e 12 0 ]
+"43
+[v _cmdBuf cmdBuf `[5]uc  1 e 5 0 ]
+"44
+[v _ackBuf ackBuf `[2]uc  1 e 2 0 ]
+"45
+[v _dataBuf dataBuf `[256]uc  1 e 256 @9968 ]
+"49
+[v _addr addr `ul  1 e 4 0 ]
+"50
+[v _numBytes numBytes `uc  1 e 1 0 ]
+"54
+[v _numRetBytes numRetBytes `uc  1 e 1 0 ]
+"32 C:\EE\MPLABx\1005\source/USART.c
+[v _buf buf `*.39VEuc  1 e 2 0 ]
+"33
+[v _bufPtr bufPtr `VEuc  1 e 1 0 ]
+"34
+[v _portInUse portInUse `VEuc  1 e 1 0 ]
+"35
+[v _bufLength bufLength `VEuc  1 e 1 0 ]
+"62 C:\EE\MPLABx\1005\source/main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"64
+[v main@successful successful `uc  1 a 1 46 ]
+"147
+} 0
+"12 C:\EE\MPLABx\1005\source/flash.c
+[v _readFlash readFlash `(uc  1 e 1 0 ]
+{
+"15
+[v readFlash@length length `uc  1 a 1 29 ]
+[v readFlash@bufPtr bufPtr `uc  1 a 1 28 ]
+[v readFlash@done done `uc  1 a 1 27 ]
+"12
+[v readFlash@addr addr `ul  1 p 4 15 ]
+[v readFlash@numBytes numBytes `uc  1 p 1 19 ]
+[v readFlash@retBytes retBytes `*.39uc  1 p 2 20 ]
+[v readFlash@numRetBytes numRetBytes `*.4uc  1 p 1 22 ]
+"47
+} 0
+"81
+[v _clearAddressRegisters clearAddressRegisters `(uc  1 e 1 0 ]
+{
+"85
+} 0
+"49
+[v _setAddressRegisters setAddressRegisters `(uc  1 e 1 0 ]
+{
+"53
+[v setAddressRegisters@mask mask `ul  1 a 4 10 ]
+"52
+[v setAddressRegisters@i i `uc  1 a 1 14 ]
+"49
+[v setAddressRegisters@addr addr `ul  1 p 4 0 ]
+[v setAddressRegisters@OE OE `uc  1 p 1 4 ]
+[v setAddressRegisters@CE CE `uc  1 p 1 5 ]
+"79
+} 0
+"38 C:\EE\MPLABx\1005\source/USART.c
+[v _SerialPortSetup SerialPortSetup `(v  1 e 1 0 ]
+{
+"57
+} 0
+"59
+[v _SerialPortSendData SerialPortSendData `(v  1 e 1 0 ]
+{
+[v SerialPortSendData@dataToSend dataToSend `*.39uc  1 p 2 0 ]
+[v SerialPortSendData@length length `uc  1 p 1 2 ]
+"89
+} 0
+"91
+[v _SerialPortReceiveData SerialPortReceiveData `(v  1 e 1 0 ]
+{
+[v SerialPortReceiveData@dataReceived dataReceived `*.4uc  1 a 1 wreg ]
+[v SerialPortReceiveData@dataReceived dataReceived `*.4uc  1 a 1 wreg ]
+[v SerialPortReceiveData@length length `uc  1 p 1 0 ]
+"99
+[v SerialPortReceiveData@dataReceived dataReceived `*.4uc  1 a 1 2 ]
+"118
+} 0
+"150 C:\EE\MPLABx\1005\source/main.c
+[v _InterruptServiceRoutine InterruptServiceRoutine `II(v  1 e 1 0 ]
+{
+"162
+} 0
+"120 C:\EE\MPLABx\1005\source/USART.c
+[v _SerialPortTransmitInterruptService SerialPortTransmitInterruptService `(v  1 e 1 0 ]
+{
+"135
+} 0
+"137
+[v _SerialPortReceiveInterruptService SerialPortReceiveInterruptService `(v  1 e 1 0 ]
+{
+"143
+[v SerialPortReceiveInterruptService@tempData tempData `uc  1 a 1 4 ]
+"166
+} 0

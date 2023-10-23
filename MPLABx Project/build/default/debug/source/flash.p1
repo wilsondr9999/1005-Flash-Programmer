@@ -1,0 +1,820 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"15 source/flash.h
+[; ;source/flash.h: 15: unsigned char setAddressRegisters(unsigned long addr, unsigned char OE, unsigned char CE);
+[v _setAddressRegisters `(uc ~T0 @X0 0 ef3`ul`uc`uc ]
+"509 C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 509: extern volatile unsigned char PORTB __attribute__((address(0x00D)));
+[v _PORTB `Vuc ~T0 @X0 0 e@13 ]
+"861
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 861: extern volatile unsigned char LATA __attribute__((address(0x018)));
+[v _LATA `Vuc ~T0 @X0 0 e@24 ]
+"14 source/flash.h
+[; ;source/flash.h: 14: unsigned char clearAddressRegisters(void);
+[v _clearAddressRegisters `(uc ~T0 @X0 0 ef ]
+"991 C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 991:     struct {
+[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S53 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"990
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 990: typedef union {
+[u S52 `S53 1 ]
+[n S52 . . ]
+"1002
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1002: extern volatile LATCbits_t LATCbits __attribute__((address(0x01A)));
+[v _LATCbits `VS52 ~T0 @X0 0 e@26 ]
+"111 C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 111: __asm("INDF0 equ 00h");
+[; <" INDF0 equ 00h ;# ">
+"131
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 131: __asm("INDF1 equ 01h");
+[; <" INDF1 equ 01h ;# ">
+"151
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 151: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"171
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 171: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"234
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 234: __asm("FSR0L equ 04h");
+[; <" FSR0L equ 04h ;# ">
+"254
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 254: __asm("FSR0H equ 05h");
+[; <" FSR0H equ 05h ;# ">
+"278
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 278: __asm("FSR1L equ 06h");
+[; <" FSR1L equ 06h ;# ">
+"298
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 298: __asm("FSR1H equ 07h");
+[; <" FSR1H equ 07h ;# ">
+"318
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 318: __asm("BSR equ 08h");
+[; <" BSR equ 08h ;# ">
+"376
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 376: __asm("WREG equ 09h");
+[; <" WREG equ 09h ;# ">
+"396
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 396: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"416
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 416: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"449
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 449: __asm("PORTA equ 0Ch");
+[; <" PORTA equ 0Ch ;# ">
+"511
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 511: __asm("PORTB equ 0Dh");
+[; <" PORTB equ 0Dh ;# ">
+"573
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 573: __asm("PORTC equ 0Eh");
+[; <" PORTC equ 0Eh ;# ">
+"635
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 635: __asm("PORTE equ 010h");
+[; <" PORTE equ 010h ;# ">
+"656
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 656: __asm("TRISA equ 012h");
+[; <" TRISA equ 012h ;# ">
+"718
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 718: __asm("TRISB equ 013h");
+[; <" TRISB equ 013h ;# ">
+"780
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 780: __asm("TRISC equ 014h");
+[; <" TRISC equ 014h ;# ">
+"842
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 842: __asm("TRISE equ 016h");
+[; <" TRISE equ 016h ;# ">
+"863
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 863: __asm("LATA equ 018h");
+[; <" LATA equ 018h ;# ">
+"925
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 925: __asm("LATB equ 019h");
+[; <" LATB equ 019h ;# ">
+"987
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 987: __asm("LATC equ 01Ah");
+[; <" LATC equ 01Ah ;# ">
+"1049
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1049: __asm("CPCON equ 09Ah");
+[; <" CPCON equ 09Ah ;# ">
+"1082
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1082: __asm("ADRES equ 09Bh");
+[; <" ADRES equ 09Bh ;# ">
+"1089
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1089: __asm("ADRESL equ 09Bh");
+[; <" ADRESL equ 09Bh ;# ">
+"1109
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1109: __asm("ADRESH equ 09Ch");
+[; <" ADRESH equ 09Ch ;# ">
+"1129
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1129: __asm("ADCON0 equ 09Dh");
+[; <" ADCON0 equ 09Dh ;# ">
+"1190
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1190: __asm("ADCON1 equ 09Eh");
+[; <" ADCON1 equ 09Eh ;# ">
+"1244
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1244: __asm("ADACT equ 09Fh");
+[; <" ADACT equ 09Fh ;# ">
+"1272
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1272: __asm("RB4I2C equ 010Ch");
+[; <" RB4I2C equ 010Ch ;# ">
+"1305
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1305: __asm("RB6I2C equ 010Dh");
+[; <" RB6I2C equ 010Dh ;# ">
+"1338
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1338: __asm("RC3I2C equ 010Eh");
+[; <" RC3I2C equ 010Eh ;# ">
+"1371
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1371: __asm("RC4I2C equ 010Fh");
+[; <" RC4I2C equ 010Fh ;# ">
+"1404
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1404: __asm("RC1REG equ 0119h");
+[; <" RC1REG equ 0119h ;# ">
+"1424
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1424: __asm("TX1REG equ 011Ah");
+[; <" TX1REG equ 011Ah ;# ">
+"1444
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1444: __asm("SP1BRG equ 011Bh");
+[; <" SP1BRG equ 011Bh ;# ">
+"1451
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1451: __asm("SP1BRGL equ 011Bh");
+[; <" SP1BRGL equ 011Bh ;# ">
+"1471
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1471: __asm("SP1BRGH equ 011Ch");
+[; <" SP1BRGH equ 011Ch ;# ">
+"1491
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1491: __asm("RC1STA equ 011Dh");
+[; <" RC1STA equ 011Dh ;# ">
+"1553
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1553: __asm("TX1STA equ 011Eh");
+[; <" TX1STA equ 011Eh ;# ">
+"1615
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1615: __asm("BAUD1CON equ 011Fh");
+[; <" BAUD1CON equ 011Fh ;# ">
+"1667
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1667: __asm("SSP1BUF equ 018Ch");
+[; <" SSP1BUF equ 018Ch ;# ">
+"1687
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1687: __asm("SSP1ADD equ 018Dh");
+[; <" SSP1ADD equ 018Dh ;# ">
+"1807
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1807: __asm("SSP1MSK equ 018Eh");
+[; <" SSP1MSK equ 018Eh ;# ">
+"1877
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 1877: __asm("SSP1STAT equ 018Fh");
+[; <" SSP1STAT equ 018Fh ;# ">
+"2241
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 2241: __asm("SSP1CON1 equ 0190h");
+[; <" SSP1CON1 equ 0190h ;# ">
+"2361
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 2361: __asm("SSP1CON2 equ 0191h");
+[; <" SSP1CON2 equ 0191h ;# ">
+"2548
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 2548: __asm("SSP1CON3 equ 0192h");
+[; <" SSP1CON3 equ 0192h ;# ">
+"2610
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 2610: __asm("TMR1L equ 020Ch");
+[; <" TMR1L equ 020Ch ;# ">
+"2680
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 2680: __asm("TMR1H equ 020Dh");
+[; <" TMR1H equ 020Dh ;# ">
+"2750
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 2750: __asm("T1CON equ 020Eh");
+[; <" T1CON equ 020Eh ;# ">
+"2755
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 2755: __asm("TMR1CON equ 020Eh");
+[; <" TMR1CON equ 020Eh ;# ">
+"2940
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 2940: __asm("T1GCON equ 020Fh");
+[; <" T1GCON equ 020Fh ;# ">
+"2945
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 2945: __asm("TMR1GCON equ 020Fh");
+[; <" TMR1GCON equ 020Fh ;# ">
+"3154
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 3154: __asm("T1GATE equ 0210h");
+[; <" T1GATE equ 0210h ;# ">
+"3159
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 3159: __asm("TMR1GATE equ 0210h");
+[; <" TMR1GATE equ 0210h ;# ">
+"3320
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 3320: __asm("T1CLK equ 0211h");
+[; <" T1CLK equ 0211h ;# ">
+"3325
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 3325: __asm("TMR1CLK equ 0211h");
+[; <" TMR1CLK equ 0211h ;# ">
+"3462
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 3462: __asm("T2TMR equ 028Ch");
+[; <" T2TMR equ 028Ch ;# ">
+"3467
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 3467: __asm("TMR2 equ 028Ch");
+[; <" TMR2 equ 028Ch ;# ">
+"3516
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 3516: __asm("T2PR equ 028Dh");
+[; <" T2PR equ 028Dh ;# ">
+"3521
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 3521: __asm("PR2 equ 028Dh");
+[; <" PR2 equ 028Dh ;# ">
+"3570
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 3570: __asm("T2CON equ 028Eh");
+[; <" T2CON equ 028Eh ;# ">
+"3716
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 3716: __asm("T2HLT equ 028Fh");
+[; <" T2HLT equ 028Fh ;# ">
+"3844
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 3844: __asm("T2CLKCON equ 0290h");
+[; <" T2CLKCON equ 0290h ;# ">
+"3924
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 3924: __asm("T2RST equ 0291h");
+[; <" T2RST equ 0291h ;# ">
+"4004
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4004: __asm("CCPR1 equ 030Ch");
+[; <" CCPR1 equ 030Ch ;# ">
+"4011
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4011: __asm("CCPR1L equ 030Ch");
+[; <" CCPR1L equ 030Ch ;# ">
+"4031
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4031: __asm("CCPR1H equ 030Dh");
+[; <" CCPR1H equ 030Dh ;# ">
+"4051
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4051: __asm("CCP1CON equ 030Eh");
+[; <" CCP1CON equ 030Eh ;# ">
+"4178
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4178: __asm("CCP1CAP equ 030Fh");
+[; <" CCP1CAP equ 030Fh ;# ">
+"4234
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4234: __asm("CCPR2 equ 0310h");
+[; <" CCPR2 equ 0310h ;# ">
+"4241
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4241: __asm("CCPR2L equ 0310h");
+[; <" CCPR2L equ 0310h ;# ">
+"4261
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4261: __asm("CCPR2H equ 0311h");
+[; <" CCPR2H equ 0311h ;# ">
+"4281
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4281: __asm("CCP2CON equ 0312h");
+[; <" CCP2CON equ 0312h ;# ">
+"4408
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4408: __asm("CCP2CAP equ 0313h");
+[; <" CCP2CAP equ 0313h ;# ">
+"4464
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4464: __asm("PWM3DC equ 0314h");
+[; <" PWM3DC equ 0314h ;# ">
+"4471
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4471: __asm("PWM3DCL equ 0314h");
+[; <" PWM3DCL equ 0314h ;# ">
+"4492
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4492: __asm("PWM3DCH equ 0315h");
+[; <" PWM3DCH equ 0315h ;# ">
+"4512
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4512: __asm("PWM3CON equ 0316h");
+[; <" PWM3CON equ 0316h ;# ">
+"4568
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4568: __asm("PWM4DC equ 0318h");
+[; <" PWM4DC equ 0318h ;# ">
+"4575
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4575: __asm("PWM4DCL equ 0318h");
+[; <" PWM4DCL equ 0318h ;# ">
+"4596
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4596: __asm("PWM4DCH equ 0319h");
+[; <" PWM4DCH equ 0319h ;# ">
+"4616
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4616: __asm("PWM4CON equ 031Ah");
+[; <" PWM4CON equ 031Ah ;# ">
+"4672
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4672: __asm("TMR0L equ 059Ch");
+[; <" TMR0L equ 059Ch ;# ">
+"4677
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4677: __asm("TMR0 equ 059Ch");
+[; <" TMR0 equ 059Ch ;# ">
+"4810
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4810: __asm("TMR0H equ 059Dh");
+[; <" TMR0H equ 059Dh ;# ">
+"4815
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 4815: __asm("PR0 equ 059Dh");
+[; <" PR0 equ 059Dh ;# ">
+"5064
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5064: __asm("T0CON0 equ 059Eh");
+[; <" T0CON0 equ 059Eh ;# ">
+"5162
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5162: __asm("T0CON1 equ 059Fh");
+[; <" T0CON1 equ 059Fh ;# ">
+"5304
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5304: __asm("PIR0 equ 070Ch");
+[; <" PIR0 equ 070Ch ;# ">
+"5337
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5337: __asm("PIR1 equ 070Dh");
+[; <" PIR1 equ 070Dh ;# ">
+"5399
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5399: __asm("PIR2 equ 070Eh");
+[; <" PIR2 equ 070Eh ;# ">
+"5432
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5432: __asm("PIE0 equ 0716h");
+[; <" PIE0 equ 0716h ;# ">
+"5465
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5465: __asm("PIE1 equ 0717h");
+[; <" PIE1 equ 0717h ;# ">
+"5527
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5527: __asm("PIE2 equ 0718h");
+[; <" PIE2 equ 0718h ;# ">
+"5560
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5560: __asm("WDTCON equ 080Ch");
+[; <" WDTCON equ 080Ch ;# ">
+"5622
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5622: __asm("BORCON equ 0811h");
+[; <" BORCON equ 0811h ;# ">
+"5649
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5649: __asm("PCON0 equ 0813h");
+[; <" PCON0 equ 0813h ;# ">
+"5706
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5706: __asm("PCON1 equ 0814h");
+[; <" PCON1 equ 0814h ;# ">
+"5727
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5727: __asm("NVMADR equ 081Ah");
+[; <" NVMADR equ 081Ah ;# ">
+"5734
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5734: __asm("NVMADRL equ 081Ah");
+[; <" NVMADRL equ 081Ah ;# ">
+"5754
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5754: __asm("NVMADRH equ 081Bh");
+[; <" NVMADRH equ 081Bh ;# ">
+"5774
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5774: __asm("NVMDAT equ 081Ch");
+[; <" NVMDAT equ 081Ch ;# ">
+"5781
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5781: __asm("NVMDATL equ 081Ch");
+[; <" NVMDATL equ 081Ch ;# ">
+"5801
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5801: __asm("NVMDATH equ 081Dh");
+[; <" NVMDATH equ 081Dh ;# ">
+"5821
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5821: __asm("NVMCON1 equ 081Eh");
+[; <" NVMCON1 equ 081Eh ;# ">
+"5877
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5877: __asm("NVMCON2 equ 081Fh");
+[; <" NVMCON2 equ 081Fh ;# ">
+"5897
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5897: __asm("OSCCON equ 088Eh");
+[; <" OSCCON equ 088Eh ;# ">
+"5962
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 5962: __asm("OSCSTAT equ 0890h");
+[; <" OSCSTAT equ 0890h ;# ">
+"6008
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6008: __asm("OSCEN equ 0891h");
+[; <" OSCEN equ 0891h ;# ">
+"6048
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6048: __asm("OSCTUNE equ 0892h");
+[; <" OSCTUNE equ 0892h ;# ">
+"6106
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6106: __asm("OSCFRQ equ 0893h");
+[; <" OSCFRQ equ 0893h ;# ">
+"6146
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6146: __asm("FVRCON equ 090Ch");
+[; <" FVRCON equ 090Ch ;# ">
+"6205
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6205: __asm("PPSLOCK equ 01E8Fh");
+[; <" PPSLOCK equ 01E8Fh ;# ">
+"6225
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6225: __asm("INTPPS equ 01E90h");
+[; <" INTPPS equ 01E90h ;# ">
+"6285
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6285: __asm("T0CKIPPS equ 01E91h");
+[; <" T0CKIPPS equ 01E91h ;# ">
+"6345
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6345: __asm("T1CKIPPS equ 01E92h");
+[; <" T1CKIPPS equ 01E92h ;# ">
+"6411
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6411: __asm("T1GPPS equ 01E93h");
+[; <" T1GPPS equ 01E93h ;# ">
+"6477
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6477: __asm("T2INPPS equ 01E9Ch");
+[; <" T2INPPS equ 01E9Ch ;# ">
+"6543
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6543: __asm("CCP1PPS equ 01EA1h");
+[; <" CCP1PPS equ 01EA1h ;# ">
+"6609
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6609: __asm("CCP2PPS equ 01EA2h");
+[; <" CCP2PPS equ 01EA2h ;# ">
+"6675
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6675: __asm("ADACTPPS equ 01EC3h");
+[; <" ADACTPPS equ 01EC3h ;# ">
+"6741
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6741: __asm("SSP1CLKPPS equ 01EC5h");
+[; <" SSP1CLKPPS equ 01EC5h ;# ">
+"6807
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6807: __asm("SSP1DATPPS equ 01EC6h");
+[; <" SSP1DATPPS equ 01EC6h ;# ">
+"6873
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6873: __asm("SSP1SSPPS equ 01EC7h");
+[; <" SSP1SSPPS equ 01EC7h ;# ">
+"6939
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6939: __asm("RX1PPS equ 01ECBh");
+[; <" RX1PPS equ 01ECBh ;# ">
+"6944
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6944: __asm("RX1DTPPS equ 01ECBh");
+[; <" RX1DTPPS equ 01ECBh ;# ">
+"6948
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 6948: __asm("RXPPS equ 01ECBh");
+[; <" RXPPS equ 01ECBh ;# ">
+"7131
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 7131: __asm("CK1PPS equ 01ECCh");
+[; <" CK1PPS equ 01ECCh ;# ">
+"7136
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 7136: __asm("TX1CKPPS equ 01ECCh");
+[; <" TX1CKPPS equ 01ECCh ;# ">
+"7140
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 7140: __asm("CKPPS equ 01ECCh");
+[; <" CKPPS equ 01ECCh ;# ">
+"7323
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 7323: __asm("RA0PPS equ 01F10h");
+[; <" RA0PPS equ 01F10h ;# ">
+"7381
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 7381: __asm("RA1PPS equ 01F11h");
+[; <" RA1PPS equ 01F11h ;# ">
+"7439
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 7439: __asm("RA2PPS equ 01F12h");
+[; <" RA2PPS equ 01F12h ;# ">
+"7497
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 7497: __asm("RA3PPS equ 01F13h");
+[; <" RA3PPS equ 01F13h ;# ">
+"7555
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 7555: __asm("RA4PPS equ 01F14h");
+[; <" RA4PPS equ 01F14h ;# ">
+"7613
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 7613: __asm("RA5PPS equ 01F15h");
+[; <" RA5PPS equ 01F15h ;# ">
+"7671
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 7671: __asm("RA6PPS equ 01F16h");
+[; <" RA6PPS equ 01F16h ;# ">
+"7729
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 7729: __asm("RA7PPS equ 01F17h");
+[; <" RA7PPS equ 01F17h ;# ">
+"7787
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 7787: __asm("RB0PPS equ 01F18h");
+[; <" RB0PPS equ 01F18h ;# ">
+"7845
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 7845: __asm("RB1PPS equ 01F19h");
+[; <" RB1PPS equ 01F19h ;# ">
+"7903
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 7903: __asm("RB2PPS equ 01F1Ah");
+[; <" RB2PPS equ 01F1Ah ;# ">
+"7961
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 7961: __asm("RB3PPS equ 01F1Bh");
+[; <" RB3PPS equ 01F1Bh ;# ">
+"8019
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8019: __asm("RB4PPS equ 01F1Ch");
+[; <" RB4PPS equ 01F1Ch ;# ">
+"8077
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8077: __asm("RB5PPS equ 01F1Dh");
+[; <" RB5PPS equ 01F1Dh ;# ">
+"8135
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8135: __asm("RB6PPS equ 01F1Eh");
+[; <" RB6PPS equ 01F1Eh ;# ">
+"8193
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8193: __asm("RB7PPS equ 01F1Fh");
+[; <" RB7PPS equ 01F1Fh ;# ">
+"8251
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8251: __asm("RC0PPS equ 01F20h");
+[; <" RC0PPS equ 01F20h ;# ">
+"8309
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8309: __asm("RC1PPS equ 01F21h");
+[; <" RC1PPS equ 01F21h ;# ">
+"8367
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8367: __asm("RC2PPS equ 01F22h");
+[; <" RC2PPS equ 01F22h ;# ">
+"8425
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8425: __asm("RC3PPS equ 01F23h");
+[; <" RC3PPS equ 01F23h ;# ">
+"8483
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8483: __asm("RC4PPS equ 01F24h");
+[; <" RC4PPS equ 01F24h ;# ">
+"8541
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8541: __asm("RC5PPS equ 01F25h");
+[; <" RC5PPS equ 01F25h ;# ">
+"8599
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8599: __asm("RC6PPS equ 01F26h");
+[; <" RC6PPS equ 01F26h ;# ">
+"8657
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8657: __asm("RC7PPS equ 01F27h");
+[; <" RC7PPS equ 01F27h ;# ">
+"8715
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8715: __asm("ANSELA equ 01F38h");
+[; <" ANSELA equ 01F38h ;# ">
+"8777
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8777: __asm("WPUA equ 01F39h");
+[; <" WPUA equ 01F39h ;# ">
+"8839
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8839: __asm("ODCONA equ 01F3Ah");
+[; <" ODCONA equ 01F3Ah ;# ">
+"8901
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8901: __asm("SLRCONA equ 01F3Bh");
+[; <" SLRCONA equ 01F3Bh ;# ">
+"8963
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 8963: __asm("INLVLA equ 01F3Ch");
+[; <" INLVLA equ 01F3Ch ;# ">
+"9025
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9025: __asm("IOCAP equ 01F3Dh");
+[; <" IOCAP equ 01F3Dh ;# ">
+"9087
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9087: __asm("IOCAN equ 01F3Eh");
+[; <" IOCAN equ 01F3Eh ;# ">
+"9149
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9149: __asm("IOCAF equ 01F3Fh");
+[; <" IOCAF equ 01F3Fh ;# ">
+"9211
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9211: __asm("ANSELB equ 01F43h");
+[; <" ANSELB equ 01F43h ;# ">
+"9273
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9273: __asm("WPUB equ 01F44h");
+[; <" WPUB equ 01F44h ;# ">
+"9335
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9335: __asm("ODCONB equ 01F45h");
+[; <" ODCONB equ 01F45h ;# ">
+"9397
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9397: __asm("SLRCONB equ 01F46h");
+[; <" SLRCONB equ 01F46h ;# ">
+"9459
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9459: __asm("INLVLB equ 01F47h");
+[; <" INLVLB equ 01F47h ;# ">
+"9521
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9521: __asm("IOCBP equ 01F48h");
+[; <" IOCBP equ 01F48h ;# ">
+"9583
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9583: __asm("IOCBN equ 01F49h");
+[; <" IOCBN equ 01F49h ;# ">
+"9645
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9645: __asm("IOCBF equ 01F4Ah");
+[; <" IOCBF equ 01F4Ah ;# ">
+"9707
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9707: __asm("ANSELC equ 01F4Eh");
+[; <" ANSELC equ 01F4Eh ;# ">
+"9769
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9769: __asm("WPUC equ 01F4Fh");
+[; <" WPUC equ 01F4Fh ;# ">
+"9831
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9831: __asm("ODCONC equ 01F50h");
+[; <" ODCONC equ 01F50h ;# ">
+"9893
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9893: __asm("SLRCONC equ 01F51h");
+[; <" SLRCONC equ 01F51h ;# ">
+"9955
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 9955: __asm("INLVLC equ 01F52h");
+[; <" INLVLC equ 01F52h ;# ">
+"10017
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10017: __asm("IOCCP equ 01F53h");
+[; <" IOCCP equ 01F53h ;# ">
+"10079
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10079: __asm("IOCCN equ 01F54h");
+[; <" IOCCN equ 01F54h ;# ">
+"10141
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10141: __asm("IOCCF equ 01F55h");
+[; <" IOCCF equ 01F55h ;# ">
+"10203
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10203: __asm("WPUE equ 01F65h");
+[; <" WPUE equ 01F65h ;# ">
+"10224
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10224: __asm("INLVLE equ 01F68h");
+[; <" INLVLE equ 01F68h ;# ">
+"10245
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10245: __asm("IOCEP equ 01F69h");
+[; <" IOCEP equ 01F69h ;# ">
+"10266
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10266: __asm("IOCEN equ 01F6Ah");
+[; <" IOCEN equ 01F6Ah ;# ">
+"10287
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10287: __asm("IOCEF equ 01F6Bh");
+[; <" IOCEF equ 01F6Bh ;# ">
+"10308
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10308: __asm("STATUS_SHAD equ 01FE4h");
+[; <" STATUS_SHAD equ 01FE4h ;# ">
+"10328
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10328: __asm("WREG_SHAD equ 01FE5h");
+[; <" WREG_SHAD equ 01FE5h ;# ">
+"10348
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10348: __asm("BSR_SHAD equ 01FE6h");
+[; <" BSR_SHAD equ 01FE6h ;# ">
+"10368
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10368: __asm("PCLATH_SHAD equ 01FE7h");
+[; <" PCLATH_SHAD equ 01FE7h ;# ">
+"10388
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10388: __asm("FSR0_SHAD equ 01FE8h");
+[; <" FSR0_SHAD equ 01FE8h ;# ">
+"10395
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10395: __asm("FSR0L_SHAD equ 01FE8h");
+[; <" FSR0L_SHAD equ 01FE8h ;# ">
+"10415
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10415: __asm("FSR0H_SHAD equ 01FE9h");
+[; <" FSR0H_SHAD equ 01FE9h ;# ">
+"10435
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10435: __asm("FSR1L_SHAD equ 01FEAh");
+[; <" FSR1L_SHAD equ 01FEAh ;# ">
+"10455
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10455: __asm("FSR1H_SHAD equ 01FEBh");
+[; <" FSR1H_SHAD equ 01FEBh ;# ">
+"10475
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10475: __asm("STKPTR equ 01FEDh");
+[; <" STKPTR equ 01FEDh ;# ">
+"10519
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10519: __asm("TOSL equ 01FEEh");
+[; <" TOSL equ 01FEEh ;# ">
+"10589
+[; ;C:/Users/wilsondr.THEDANZONE/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.8.149/xc8\pic\include\proc\pic16f15256.h: 10589: __asm("TOSH equ 01FEFh");
+[; <" TOSH equ 01FEFh ;# ">
+"12 source/flash.c
+[; ;source/flash.c: 12: unsigned char readFlash(unsigned long addr, unsigned char numBytes, unsigned char retBytes[], unsigned char *numRetBytes) {
+[v _readFlash `(uc ~T0 @X0 1 ef4`ul`uc`*uc`*uc ]
+{
+[e :U _readFlash ]
+[v _addr `ul ~T0 @X0 1 r1 ]
+[v _numBytes `uc ~T0 @X0 1 r2 ]
+[v _retBytes `*uc ~T0 @X0 1 r3 ]
+[v _numRetBytes `*uc ~T0 @X0 1 r4 ]
+[f ]
+"15
+[; ;source/flash.c: 15:     unsigned char done,length,bufPtr;
+[v _done `uc ~T0 @X0 1 a ]
+[v _length `uc ~T0 @X0 1 a ]
+[v _bufPtr `uc ~T0 @X0 1 a ]
+"18
+[; ;source/flash.c: 18:     bufPtr=0;
+[e = _bufPtr -> -> 0 `i `uc ]
+"19
+[; ;source/flash.c: 19:     done=0;
+[e = _done -> -> 0 `i `uc ]
+"20
+[; ;source/flash.c: 20:     length=numBytes;
+[e = _length _numBytes ]
+"23
+[; ;source/flash.c: 23:     if (!setAddressRegisters(addr,0x0,0x0)) {
+[e $ ! ! != -> ( _setAddressRegisters (3 , , _addr -> -> 0 `i `uc -> -> 0 `i `uc `i -> 0 `i 547  ]
+{
+"24
+[; ;source/flash.c: 24:         *numRetBytes=0;
+[e = *U _numRetBytes -> -> 0 `i `uc ]
+"25
+[; ;source/flash.c: 25:         return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 546  ]
+"26
+[; ;source/flash.c: 26:     }
+}
+[e :U 547 ]
+"29
+[; ;source/flash.c: 29:     while (!done) {
+[e $U 548  ]
+[e :U 549 ]
+{
+"30
+[; ;source/flash.c: 30:         length--;
+[e -- _length -> -> 1 `i `uc ]
+"33
+[; ;source/flash.c: 33:         retBytes[bufPtr++]=PORTB;
+[e = *U + _retBytes * -> ++ _bufPtr -> -> 1 `i `uc `ux -> -> # *U _retBytes `ui `ux _PORTB ]
+"34
+[; ;source/flash.c: 34:         if (++LATA==0x00 && length>0) {
+[e $ ! && == -> =+ _LATA -> -> 1 `i `Vuc `i -> 0 `i > -> _length `i -> 0 `i 551  ]
+{
+"35
+[; ;source/flash.c: 35:             addr+=0x100;
+[e =+ _addr -> -> -> 256 `i `l `ul ]
+"36
+[; ;source/flash.c: 36:             if (!setAddressRegisters(addr,0x0,0x0)) {
+[e $ ! ! != -> ( _setAddressRegisters (3 , , _addr -> -> 0 `i `uc -> -> 0 `i `uc `i -> 0 `i 552  ]
+{
+"37
+[; ;source/flash.c: 37:                 *numRetBytes=0;
+[e = *U _numRetBytes -> -> 0 `i `uc ]
+"38
+[; ;source/flash.c: 38:                 return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 546  ]
+"39
+[; ;source/flash.c: 39:             }
+}
+[e :U 552 ]
+"40
+[; ;source/flash.c: 40:         }
+}
+[e :U 551 ]
+"41
+[; ;source/flash.c: 41:         if (length==0) done=1;
+[e $ ! == -> _length `i -> 0 `i 553  ]
+[e = _done -> -> 1 `i `uc ]
+[e :U 553 ]
+"42
+[; ;source/flash.c: 42:     }
+}
+[e :U 548 ]
+"29
+[; ;source/flash.c: 29:     while (!done) {
+[e $ ! != -> _done `i -> 0 `i 549  ]
+[e :U 550 ]
+"44
+[; ;source/flash.c: 44:     clearAddressRegisters();
+[e ( _clearAddressRegisters ..  ]
+"45
+[; ;source/flash.c: 45:     *numRetBytes=numBytes;
+[e = *U _numRetBytes _numBytes ]
+"46
+[; ;source/flash.c: 46:     return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 546  ]
+"47
+[; ;source/flash.c: 47: }
+[e :UE 546 ]
+}
+"49
+[; ;source/flash.c: 49: unsigned char setAddressRegisters(unsigned long addr, unsigned char OE, unsigned char CE) {
+[v _setAddressRegisters `(uc ~T0 @X0 1 ef3`ul`uc`uc ]
+{
+[e :U _setAddressRegisters ]
+[v _addr `ul ~T0 @X0 1 r1 ]
+[v _OE `uc ~T0 @X0 1 r2 ]
+[v _CE `uc ~T0 @X0 1 r3 ]
+[f ]
+"52
+[; ;source/flash.c: 52:     unsigned char i,done;
+[v _i `uc ~T0 @X0 1 a ]
+[v _done `uc ~T0 @X0 1 a ]
+"53
+[; ;source/flash.c: 53:     unsigned long mask;
+[v _mask `ul ~T0 @X0 1 a ]
+"56
+[; ;source/flash.c: 56:     done=0;
+[e = _done -> -> 0 `i `uc ]
+"58
+[; ;source/flash.c: 58:     addr&=0x07ffff;
+[e =& _addr -> -> 524287 `l `ul ]
+"59
+[; ;source/flash.c: 59:     if (CE) addr|=0x800000; else addr&=0x7fffff;
+[e $ ! != -> _CE `i -> 0 `i 555  ]
+[e =| _addr -> -> 8388608 `l `ul ]
+[e $U 556  ]
+[e :U 555 ]
+[e =& _addr -> -> 8388607 `l `ul ]
+[e :U 556 ]
+"60
+[; ;source/flash.c: 60:     if (OE) addr|=0x400000; else addr&=0xbfffff;
+[e $ ! != -> _OE `i -> 0 `i 557  ]
+[e =| _addr -> -> 4194304 `l `ul ]
+[e $U 558  ]
+[e :U 557 ]
+[e =& _addr -> -> 12582911 `l `ul ]
+[e :U 558 ]
+"63
+[; ;source/flash.c: 63:     mask=0x800000;
+[e = _mask -> -> 8388608 `l `ul ]
+"64
+[; ;source/flash.c: 64:     for (i=16; i>0; i--) {
+{
+[e = _i -> -> 16 `i `uc ]
+[e $ > -> _i `i -> 0 `i 559  ]
+[e $U 560  ]
+[e :U 559 ]
+{
+"66
+[; ;source/flash.c: 66:         LATCbits.LATC0=((addr & mask) ? 1 : 0);
+[e = . . _LATCbits 0 0 -> ? != & _addr _mask -> -> -> 0 `i `l `ul : -> 1 `i -> 0 `i `uc ]
+"67
+[; ;source/flash.c: 67:         LATCbits.LATC1=1;
+[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+"68
+[; ;source/flash.c: 68:         LATCbits.LATC1=0;
+[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
+"69
+[; ;source/flash.c: 69:         mask>>=1;
+[e =>> _mask -> -> 1 `i `ul ]
+"70
+[; ;source/flash.c: 70:     }
+}
+[e -- _i -> -> 1 `i `uc ]
+[e $ > -> _i `i -> 0 `i 559  ]
+[e :U 560 ]
+}
+"72
+[; ;source/flash.c: 72:     LATCbits.LATC2=1;
+[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
+"73
+[; ;source/flash.c: 73:     LATCbits.LATC2=0;
+[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
+"76
+[; ;source/flash.c: 76:     LATA=(addr&0xff);
+[e = _LATA -> & _addr -> -> -> 255 `i `l `ul `uc ]
+"78
+[; ;source/flash.c: 78:     return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 554  ]
+"79
+[; ;source/flash.c: 79: }
+[e :UE 554 ]
+}
+"81
+[; ;source/flash.c: 81: unsigned char clearAddressRegisters() {
+[v _clearAddressRegisters `(uc ~T0 @X0 1 ef ]
+{
+[e :U _clearAddressRegisters ]
+[f ]
+"84
+[; ;source/flash.c: 84:     return setAddressRegisters(0x000000,0x1,0x1);
+[e ) ( _setAddressRegisters (3 , , -> -> -> 0 `i `l `ul -> -> 1 `i `uc -> -> 1 `i `uc ]
+[e $UE 562  ]
+"85
+[; ;source/flash.c: 85: }
+[e :UE 562 ]
+}
