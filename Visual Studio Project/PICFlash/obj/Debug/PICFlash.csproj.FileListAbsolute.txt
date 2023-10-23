@@ -1,0 +1,8 @@
+C:\EE\Projects\1005 Flash Programmer\Visual Studio Project\PICFlash\bin\Debug\PICFlash.exe.config
+C:\EE\Projects\1005 Flash Programmer\Visual Studio Project\PICFlash\bin\Debug\PICFlash.exe
+C:\EE\Projects\1005 Flash Programmer\Visual Studio Project\PICFlash\bin\Debug\PICFlash.pdb
+C:\EE\Projects\1005 Flash Programmer\Visual Studio Project\PICFlash\obj\Debug\PICFlash.csproj.SuggestedBindingRedirects.cache
+C:\EE\Projects\1005 Flash Programmer\Visual Studio Project\PICFlash\obj\Debug\PICFlash.csproj.CoreCompileInputs.cache
+C:\EE\Projects\1005 Flash Programmer\Visual Studio Project\PICFlash\obj\Debug\PICFlash.exe
+C:\EE\Projects\1005 Flash Programmer\Visual Studio Project\PICFlash\obj\Debug\PICFlash.pdb
+C:\EE\Projects\1005 Flash Programmer\Visual Studio Project\PICFlash\obj\Debug\PICFlash.csproj.AssemblyReference.cache
