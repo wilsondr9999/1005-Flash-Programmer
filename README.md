@@ -5,3 +5,6 @@
 <p>The firmware on the PIC16 implements a command protocol that runs over a serial interface.  The board contains a simple RS232 serial level shifter that allows the PC to communicate with the microcontroller.</p>
 <p>On the PC, a command line program is provided to read and write to the flash memory.  The command line program is written in Visual C# with Visual Studio.</p>
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTk1NTgyNTU3M119
+-->
