@@ -1,8 +1,3 @@
----
-
-
----
-
 <h1 id="flash-programmer">Flash Programmer</h1>
 <p>This is a simple PCB, firmware, and software that can write binary image files to the Microchip SST39 series of flash ROMs.  These flash ROMs are one of the very few flash ROMs on the market that are still active production and in DIP packages, making them a popular replacement for the difficult-to-find and out-of-production AT28 series.</p>
 <p>This programmer handles the SST39SF010, SST39SF020, and SST39SF040 parts (128KB, 256KB, and 512KB respectively).</p>
