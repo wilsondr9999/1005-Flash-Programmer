@@ -1,0 +1,1300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>C:\EE\Projects\1005 Flash Programmer\KiCAD Project\1005 Flash Programmer\1005 Flash Programmer.sch</source>
+    <date>12/26/2021 11:18:50 AM</date>
+    <tool>Eeschema (5.1.12)-1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>1005 Flash Programmer</title>
+        <company>Dan Wilson</company>
+        <rev>1</rev>
+        <date>2021-12-12</date>
+        <source>1005 Flash Programmer.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value="Copyright © 2021 Dan Wilson"/>
+        <comment number="4" value="SST39SF0x0A Flash Programmer"/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/UART Level Converter/" tstamps="/61B67328/">
+      <title_block>
+        <title>1005 Flash Programmer</title>
+        <company>Dan Wilson</company>
+        <rev>1</rev>
+        <date>2021-12-12</date>
+        <source>1004 UART Level Converter.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value="Copyright © 2021 Dan Wilson"/>
+        <comment number="4" value="SST39SF0x0A Flash Programmer"/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/5V Power Supply/" tstamps="/61B6B9EE/">
+      <title_block>
+        <title>1005 Flash Programmer</title>
+        <company>Dan Wilson</company>
+        <rev>1</rev>
+        <date>2021-12-12</date>
+        <source>5V Power Supply.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value="Copyright © 2021 Dan Wilson"/>
+        <comment number="4" value="SST39SF0x0A Flash Programmer"/>
+      </title_block>
+    </sheet>
+    <sheet number="4" name="/Micro Controller/" tstamps="/61B83974/">
+      <title_block>
+        <title>1005 Flash Programmer</title>
+        <company>Dan Wilson</company>
+        <rev>1</rev>
+        <date>2021-12-12</date>
+        <source>Micro Controller.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value="Copyright © 2021 Dan Wilson"/>
+        <comment number="4" value="SST39SF0x0A Flash Programmer"/>
+      </title_block>
+    </sheet>
+    <sheet number="5" name="/Shift Registers/" tstamps="/61BD71FF/">
+      <title_block>
+        <title>1005 Flash Programmer</title>
+        <company>Dan Wilson</company>
+        <rev>1</rev>
+        <date>2021-12-12</date>
+        <source>Shift Registers.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value="Copyright © 2021 Dan Wilson"/>
+        <comment number="4" value="SST39SF0x0A Flash Programmer"/>
+      </title_block>
+    </sheet>
+    <sheet number="6" name="/Flash Memory/" tstamps="/61C0AA4A/">
+      <title_block>
+        <title>1005 Flash Programmer</title>
+        <company>Dan Wilson</company>
+        <rev>1</rev>
+        <date>2021-12-12</date>
+        <source>Flash Memory.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value="Copyright © 2021 Dan Wilson"/>
+        <comment number="4" value="SST39SF0x0A Flash Programmer"/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="H101">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61C5F7D2</tstamp>
+    </comp>
+    <comp ref="H102">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61C60227</tstamp>
+    </comp>
+    <comp ref="H103">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61C60496</tstamp>
+    </comp>
+    <comp ref="H104">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61C607D6</tstamp>
+    </comp>
+    <comp ref="J201">
+      <value>A-2004-2-4-LP-N-R</value>
+      <footprint>digikey-footprints:Ethernet_Jack_54602-908LF</footprint>
+      <fields>
+        <field name="Category">Connectors, Interconnects</field>
+        <field name="DK_Detail_Page">/product-detail/en/amphenol-icc-fci/54602-908LF/609-1046-ND/1001360</field>
+        <field name="Description">CONN MOD JACK 8P8C R/A UNSHLD</field>
+        <field name="Digi-Key_PN">AE10384-ND</field>
+        <field name="Family">Modular Connectors - Jacks</field>
+        <field name="MPN">A-2004-2-4-LP-N-R</field>
+        <field name="Manufacturer">Amphenol ICC (FCI)</field>
+        <field name="Status">Active</field>
+      </fields>
+      <libsource lib="dk_Modular-Connectors-Jacks" part="54602-908LF" description="CONN MOD JACK 8P8C R/A UNSHLD"/>
+      <sheetpath names="/UART Level Converter/" tstamps="/61B67328/"/>
+      <tstamp>61A3A45D</tstamp>
+    </comp>
+    <comp ref="Q201">
+      <value>BC558</value>
+      <footprint>Package_TO_SOT_THT:TO-92_Inline</footprint>
+      <datasheet>https://www.onsemi.com/pub/Collateral/BC556BTA-D.pdf</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://www.nteinc.com/specs/original/BC558.pdf</field>
+        <field name="Description">TRANS PNP 30V 100MA TO92-3</field>
+        <field name="Digi-Key_PN">2368-BC558-ND</field>
+        <field name="Family">Transistors - Bipolar (BJT) - Songle</field>
+        <field name="MPN">BC558</field>
+        <field name="Manufacturer">NTE Electronics, Inc</field>
+      </fields>
+      <libsource lib="Transistor_BJT" part="BC558" description="0.1A Ic, 30V Vce, PNP Small Signal Transistor, TO-92"/>
+      <sheetpath names="/UART Level Converter/" tstamps="/61B67328/"/>
+      <tstamp>61A3CB45</tstamp>
+    </comp>
+    <comp ref="Q202">
+      <value>BC548</value>
+      <footprint>Package_TO_SOT_THT:TO-92_Inline</footprint>
+      <datasheet>https://www.onsemi.com/pub/Collateral/BC550-D.pdf</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://rocelec.widen.net/view/pdf/q1kc0zm1fe/FAIRS24942-1.pdf?t.download=true&amp;u=5oefqw</field>
+        <field name="Description">TRANS NPN 30V 100MA TO92-3</field>
+        <field name="Digi-Key_PN">2156-BC548-FS-ND</field>
+        <field name="Family">Transistors - Bipolar (BJT) - Songle</field>
+        <field name="MPN">BC548</field>
+        <field name="Manufacturer">Fairchild Semiconductor</field>
+      </fields>
+      <libsource lib="Transistor_BJT" part="BC548" description="0.1A Ic, 30V Vce, Small Signal NPN Transistor, TO-92"/>
+      <sheetpath names="/UART Level Converter/" tstamps="/61B67328/"/>
+      <tstamp>61A3DB1B</tstamp>
+    </comp>
+    <comp ref="D201">
+      <value>1N4148</value>
+      <footprint>Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal</footprint>
+      <datasheet>https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://rocelec.widen.net/view/pdf/bhc41r7lwc/ONSM-S-A0003539415-1.pdf?t.download=true&amp;u=5oefqw</field>
+        <field name="Description">DIODE GEN PURP 100V 200MA DO35</field>
+        <field name="Digi-Key_PN">1N4148FS-ND</field>
+        <field name="Family">Diodes - Rectifiers - Single</field>
+        <field name="MPN">1N4148</field>
+        <field name="Manufacturer">onsemi</field>
+      </fields>
+      <libsource lib="Diode" part="1N4148" description="100V 0.15A standard switching diode, DO-35"/>
+      <sheetpath names="/UART Level Converter/" tstamps="/61B67328/"/>
+      <tstamp>61A3F0A8</tstamp>
+    </comp>
+    <comp ref="C201">
+      <value>0.1uF</value>
+      <footprint>Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Description">CAP CER 0.1UF 50V X7R RADIAL</field>
+        <field name="Digi-Key_PN">445-173588-1-ND</field>
+        <field name="Family">Ceramic Capacitors</field>
+        <field name="MPN">FG28X7R1H104KNT06</field>
+        <field name="Manufacturer">TDK Corporation</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/UART Level Converter/" tstamps="/61B67328/"/>
+      <tstamp>61A400A7</tstamp>
+    </comp>
+    <comp ref="R203">
+      <value>4.7K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://www.yageo.com/upload/media/product/productsearch/datasheet/lr/YAGEO%20MFR_datasheet_2021v1.pdf</field>
+        <field name="Description">RES 4.7K OHM 1% 1/4W AXIAL</field>
+        <field name="Digi-Key_PN">MFR-25FBF52-4K7-ND</field>
+        <field name="Family">Through Hole Resistors</field>
+        <field name="MPN">MFR-25FBF52-4K7</field>
+        <field name="Manufacturer">YAGEO</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <sheetpath names="/UART Level Converter/" tstamps="/61B67328/"/>
+      <tstamp>61A40695</tstamp>
+    </comp>
+    <comp ref="R205">
+      <value>4.7K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://www.yageo.com/upload/media/product/productsearch/datasheet/lr/YAGEO%20MFR_datasheet_2021v1.pdf</field>
+        <field name="Description">RES 4.7K OHM 1% 1/4W AXIAL</field>
+        <field name="Digi-Key_PN">MFR-25FBF52-4K7-ND</field>
+        <field name="Family">Through Hole Resistors</field>
+        <field name="MPN">MFR-25FBF52-4K7</field>
+        <field name="Manufacturer">YAGEO</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <sheetpath names="/UART Level Converter/" tstamps="/61B67328/"/>
+      <tstamp>61A41340</tstamp>
+    </comp>
+    <comp ref="R206">
+      <value>4.7K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://www.yageo.com/upload/media/product/productsearch/datasheet/lr/YAGEO%20MFR_datasheet_2021v1.pdf</field>
+        <field name="Description">RES 4.7K OHM 1% 1/4W AXIAL</field>
+        <field name="Digi-Key_PN">MFR-25FBF52-4K7-ND</field>
+        <field name="Family">Through Hole Resistors</field>
+        <field name="MPN">MFR-25FBF52-4K7</field>
+        <field name="Manufacturer">YAGEO</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <sheetpath names="/UART Level Converter/" tstamps="/61B67328/"/>
+      <tstamp>61A41AB5</tstamp>
+    </comp>
+    <comp ref="R201">
+      <value>10K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://www.yageo.com/upload/media/product/productsearch/datasheet/lr/YAGEO%20MFR_datasheet_2021v1.pdf</field>
+        <field name="Description">RES 10K OHM 1% 1/4W AXIAL</field>
+        <field name="Digi-Key_PN">10.0KXBK-ND</field>
+        <field name="Family">Through Hole Resistors</field>
+        <field name="MPN">MFR-25FBF52-10K</field>
+        <field name="Manufacturer">YAGEO</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <sheetpath names="/UART Level Converter/" tstamps="/61B67328/"/>
+      <tstamp>61A41DDF</tstamp>
+    </comp>
+    <comp ref="R204">
+      <value>10K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://www.yageo.com/upload/media/product/productsearch/datasheet/lr/YAGEO%20MFR_datasheet_2021v1.pdf</field>
+        <field name="Description">RES 10K OHM 1% 1/4W AXIAL</field>
+        <field name="Digi-Key_PN">10.0KXBK-ND</field>
+        <field name="Family">Through Hole Resistors</field>
+        <field name="MPN">MFR-25FBF52-10K</field>
+        <field name="Manufacturer">YAGEO</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <sheetpath names="/UART Level Converter/" tstamps="/61B67328/"/>
+      <tstamp>61A42135</tstamp>
+    </comp>
+    <comp ref="R202">
+      <value>10K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://www.yageo.com/upload/media/product/productsearch/datasheet/lr/YAGEO%20MFR_datasheet_2021v1.pdf</field>
+        <field name="Description">RES 10K OHM 1% 1/4W AXIAL</field>
+        <field name="Digi-Key_PN">10.0KXBK-ND</field>
+        <field name="Family">Through Hole Resistors</field>
+        <field name="MPN">MFR-25FBF52-10K</field>
+        <field name="Manufacturer">YAGEO</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <sheetpath names="/UART Level Converter/" tstamps="/61B67328/"/>
+      <tstamp>61A42A05</tstamp>
+    </comp>
+    <comp ref="J301">
+      <value>Barrel_Jack_Switch</value>
+      <footprint>digikey-footprints:Barrel_Jack_5.5mmODx2.1mmID_PJ-102A</footprint>
+      <datasheet>https://www.cuidevices.com/product/resource/pj-102b.pdf</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://www.cuidevices.com/product/resource/pj-102b.pdf</field>
+        <field name="Description">CONN PWR JACK 2.5X5.5MM SOLDER</field>
+        <field name="Digi-Key_PN">CP-102B-ND</field>
+        <field name="Family">Barrel - Power Connectors</field>
+        <field name="MPN">PJ-102B</field>
+        <field name="Manufacturer">CUI Devices</field>
+      </fields>
+      <libsource lib="Connector" part="Barrel_Jack_Switch" description="DC Barrel Jack with an internal switch"/>
+      <sheetpath names="/5V Power Supply/" tstamps="/61B6B9EE/"/>
+      <tstamp>61B74DC1</tstamp>
+    </comp>
+    <comp ref="U301">
+      <value>L7805CV</value>
+      <footprint>digikey-footprints:TO-220-3</footprint>
+      <datasheet>http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf</datasheet>
+      <fields>
+        <field name="Category">Integrated Circuits (ICs)</field>
+        <field name="DK_Datasheet_Link">http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf</field>
+        <field name="DK_Detail_Page">/product-detail/en/stmicroelectronics/L7805CV/497-1443-5-ND/585964</field>
+        <field name="Description">IC REG LINEAR 5V 1.5A TO220AB</field>
+        <field name="Digi-Key_PN">497-1443-5-ND</field>
+        <field name="Family">PMIC - Voltage Regulators - Linear</field>
+        <field name="MPN">L7805CV</field>
+        <field name="Manufacturer">STMicroelectronics</field>
+        <field name="Status">Active</field>
+      </fields>
+      <libsource lib="dk_PMIC-Voltage-Regulators-Linear" part="L7805CV" description="IC REG LINEAR 5V 1.5A TO220AB"/>
+      <sheetpath names="/5V Power Supply/" tstamps="/61B6B9EE/"/>
+      <tstamp>61B763F3</tstamp>
+    </comp>
+    <comp ref="C301">
+      <value>0.33uF</value>
+      <footprint>Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Description">CAP CER 0.33UF 50V X7R RADIAL</field>
+        <field name="Digi-Key_PN">445-180638-1-ND</field>
+        <field name="Family">Ceramic Capacitors</field>
+        <field name="MPN">FA24X7R1H334KNU06</field>
+        <field name="Manufacturer">TDK Corporation</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/5V Power Supply/" tstamps="/61B6B9EE/"/>
+      <tstamp>61B7D057</tstamp>
+    </comp>
+    <comp ref="C302">
+      <value>0.1uF</value>
+      <footprint>Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Description">CAP CER 0.1UF 50V X7R RADIAL</field>
+        <field name="Digi-Key_PN">445-173588-1-ND</field>
+        <field name="Family">Ceramic Capacitors</field>
+        <field name="MPN">FG28X7R1H104KNT06</field>
+        <field name="Manufacturer">TDK Corporation</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/5V Power Supply/" tstamps="/61B6B9EE/"/>
+      <tstamp>61B7DAA7</tstamp>
+    </comp>
+    <comp ref="R301">
+      <value>300</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/lr/YAGEO%20MFR_datasheet_2021v1.pdf</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://www.yageo.com/upload/media/product/productsearch/datasheet/lr/YAGEO%20MFR_datasheet_2021v1.pdf</field>
+        <field name="Description">RES 300 OHM 1% 1/4W AXIAL</field>
+        <field name="Digi-Key_PN">MFR-25FBF52-300R-ND</field>
+        <field name="Family">Through Hole Resistors</field>
+        <field name="MPN">MFR-25FBF52-300R</field>
+        <field name="Manufacturer">YAGEO</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/5V Power Supply/" tstamps="/61B6B9EE/"/>
+      <tstamp>61C74A72</tstamp>
+    </comp>
+    <comp ref="D301">
+      <value>LED</value>
+      <footprint>LED_THT:LED_D5.0mm</footprint>
+      <datasheet>https://www.lumex.com/spec/SSL-LX5093USBD.pdf</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://www.lumex.com/spec/SSL-LX5093USBD.pdf</field>
+        <field name="Description">LED BLUE DIFFUSED T-1 3/4 T/H</field>
+        <field name="Digi-Key_PN">67-1751-ND</field>
+        <field name="Family">LED Indication - Discrete</field>
+        <field name="MPN">SSL-LX5093USBD</field>
+        <field name="Manufacturer">Lumex Opto/Components Inc.</field>
+      </fields>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <sheetpath names="/5V Power Supply/" tstamps="/61B6B9EE/"/>
+      <tstamp>61C7582B</tstamp>
+    </comp>
+    <comp ref="U401">
+      <value>PIC16F15256-xSP</value>
+      <footprint>Package_DIP:DIP-28_W7.62mm</footprint>
+      <datasheet>https://ww1.microchip.com/downloads/en/DeviceDoc/PIC16F15256-74-75-76-28-40-Pin-Microcontrollers-40002305B.pdf</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://ww1.microchip.com/downloads/en/DeviceDoc/PIC16F15256-74-75-76-28-40-Pin-Microcontrollers-40002305B.pdf</field>
+        <field name="Description">IC MCU 8BIT 28KB FLASH 28SPDIP</field>
+        <field name="Digi-Key_PN">150-PIC16F15256-I/SP-ND</field>
+        <field name="Family">Embedded - Microcontrollers</field>
+        <field name="MPN">PIC16F15256-I/SP</field>
+        <field name="Manufacturer">Microchip Technology</field>
+      </fields>
+      <libsource lib="MCU_Microchip_PIC16" part="PIC16F15356-xSP" description="16KW FLASH, 2048B SRAM, DIP-28"/>
+      <sheetpath names="/Micro Controller/" tstamps="/61B83974/"/>
+      <tstamp>61B83F45</tstamp>
+    </comp>
+    <comp ref="R401">
+      <value>10K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://www.yageo.com/upload/media/product/productsearch/datasheet/lr/YAGEO%20MFR_datasheet_2021v1.pdf</field>
+        <field name="Description">RES 10K OHM 1% 1/4W AXIAL</field>
+        <field name="Digi-Key_PN">10.0KXBK-ND</field>
+        <field name="Family">Through Hole Resistors</field>
+        <field name="MPN">MFR-25FBF52-10K</field>
+        <field name="Manufacturer">YAGEO</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Micro Controller/" tstamps="/61B83974/"/>
+      <tstamp>61B874CF</tstamp>
+    </comp>
+    <comp ref="C401">
+      <value>0.1uF</value>
+      <footprint>Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Description">CAP CER 0.1UF 50V X7R RADIAL</field>
+        <field name="Digi-Key_PN">445-173588-1-ND</field>
+        <field name="Family">Ceramic Capacitors</field>
+        <field name="MPN">FG28X7R1H104KNT06</field>
+        <field name="Manufacturer">TDK Corporation</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Micro Controller/" tstamps="/61B83974/"/>
+      <tstamp>61B887D7</tstamp>
+    </comp>
+    <comp ref="J401">
+      <value>ICSP</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical</footprint>
+      <datasheet>https://app.adam-tech.com/products/download/data_sheet/201605/ph1-xx-ua-data-sheet.pdf</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://app.adam-tech.com/products/download/data_sheet/201605/ph1-xx-ua-data-sheet.pdf</field>
+        <field name="Description">CONN HEADER VERT 5POS 2.54MM</field>
+        <field name="Digi-Key_PN">2057-PH1-05-UA-ND</field>
+        <field name="Family">Rectangular Connectors - Headers, Male Pins</field>
+        <field name="MPN">PH1-05-UA</field>
+        <field name="Manufacturer">Adam Tech</field>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_01x05" description="Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/Micro Controller/" tstamps="/61B83974/"/>
+      <tstamp>61B89A86</tstamp>
+    </comp>
+    <comp ref="R402">
+      <value>300</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/lr/YAGEO%20MFR_datasheet_2021v1.pdf</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://www.yageo.com/upload/media/product/productsearch/datasheet/lr/YAGEO%20MFR_datasheet_2021v1.pdf</field>
+        <field name="Description">RES 300 OHM 1% 1/4W AXIAL</field>
+        <field name="Digi-Key_PN">MFR-25FBF52-300R-ND</field>
+        <field name="Family">Through Hole Resistors</field>
+        <field name="MPN">MFR-25FBF52-300R</field>
+        <field name="Manufacturer">YAGEO</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Micro Controller/" tstamps="/61B83974/"/>
+      <tstamp>61BA7A58</tstamp>
+    </comp>
+    <comp ref="R403">
+      <value>300</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/lr/YAGEO%20MFR_datasheet_2021v1.pdf</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://www.yageo.com/upload/media/product/productsearch/datasheet/lr/YAGEO%20MFR_datasheet_2021v1.pdf</field>
+        <field name="Description">RES 300 OHM 1% 1/4W AXIAL</field>
+        <field name="Digi-Key_PN">MFR-25FBF52-300R-ND</field>
+        <field name="Family">Through Hole Resistors</field>
+        <field name="MPN">MFR-25FBF52-300R</field>
+        <field name="Manufacturer">YAGEO</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Micro Controller/" tstamps="/61B83974/"/>
+      <tstamp>61BA86EC</tstamp>
+    </comp>
+    <comp ref="D401">
+      <value>LED</value>
+      <footprint>LED_THT:LED_D5.0mm</footprint>
+      <datasheet>https://media.digikey.com/pdf/Data%20Sheets/Lite-On%20PDFs/LTL-307A.pdf</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://media.digikey.com/pdf/Data%20Sheets/Lite-On%20PDFs/LTL-307A.pdf</field>
+        <field name="Description">LED AMBER DIFFUSED T-1 3/4 T/H</field>
+        <field name="Digi-Key_PN">160-1949-ND</field>
+        <field name="Family">LED Indication - Discrete</field>
+        <field name="MPN">LTL-307A</field>
+        <field name="Manufacturer">LITEON</field>
+      </fields>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <sheetpath names="/Micro Controller/" tstamps="/61B83974/"/>
+      <tstamp>61BACD14</tstamp>
+    </comp>
+    <comp ref="D402">
+      <value>LED</value>
+      <footprint>LED_THT:LED_D5.0mm</footprint>
+      <datasheet>https://media.digikey.com/pdf/Data%20Sheets/Lite-On%20PDFs/LTL-4233.pdf</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://media.digikey.com/pdf/Data%20Sheets/Lite-On%20PDFs/LTL-4233.pdf</field>
+        <field name="Description">LED GREEN DIFFUSED T-1 3/4 T/H</field>
+        <field name="Digi-Key_PN">160-1130-ND</field>
+        <field name="Family">LED Indication - Discrete</field>
+        <field name="MPN">LTL-4233</field>
+        <field name="Manufacturer">LITEON</field>
+      </fields>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <sheetpath names="/Micro Controller/" tstamps="/61B83974/"/>
+      <tstamp>61BB9171</tstamp>
+    </comp>
+    <comp ref="U501">
+      <value>SN74HC595NE4</value>
+      <footprint>digikey-footprints:DIP-16_W7.62mm</footprint>
+      <datasheet>https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74hc595</datasheet>
+      <fields>
+        <field name="Category">Integrated Circuits (ICs)</field>
+        <field name="DK_Datasheet_Link">https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74hc595</field>
+        <field name="DK_Detail_Page">https://www.digikey.com/en/products/detail/texas-instruments/SN74HC595NE4/1571270</field>
+        <field name="Description">IC SHIFT REGISTER 8BIT 16-DIP</field>
+        <field name="Digi-Key_PN">296-36142-5-ND</field>
+        <field name="Family">Logic - Shift Registers</field>
+        <field name="MPN">SN74HC595NE4</field>
+        <field name="Manufacturer">Texas Instruments</field>
+        <field name="Status">Active</field>
+      </fields>
+      <libsource lib="dk_Logic-Shift-Registers" part="SN74HC595N" description="IC 8-BIT SHIFT REGISTER 16-DIP"/>
+      <sheetpath names="/Shift Registers/" tstamps="/61BD71FF/"/>
+      <tstamp>61BD783C</tstamp>
+    </comp>
+    <comp ref="U502">
+      <value>SN74HC595NE4</value>
+      <footprint>digikey-footprints:DIP-16_W7.62mm</footprint>
+      <datasheet>https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74hc595</datasheet>
+      <fields>
+        <field name="Category">Integrated Circuits (ICs)</field>
+        <field name="DK_Datasheet_Link">https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74hc595</field>
+        <field name="DK_Detail_Page">https://www.digikey.com/en/products/detail/texas-instruments/SN74HC595NE4/1571270</field>
+        <field name="Description">IC SHIFT REGISTER 8BIT 16-DIP</field>
+        <field name="Digi-Key_PN">296-36142-5-ND</field>
+        <field name="Family">Logic - Shift Registers</field>
+        <field name="MPN">SN74HC595NE4</field>
+        <field name="Manufacturer">Texas Instruments</field>
+        <field name="Status">Active</field>
+      </fields>
+      <libsource lib="dk_Logic-Shift-Registers" part="SN74HC595N" description="IC 8-BIT SHIFT REGISTER 16-DIP"/>
+      <sheetpath names="/Shift Registers/" tstamps="/61BD71FF/"/>
+      <tstamp>61BD9621</tstamp>
+    </comp>
+    <comp ref="C501">
+      <value>0.1uF</value>
+      <footprint>Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Description">CAP CER 0.1UF 50V X7R RADIAL</field>
+        <field name="Digi-Key_PN">445-173588-1-ND</field>
+        <field name="Family">Ceramic Capacitors</field>
+        <field name="MPN">FG28X7R1H104KNT06</field>
+        <field name="Manufacturer">TDK Corporation</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Shift Registers/" tstamps="/61BD71FF/"/>
+      <tstamp>61BDD96A</tstamp>
+    </comp>
+    <comp ref="C502">
+      <value>0.1uF</value>
+      <footprint>Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Description">CAP CER 0.1UF 50V X7R RADIAL</field>
+        <field name="Digi-Key_PN">445-173588-1-ND</field>
+        <field name="Family">Ceramic Capacitors</field>
+        <field name="MPN">FG28X7R1H104KNT06</field>
+        <field name="Manufacturer">TDK Corporation</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Shift Registers/" tstamps="/61BD71FF/"/>
+      <tstamp>61C41A0B</tstamp>
+    </comp>
+    <comp ref="J601">
+      <value>32-6554-10</value>
+      <footprint>DW_Footprint:32-6554-10</footprint>
+      <datasheet>https://www.arieselec.com/wp-content/uploads/2020/02/10001-universal-dip-zif-test-socket.pdf</datasheet>
+      <fields>
+        <field name="DK_Datasheet_Link">https://www.arieselec.com/wp-content/uploads/2020/02/10001-universal-dip-zif-test-socket.pdf</field>
+        <field name="Description">CONN IC DIP SOCKET ZIF 32POS TIN</field>
+        <field name="Digi-Key_PN">A304-ND</field>
+        <field name="Family">Sockets for ICs, Transistors</field>
+        <field name="MPN">32-6554-10</field>
+        <field name="Manufacturer">Aries Electronics</field>
+      </fields>
+      <libsource lib="DW_Library" part="32-6554-10" description="Universal Zero-Insertion-Force DIP Test Socket"/>
+      <sheetpath names="/Flash Memory/" tstamps="/61C0AA4A/"/>
+      <tstamp>61C174C7</tstamp>
+    </comp>
+    <comp ref="C601">
+      <value>0.1uF</value>
+      <footprint>Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Description">CAP CER 0.1UF 50V X7R RADIAL</field>
+        <field name="Digi-Key_PN">445-173588-1-ND</field>
+        <field name="Family">Ceramic Capacitors</field>
+        <field name="MPN">FG28X7R1H104KNT06</field>
+        <field name="Manufacturer">TDK Corporation</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Flash Memory/" tstamps="/61C0AA4A/"/>
+      <tstamp>61C1D85D</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="Barrel_Jack_Switch">
+      <description>DC Barrel Jack with an internal switch</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>BarrelJack*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Barrel_Jack_Switch</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+        <pin num="3" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x05">
+      <description>Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x05</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="DW_Library" part="32-6554-10">
+      <description>Universal Zero-Insertion-Force DIP Test Socket</description>
+      <docs>https://www.arieselec.com/wp-content/uploads/2020/02/10001-universal-dip-zif-test-socket.pdf</docs>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">32-6554-10</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+        <pin num="5" name="5" type="passive"/>
+        <pin num="6" name="6" type="passive"/>
+        <pin num="7" name="7" type="passive"/>
+        <pin num="8" name="8" type="passive"/>
+        <pin num="9" name="9" type="passive"/>
+        <pin num="10" name="10" type="passive"/>
+        <pin num="11" name="11" type="passive"/>
+        <pin num="12" name="12" type="passive"/>
+        <pin num="13" name="13" type="passive"/>
+        <pin num="14" name="14" type="passive"/>
+        <pin num="15" name="15" type="passive"/>
+        <pin num="16" name="16" type="passive"/>
+        <pin num="17" name="17" type="passive"/>
+        <pin num="18" name="18" type="passive"/>
+        <pin num="19" name="19" type="passive"/>
+        <pin num="20" name="20" type="passive"/>
+        <pin num="21" name="21" type="passive"/>
+        <pin num="22" name="22" type="passive"/>
+        <pin num="23" name="23" type="passive"/>
+        <pin num="24" name="24" type="passive"/>
+        <pin num="25" name="25" type="passive"/>
+        <pin num="26" name="26" type="passive"/>
+        <pin num="27" name="27" type="passive"/>
+        <pin num="28" name="28" type="passive"/>
+        <pin num="29" name="29" type="passive"/>
+        <pin num="30" name="30" type="passive"/>
+        <pin num="31" name="31" type="passive"/>
+        <pin num="32" name="32" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED">
+      <description>Light emitting diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_US">
+      <description>Resistor, US symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_US</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Diode" part="1N4148">
+      <aliases>
+        <alias>1N4448</alias>
+        <alias>1N4149</alias>
+        <alias>1N4151</alias>
+        <alias>1N914</alias>
+        <alias>BA243</alias>
+        <alias>BA244</alias>
+        <alias>BA282</alias>
+        <alias>BA283</alias>
+        <alias>BAV17</alias>
+        <alias>BAV18</alias>
+        <alias>BAV19</alias>
+        <alias>BAV20</alias>
+        <alias>BAV21</alias>
+        <alias>BAW75</alias>
+        <alias>BAW76</alias>
+        <alias>BAY93</alias>
+      </aliases>
+      <description>100V 0.15A standard switching diode, DO-35</description>
+      <docs>https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf</docs>
+      <footprints>
+        <fp>D*DO?35*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">1N4148</field>
+        <field name="Footprint">Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="MCU_Microchip_PIC16" part="PIC16F15356-xSP">
+      <aliases>
+        <alias>PIC16LF15356-xSP</alias>
+      </aliases>
+      <description>16KW FLASH, 2048B SRAM, DIP-28</description>
+      <docs>http://ww1.microchip.com/downloads/en/DeviceDoc/PIC16LF15356-75-76-85-86-Data%20Sheet-40001866B.pdf</docs>
+      <footprints>
+        <fp>DIP*7.62mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U?</field>
+        <field name="Value">PIC16F15356-xSP</field>
+        <field name="Footprint">Package_DIP:DIP-28_W7.62mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VPP/~MCLR~/RE3" type="BiDi"/>
+        <pin num="2" name="RA0" type="BiDi"/>
+        <pin num="3" name="RA1" type="BiDi"/>
+        <pin num="4" name="RA2" type="BiDi"/>
+        <pin num="5" name="RA3" type="BiDi"/>
+        <pin num="6" name="RA4" type="BiDi"/>
+        <pin num="7" name="RA5" type="BiDi"/>
+        <pin num="8" name="VSS" type="power_in"/>
+        <pin num="9" name="RA7" type="BiDi"/>
+        <pin num="10" name="RA6" type="BiDi"/>
+        <pin num="11" name="RC0" type="BiDi"/>
+        <pin num="12" name="RC1" type="BiDi"/>
+        <pin num="13" name="RC2" type="BiDi"/>
+        <pin num="14" name="RC3" type="BiDi"/>
+        <pin num="15" name="RC4" type="BiDi"/>
+        <pin num="16" name="RC5" type="BiDi"/>
+        <pin num="17" name="RC6" type="BiDi"/>
+        <pin num="18" name="RC7" type="BiDi"/>
+        <pin num="19" name="VSS" type="power_in"/>
+        <pin num="20" name="VDD" type="power_in"/>
+        <pin num="21" name="RB0" type="BiDi"/>
+        <pin num="22" name="RB1" type="BiDi"/>
+        <pin num="23" name="RB2" type="BiDi"/>
+        <pin num="24" name="RB3" type="BiDi"/>
+        <pin num="25" name="RB4" type="BiDi"/>
+        <pin num="26" name="RB5" type="BiDi"/>
+        <pin num="27" name="RB6/ICSPCLK" type="BiDi"/>
+        <pin num="28" name="RB7/ICSPDAT" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole">
+      <description>Mounting Hole without connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole</field>
+      </fields>
+    </libpart>
+    <libpart lib="Transistor_BJT" part="BC547">
+      <aliases>
+        <alias>BC546</alias>
+        <alias>BC548</alias>
+        <alias>BC549</alias>
+        <alias>BC550</alias>
+        <alias>BC337</alias>
+        <alias>BC338</alias>
+      </aliases>
+      <description>0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92</description>
+      <docs>https://www.onsemi.com/pub/Collateral/BC550-D.pdf</docs>
+      <footprints>
+        <fp>TO?92*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">BC547</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-92_Inline</field>
+      </fields>
+      <pins>
+        <pin num="1" name="C" type="passive"/>
+        <pin num="2" name="B" type="input"/>
+        <pin num="3" name="E" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Transistor_BJT" part="BC557">
+      <aliases>
+        <alias>BC556</alias>
+        <alias>BC558</alias>
+        <alias>BC559</alias>
+        <alias>BC560</alias>
+        <alias>BC327</alias>
+        <alias>BC328</alias>
+      </aliases>
+      <description>0.1A Ic, 45V Vce, PNP Small Signal Transistor, TO-92</description>
+      <docs>https://www.onsemi.com/pub/Collateral/BC556BTA-D.pdf</docs>
+      <footprints>
+        <fp>TO?92*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">BC557</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-92_Inline</field>
+      </fields>
+      <pins>
+        <pin num="1" name="C" type="passive"/>
+        <pin num="2" name="B" type="input"/>
+        <pin num="3" name="E" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="dk_Logic-Shift-Registers" part="SN74HC595N">
+      <description>IC 8-BIT SHIFT REGISTER 16-DIP</description>
+      <docs>http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74hc595</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SN74HC595N</field>
+        <field name="Footprint">digikey-footprints:DIP-16_W7.62mm</field>
+        <field name="Datasheet">http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74hc595</field>
+        <field name="Digi-Key_PN">296-1600-5-ND</field>
+        <field name="MPN">SN74HC595N</field>
+        <field name="Category">Integrated Circuits (ICs)</field>
+        <field name="Family">Logic - Shift Registers</field>
+        <field name="DK_Datasheet_Link">http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74hc595</field>
+        <field name="DK_Detail_Page">/product-detail/en/texas-instruments/SN74HC595N/296-1600-5-ND/277246</field>
+        <field name="Description">IC 8-BIT SHIFT REGISTER 16-DIP</field>
+        <field name="Manufacturer">Texas Instruments</field>
+        <field name="Status">Active</field>
+      </fields>
+      <pins>
+        <pin num="1" name="QB" type="output"/>
+        <pin num="2" name="QC" type="output"/>
+        <pin num="3" name="QD" type="output"/>
+        <pin num="4" name="QE" type="output"/>
+        <pin num="5" name="QF" type="output"/>
+        <pin num="6" name="QG" type="output"/>
+        <pin num="7" name="QH" type="output"/>
+        <pin num="8" name="GND" type="power_in"/>
+        <pin num="9" name="QH'" type="output"/>
+        <pin num="10" name="~SRCLR" type="input"/>
+        <pin num="11" name="SRCLK" type="input"/>
+        <pin num="12" name="RCLK" type="input"/>
+        <pin num="13" name="~OE" type="input"/>
+        <pin num="14" name="SER" type="input"/>
+        <pin num="15" name="QA" type="output"/>
+        <pin num="16" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="dk_Modular-Connectors-Jacks" part="54602-908LF">
+      <description>CONN MOD JACK 8P8C R/A UNSHLD</description>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">54602-908LF</field>
+        <field name="Footprint">digikey-footprints:Ethernet_Jack_54602-908LF</field>
+        <field name="Digi-Key_PN">609-1046-ND</field>
+        <field name="MPN">54602-908LF</field>
+        <field name="Category">Connectors, Interconnects</field>
+        <field name="Family">Modular Connectors - Jacks</field>
+        <field name="DK_Detail_Page">/product-detail/en/amphenol-icc-fci/54602-908LF/609-1046-ND/1001360</field>
+        <field name="Description">CONN MOD JACK 8P8C R/A UNSHLD</field>
+        <field name="Manufacturer">Amphenol ICC (FCI)</field>
+        <field name="Status">Active</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+        <pin num="3" name="~" type="passive"/>
+        <pin num="4" name="~" type="passive"/>
+        <pin num="5" name="~" type="passive"/>
+        <pin num="6" name="~" type="passive"/>
+        <pin num="7" name="~" type="passive"/>
+        <pin num="8" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="dk_PMIC-Voltage-Regulators-Linear" part="L7805CV">
+      <description>IC REG LINEAR 5V 1.5A TO220AB</description>
+      <docs>http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">L7805CV</field>
+        <field name="Footprint">digikey-footprints:TO-220-3</field>
+        <field name="Datasheet">http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf</field>
+        <field name="Digi-Key_PN">497-1443-5-ND</field>
+        <field name="MPN">L7805CV</field>
+        <field name="Category">Integrated Circuits (ICs)</field>
+        <field name="Family">PMIC - Voltage Regulators - Linear</field>
+        <field name="DK_Datasheet_Link">http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf</field>
+        <field name="DK_Detail_Page">/product-detail/en/stmicroelectronics/L7805CV/497-1443-5-ND/585964</field>
+        <field name="Description">IC REG LINEAR 5V 1.5A TO220AB</field>
+        <field name="Manufacturer">STMicroelectronics</field>
+        <field name="Status">Active</field>
+      </fields>
+      <pins>
+        <pin num="1" name="IN" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="OUT" type="power_out"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Connector.lib</uri>
+    </library>
+    <library logical="Connector_Generic">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Connector_Generic.lib</uri>
+    </library>
+    <library logical="DW_Library">
+      <uri>C:/EE/KiCAD Libraries/DW/DW_Library.lib</uri>
+    </library>
+    <library logical="Device">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Device.lib</uri>
+    </library>
+    <library logical="Diode">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Diode.lib</uri>
+    </library>
+    <library logical="MCU_Microchip_PIC16">
+      <uri>C:\Program Files\KiCad\share\kicad\library/MCU_Microchip_PIC16.lib</uri>
+    </library>
+    <library logical="Mechanical">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Mechanical.lib</uri>
+    </library>
+    <library logical="Transistor_BJT">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Transistor_BJT.lib</uri>
+    </library>
+    <library logical="dk_Logic-Shift-Registers">
+      <uri>C:/EE/KiCAD Libraries/DigiKey/digikey-symbols/dk_Logic-Shift-Registers.lib</uri>
+    </library>
+    <library logical="dk_Modular-Connectors-Jacks">
+      <uri>C:/EE/KiCAD Libraries/DigiKey/digikey-symbols/dk_Modular-Connectors-Jacks.lib</uri>
+    </library>
+    <library logical="dk_PMIC-Voltage-Regulators-Linear">
+      <uri>C:/EE/KiCAD Libraries/DigiKey/digikey-symbols/dk_PMIC-Voltage-Regulators-Linear.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/Micro Controller/USART_uTX">
+      <node ref="R202" pin="2"/>
+      <node ref="U401" pin="17"/>
+    </net>
+    <net code="2" name="/Flash Memory/~OE">
+      <node ref="J601" pin="24"/>
+      <node ref="U502" pin="6"/>
+    </net>
+    <net code="3" name="/Flash Memory/~CE">
+      <node ref="J601" pin="22"/>
+      <node ref="U502" pin="7"/>
+    </net>
+    <net code="4" name="/Flash Memory/~FL_WE">
+      <node ref="J601" pin="31"/>
+      <node ref="U401" pin="14"/>
+    </net>
+    <net code="5" name="/Micro Controller/USART_uRX">
+      <node ref="U401" pin="18"/>
+      <node ref="Q202" pin="1"/>
+      <node ref="R204" pin="2"/>
+    </net>
+    <net code="6" name="/Micro Controller/SR_RCLK">
+      <node ref="U401" pin="13"/>
+      <node ref="U502" pin="12"/>
+      <node ref="U501" pin="12"/>
+    </net>
+    <net code="7" name="/Micro Controller/SR_SCLK">
+      <node ref="U502" pin="11"/>
+      <node ref="U501" pin="11"/>
+      <node ref="U401" pin="12"/>
+    </net>
+    <net code="8" name="/Micro Controller/SR_SDATA">
+      <node ref="U401" pin="11"/>
+      <node ref="U501" pin="14"/>
+    </net>
+    <net code="9" name="VDD">
+      <node ref="C401" pin="1"/>
+      <node ref="C302" pin="1"/>
+      <node ref="R201" pin="1"/>
+      <node ref="R301" pin="1"/>
+      <node ref="J401" pin="2"/>
+      <node ref="R401" pin="1"/>
+      <node ref="C601" pin="1"/>
+      <node ref="J601" pin="32"/>
+      <node ref="U301" pin="3"/>
+      <node ref="R204" pin="1"/>
+      <node ref="C502" pin="1"/>
+      <node ref="U502" pin="16"/>
+      <node ref="U401" pin="20"/>
+      <node ref="U502" pin="10"/>
+      <node ref="U501" pin="16"/>
+      <node ref="U501" pin="10"/>
+      <node ref="Q201" pin="3"/>
+      <node ref="C501" pin="1"/>
+    </net>
+    <net code="10" name="Net-(Q201-Pad2)">
+      <node ref="Q201" pin="2"/>
+      <node ref="R202" pin="1"/>
+      <node ref="R201" pin="2"/>
+    </net>
+    <net code="11" name="VSS">
+      <node ref="C401" pin="2"/>
+      <node ref="U502" pin="13"/>
+      <node ref="D402" pin="1"/>
+      <node ref="C501" pin="2"/>
+      <node ref="U401" pin="8"/>
+      <node ref="U401" pin="19"/>
+      <node ref="U501" pin="13"/>
+      <node ref="U501" pin="8"/>
+      <node ref="D401" pin="1"/>
+      <node ref="U502" pin="8"/>
+      <node ref="R206" pin="2"/>
+      <node ref="J201" pin="4"/>
+      <node ref="J201" pin="5"/>
+      <node ref="Q202" pin="3"/>
+      <node ref="C201" pin="2"/>
+      <node ref="C601" pin="2"/>
+      <node ref="J601" pin="16"/>
+      <node ref="J301" pin="2"/>
+      <node ref="U301" pin="2"/>
+      <node ref="J401" pin="3"/>
+      <node ref="C502" pin="2"/>
+      <node ref="C301" pin="2"/>
+      <node ref="C302" pin="2"/>
+      <node ref="D301" pin="1"/>
+    </net>
+    <net code="12" name="Net-(J201-Pad8)">
+      <node ref="J201" pin="8"/>
+    </net>
+    <net code="13" name="Net-(J201-Pad7)">
+      <node ref="J201" pin="7"/>
+    </net>
+    <net code="14" name="Net-(J201-Pad2)">
+      <node ref="J201" pin="2"/>
+    </net>
+    <net code="15" name="Net-(J201-Pad1)">
+      <node ref="J201" pin="1"/>
+    </net>
+    <net code="16" name="/UART Level Converter/TxD">
+      <node ref="D201" pin="1"/>
+      <node ref="R205" pin="1"/>
+      <node ref="J201" pin="6"/>
+    </net>
+    <net code="17" name="Net-(C201-Pad1)">
+      <node ref="R203" pin="2"/>
+      <node ref="C201" pin="1"/>
+      <node ref="D201" pin="2"/>
+    </net>
+    <net code="18" name="/UART Level Converter/RxD">
+      <node ref="R203" pin="1"/>
+      <node ref="Q201" pin="1"/>
+      <node ref="J201" pin="3"/>
+    </net>
+    <net code="19" name="Net-(Q202-Pad2)">
+      <node ref="Q202" pin="2"/>
+      <node ref="R206" pin="1"/>
+      <node ref="R205" pin="2"/>
+    </net>
+    <net code="20" name="Net-(D301-Pad2)">
+      <node ref="D301" pin="2"/>
+      <node ref="R301" pin="2"/>
+    </net>
+    <net code="21" name="Net-(C301-Pad1)">
+      <node ref="C301" pin="1"/>
+      <node ref="U301" pin="1"/>
+      <node ref="J301" pin="1"/>
+    </net>
+    <net code="22" name="Net-(J301-Pad3)">
+      <node ref="J301" pin="3"/>
+    </net>
+    <net code="23" name="/Micro Controller/LED_uRX">
+      <node ref="U401" pin="16"/>
+      <node ref="R402" pin="1"/>
+    </net>
+    <net code="24" name="Net-(D401-Pad2)">
+      <node ref="R402" pin="2"/>
+      <node ref="D401" pin="2"/>
+    </net>
+    <net code="25" name="/Micro Controller/LED_uTX">
+      <node ref="R403" pin="1"/>
+      <node ref="U401" pin="15"/>
+    </net>
+    <net code="26" name="Net-(D402-Pad2)">
+      <node ref="R403" pin="2"/>
+      <node ref="D402" pin="2"/>
+    </net>
+    <net code="27" name="/Micro Controller/~MCLR">
+      <node ref="J401" pin="1"/>
+      <node ref="U401" pin="1"/>
+      <node ref="R401" pin="2"/>
+    </net>
+    <net code="28" name="Net-(U502-Pad3)">
+      <node ref="U502" pin="3"/>
+    </net>
+    <net code="29" name="Net-(U502-Pad4)">
+      <node ref="U502" pin="4"/>
+    </net>
+    <net code="30" name="Net-(U502-Pad5)">
+      <node ref="U502" pin="5"/>
+    </net>
+    <net code="31" name="Net-(U502-Pad9)">
+      <node ref="U502" pin="9"/>
+    </net>
+    <net code="32" name="Net-(U501-Pad9)">
+      <node ref="U502" pin="14"/>
+      <node ref="U501" pin="9"/>
+    </net>
+    <net code="35" name="/Flash Memory/A4">
+      <node ref="U401" pin="6"/>
+      <node ref="J601" pin="8"/>
+    </net>
+    <net code="36" name="/Flash Memory/A15">
+      <node ref="J601" pin="3"/>
+      <node ref="U501" pin="7"/>
+    </net>
+    <net code="37" name="/Flash Memory/A14">
+      <node ref="U501" pin="6"/>
+      <node ref="J601" pin="29"/>
+    </net>
+    <net code="38" name="/Flash Memory/A13">
+      <node ref="U501" pin="5"/>
+      <node ref="J601" pin="28"/>
+    </net>
+    <net code="39" name="/Flash Memory/A12">
+      <node ref="U501" pin="4"/>
+      <node ref="J601" pin="4"/>
+    </net>
+    <net code="40" name="/Flash Memory/A11">
+      <node ref="U501" pin="3"/>
+      <node ref="J601" pin="25"/>
+    </net>
+    <net code="41" name="/Flash Memory/A10">
+      <node ref="J601" pin="23"/>
+      <node ref="U501" pin="2"/>
+    </net>
+    <net code="42" name="/Flash Memory/A9">
+      <node ref="U501" pin="1"/>
+      <node ref="J601" pin="26"/>
+    </net>
+    <net code="43" name="/Flash Memory/A8">
+      <node ref="J601" pin="27"/>
+      <node ref="U501" pin="15"/>
+    </net>
+    <net code="44" name="/Flash Memory/A7">
+      <node ref="J601" pin="5"/>
+      <node ref="U401" pin="9"/>
+    </net>
+    <net code="45" name="/Flash Memory/A6">
+      <node ref="J601" pin="6"/>
+      <node ref="U401" pin="10"/>
+    </net>
+    <net code="46" name="/Flash Memory/A5">
+      <node ref="U401" pin="7"/>
+      <node ref="J601" pin="7"/>
+    </net>
+    <net code="47" name="/Flash Memory/A16">
+      <node ref="U502" pin="15"/>
+      <node ref="J601" pin="2"/>
+    </net>
+    <net code="48" name="/Flash Memory/A3">
+      <node ref="U401" pin="5"/>
+      <node ref="J601" pin="9"/>
+    </net>
+    <net code="49" name="/Flash Memory/A2">
+      <node ref="J601" pin="10"/>
+      <node ref="U401" pin="4"/>
+    </net>
+    <net code="50" name="/Flash Memory/A1">
+      <node ref="U401" pin="3"/>
+      <node ref="J601" pin="11"/>
+    </net>
+    <net code="51" name="/Flash Memory/A0">
+      <node ref="U401" pin="2"/>
+      <node ref="J601" pin="12"/>
+    </net>
+    <net code="52" name="/Flash Memory/D7">
+      <node ref="J601" pin="21"/>
+      <node ref="J401" pin="4"/>
+      <node ref="U401" pin="28"/>
+    </net>
+    <net code="53" name="/Flash Memory/D6">
+      <node ref="U401" pin="27"/>
+      <node ref="J601" pin="20"/>
+      <node ref="J401" pin="5"/>
+    </net>
+    <net code="54" name="/Flash Memory/D5">
+      <node ref="J601" pin="19"/>
+      <node ref="U401" pin="26"/>
+    </net>
+    <net code="55" name="/Flash Memory/D4">
+      <node ref="J601" pin="18"/>
+      <node ref="U401" pin="25"/>
+    </net>
+    <net code="56" name="/Flash Memory/D3">
+      <node ref="J601" pin="17"/>
+      <node ref="U401" pin="24"/>
+    </net>
+    <net code="57" name="/Flash Memory/D2">
+      <node ref="J601" pin="15"/>
+      <node ref="U401" pin="23"/>
+    </net>
+    <net code="58" name="/Flash Memory/D1">
+      <node ref="U401" pin="22"/>
+      <node ref="J601" pin="14"/>
+    </net>
+    <net code="59" name="/Flash Memory/A18">
+      <node ref="U502" pin="2"/>
+      <node ref="J601" pin="1"/>
+    </net>
+    <net code="60" name="/Flash Memory/A17">
+      <node ref="J601" pin="30"/>
+      <node ref="U502" pin="1"/>
+    </net>
+    <net code="61" name="/Flash Memory/D0">
+      <node ref="U401" pin="21"/>
+      <node ref="J601" pin="13"/>
+    </net>
+  </nets>
+</export>
