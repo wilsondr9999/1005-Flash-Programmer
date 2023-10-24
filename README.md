@@ -19,4 +19,4 @@ All schematics and circuit board designs in the project (all KiCAD files) are li
 
 All software and firmware code in the project (all MPLAB and Visual Studio files) are licensed under the GNU Affero General Public License v3.0 (AGPL 3.0).
 
-Documentation, Bill of Materials, pictures, and documentation (i.e. all other files not covered by the other two licenses above) are licensed under the Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0).
+Bill of Materials, pictures, and documentation (i.e. all other files not covered by the other two licenses above) are licensed under the Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0).
