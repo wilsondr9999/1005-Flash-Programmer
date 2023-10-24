@@ -1,4 +1,5 @@
 # Flash Programmer
+Copyright © 2021 by Dan WIlson
 
 This is a simple PCB, firmware, and software that can write binary image files to the Microchip SST39 series of flash ROMs.  These flash ROMs are one of the very few flash ROMs on the market that are still active production and in DIP packages, making them a popular replacement for the difficult-to-find and out-of-production AT28 series.
 
@@ -11,3 +12,11 @@ The firmware on the PIC16 implements a command protocol that runs over a serial 
 On the PC, a command line program is provided to read and write to the flash memory.  The command line program is written in Visual C# with Visual Studio.
 
 You can order the PCBs directly from Oshpark with [this](https://oshpark.com/import?url=https://github.com/wilsondr9999/1005-Flash-Programmer/raw/main/1005-Flash-Programmer.zip) link.
+
+Several different licenses apply to this repository and the files within.
+
+All schematics and circuit board designs in the project (all KiCAD files) are licensed under the CERN Open Hardware Licence Version 2 - Strongly Reciprocal (CERN-OHL-S).
+
+All software and firmware code in the project (all MPLAB and Visual Studio files) are licensed under the GNU Affero General Public License v3.0 (AGPL 3.0).
+
+Documentation, Bill of Materials, pictures, and documentation (i.e. all other files not covered by the other two licenses above) are licensed under the Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0).
